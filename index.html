@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <!--Your HTML here-->
-	<h1>Hello!</h1>
-    </body>
+<html> 
+  <head> 
+    <script src="index_js.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContent").load("main.html"); 
+    });
+    </script> 
+  </head> 
+
+  <body> 
+     <div id="includedContent"></div>
+  </body> 
 </html>
