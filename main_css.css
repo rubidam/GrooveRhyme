@@ -1,1 +1,15 @@
+#search {
+	width:40%;
+	height:300px;
+	float:left;
+	text-align:center;
+	background-color:green;
+}
 
+#write {
+	width:40%;
+	height:300px;
+	float:right;
+	text-align:center;
+	background-color:red;
+}
