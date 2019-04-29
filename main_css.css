@@ -1,8 +1,17 @@
+#top {
+	width : 100%;
+	height : 50px;
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+}
 #search {
 	width:40%;
 	height:300px;
 	float:left;
 	text-align:center;
+	font-size:50px;
+	padding: 100px 0px;
 	background-color:green;
 }
 
@@ -11,5 +20,17 @@
 	height:300px;
 	float:right;
 	text-align:center;
+	font-size:50px;
+	padding: 100px 0px;
 	background-color:red;
+}
+#profile {
+	position: absolute;
+	width: 15%;
+	height : 5%;
+	right: 0px;
+	bottom: 0px;
+	text-align:center;
+	padding: 30px 0px;
+	background-color:blue;
 }
