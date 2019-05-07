@@ -1,9 +1,6 @@
 // This allows the Javascript code inside this block to only run when the page
 // has finished loading in the browser.
-var topdiv = document.getElementById("top");
-topdiv.addEventListener('click',function (e) {
-	console.log("top click");
-});
+
 var searchdiv = document.getElementById("search");
 searchdiv.addEventListener('click',function (e) {
 	console.log("search click");
@@ -18,7 +15,7 @@ profilediv.addEventListener('click',function (e) {
 });
 profilediv.addEventListener('mouseover',function (e) {
 	console.log("profile hover");
-	profilediv.style.backgroundImage = "url('profile.png')";
+	profilediv.style.backgroundImage = "url('profile2.png')";
 });
 profilediv.addEventListener('mouseout',function (e) {
 	console.log("profile hover out");
