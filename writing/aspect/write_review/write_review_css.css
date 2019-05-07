@@ -1,0 +1,71 @@
+body{
+	padding : 0px;
+	margin : 0px;
+}
+
+#taskbar{
+	width:100%;
+	height:100px;
+	text-align:center;
+	background-color:#A3FFF9;
+	display:inline-block;
+	margin:0 auto;
+}
+#back{
+	position : absolute;
+	top : 30px;
+	left : 5%;
+	margin-left : 3px;
+}
+
+#backbutton{
+	
+}
+
+#input_position{
+	padding-left : 40px;
+	padding-top : 20px;
+}
+	
+#review{
+	margin-left : 30px;
+}
+#review_content{
+	margin-left : 30px;
+	width : 80%;
+	height : 200px;
+	text-align : justify;
+	font-size : 20px;
+}
+
+#content{
+	width : 100%;
+	height : 300px;
+}
+
+#OK_position{
+	float:center;
+}
+
+#OK{
+	background-color : DodgerBlue;
+	border : none;
+	color: white;
+	padding : 12px 16px;
+	font-size:16px;
+	cursor : pointer;
+	margin-top : 30px;
+	width : 80%;
+	height : 40px;
+	margin-left:20px;
+}
+
+#OK:hover{
+	background-color : RoyalBlue;
+}
+
+#OK:disabled{
+	border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

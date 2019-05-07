@@ -1,0 +1,142 @@
+body{
+	padding : 0px;
+	margin : 0px;
+}
+
+#taskbar{
+	width:100%;
+	height:100px;
+	text-align:center;
+	background-color:#A3FFF9;
+	display:inline-block;
+	margin:0 auto;
+}
+#back{
+	position : absolute;
+	top : 30px;
+	left : 5%;
+	margin-left : 3px;
+}
+
+#backbutton{
+	
+}
+
+#input_position{
+	padding-left : 40px;
+	padding-top : 20px;
+}
+.pentagon{
+	position: relative;
+	border-style: solid;
+    margin : auto;
+}
+.pentagon:before{
+	content: "";
+    position: absolute;
+	border-style: solid;
+}
+#pentagon1{
+      width: 280px;
+      box-sizing: content-box;
+      border-width: 300px 100px 0;
+      border-color: #C4FFB5 transparent;
+	  margin-top : 200px;
+    }
+
+#pentagon1:before {
+      height: 0px;
+      width: 0;
+      top: -440px;
+      left: -100px;
+      border-width: 0 240px 140px;
+      border-color: transparent transparent #C4FFB5;
+    }
+#pentagon2{
+	width: 230px;
+      box-sizing: content-box;
+      border-width: 270px 90px 0;
+      border-color: white transparent;
+	  top : -690px;
+}
+#pentagon2:before{
+	height: 0px;
+      width: 0;
+      top: -390px;
+      left: -90px;
+      border-width: 0 205px 120px;
+      border-color: transparent transparent white;
+}
+	
+.aspect{
+	position : relative;
+	margin : auto;
+	background : white;
+	border : 5px solid #C4FFB5;
+	width : 70px;
+	height : 70px;
+	border-radius : 70px;
+	text-align : center;
+	vertical-align : middle;
+	z-index : 2;
+	margin : auto auto;
+}
+
+#Production{
+	top : -470px;
+	right :0px;
+	text-align : right;
+}	
+
+#Acting{
+	top : -420px;
+	right : 230px;
+}
+
+#Synopsis{
+	top : -500px;
+	right : -230px;
+}
+
+#Music{
+	top : -300px;
+	right : -150px;
+}
+
+#Visual{
+	top : -380px;
+	right : 150px;
+}
+
+#content{
+	width : 100%;
+	height : 300px;
+}
+
+#OK_position{
+	float:center;
+}
+
+#OK{
+	background-color : DodgerBlue;
+	border : none;
+	color: white;
+	padding : 12px 16px;
+	font-size:16px;
+	cursor : pointer;
+	margin-top : 30px;
+	width : 80%;
+	height : 40px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#OK:hover{
+	background-color : RoyalBlue;
+}
+
+#OK:disabled{
+	border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
