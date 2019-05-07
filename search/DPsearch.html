@@ -36,16 +36,14 @@
             color: black;
         }
         .cate {
-            font-size: 20px;
             border : none;
             outline : none;
             width : 300px;
-            height : 100px;
-            background-color : darkturquoise;
-            color : #224422;
-            letter-spacing : 1px;
-            font-weight : bold;
-            word-wrap: break-word;
+            height : 150px;
+            background-image:url(go_to_choose_category.png);
+            background-repeat:no-repeat;
+            background-color:white;
+            background-size:100%;
         }
         .cate-skip {
             font-size: 20px;
@@ -58,11 +56,17 @@
             letter-spacing: 3px;
             font-weight: bold;
         }
-            .cate:hover, .cate-skip:hover {
-                background-color: deepskyblue;
+            .cate-skip:hover {
+                background-color: darkturquoise;
                 color: #eee;
                 border-color: #eee;
             }
+        .cate:hover {
+            background-image: url(go_to_choose_category_hover.png);
+            background-repeat: no-repeat;
+            background-color: white;
+            background-size: 100%;
+        }
         .aspe {
             font-size: 20px;
             border: none;
@@ -106,8 +110,10 @@
             background-image: url(arrow_to_down.png);
             background-size: 100%;
 			background-repeat:no-repeat;
-            background-position: center;
-            width: 50px;
+            position:absolute;
+            left:50%;
+            bottom:100px;
+            width: 100px;
             height:50px;
         }
         </style>
@@ -131,7 +137,7 @@
                          <th id="Category">
                              <input id="category"
                                     type="Button"
-                                    value="go to choose CATEGORY >"
+                                    value=""
                                     class="cate"
                                     onkeypress="categoryPressListener(event)" />
                          </th>
