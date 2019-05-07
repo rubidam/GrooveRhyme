@@ -9,9 +9,8 @@
 #search {
 	background-color: #eee;
     color:darkturquoise;
-	width:50%;
-	height:500px;
-	margin-left: 0%;
+	width:49%;
+	height:430px;
 	float: left;
 	text-align:center;
 	font-size:60px;
@@ -24,7 +23,7 @@
     background-color: darkturquoise;
     color: #eee;
     width: 50%;
-    height: 500px;
+    height: 430px;
     float: left;
     text-align: center;
     font-size: 60px;

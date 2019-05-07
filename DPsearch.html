@@ -19,7 +19,7 @@
         .searchTable {
             position : absolute;
             top: 200px;
-            left: 50px;
+            left: 300px;
         }
         td, th{
             padding: 20px;
@@ -99,6 +99,14 @@
         }
         .ok:hover {
 
+
+        }
+        .arrow {
+            background-image: url(arrow_to_down.png);
+            background-size: 100%;
+            background-position: center;
+            width: 50px;
+            height:50px;
         }
         </style>
 
@@ -136,6 +144,11 @@
 
                      </tr>
                      <tr>
+                         <td >
+                             <div id="arrow"></div>
+                         </td>
+                     </tr>
+                     <tr>
                      <td id="aspect">
                          <center>
                              <input id="aspect"
@@ -157,7 +170,6 @@
                          </tr>
                     
                  </table>
-		<a href = "./selectMovie.html">
         <div>
             <input id="ok"
                    type="button"
@@ -165,7 +177,6 @@
                     class="ok"
                    onkeypress="okPressListener(event)">
         </div>
-		</a>
         </body >
         </html >
 
