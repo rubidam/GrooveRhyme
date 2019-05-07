@@ -1,5 +1,9 @@
-h1 {
-  font-size : 40px;
+.header{
+	background : #95e89e;
+}
+
+.profileImg{
+	margin-bottom : 10px;
 }
 
 #button {
