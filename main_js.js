@@ -15,9 +15,9 @@ profilediv.addEventListener('click',function (e) {
 });
 profilediv.addEventListener('mouseover',function (e) {
 	console.log("profile hover");
-	profilediv.style.backgroundImage = "url('profile2.png')";
+	profilediv.style.backgroundImage = "url('')";
 });
 profilediv.addEventListener('mouseout',function (e) {
 	console.log("profile hover out");
-	profilediv.style.backgroundImage = "";
+	profilediv.style.backgroundImage = "url('./profile/profile1.png')";
 });
