@@ -1,27 +1,15 @@
-body{
-	padding : 0px;
-	margin : 0px;
-}
-
-#taskbar{
-	position : relative;
-	width:1272px;
-	height:100px;
+#upper-box {
+	position: absolute;
+	top: 0px;
+	left: 0px;
 	padding: 30px;
-	text-align:center;
-	font-size: 30px;
+	width: 1272px;
+	height: 100px;
+	background-color: darkturquoise;
+	text-align: left;
+	font-size: 40px;
 	font-weight: bold;
 	color : #eee;
-	background-color: darkturquoise;
-	display:inline-block;
-	margin:0 auto;
-}
-#back{
-	position : absolute;
-	border : 1px solid black;
-	top : 30px;
-	left : 5%;
-	margin-left : 3px;
 }
 
 .backbutton {
@@ -33,17 +21,36 @@ body{
 	outline : none;
 }
 
-#title {
-	position : absolute;
-	border : 1px solid black;
-	top : 0%;
-	left : 15%;
+.backbutton:hover{
+	color: black;
 }
 
-#input_position{
-	padding-left : 40px;
-	padding-top : 20px;
+#title {
+	position : absolute;
+	left : 10%;
+	top : 40px;
+	font-size : 50px;
 }
+
+#homeButton {
+	position : absolute;
+	right : 10%;
+	font-size : 20px;
+	font-weight : bold;
+	background : #ffffff;
+	border-radius : 0.5em;
+	padding : 3px 10px;
+}
+
+#middle {
+	position : absolute;
+	top: 160px;
+	left: 0px;
+	padding : 30px;
+	width : 1272px;
+	height : 500px;
+}
+
 .pentagon{
 	position: relative;
 	border-style: solid;
