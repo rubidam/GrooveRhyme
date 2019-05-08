@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>search</title>
     <style type="text/css">
@@ -14,41 +15,47 @@
             text-align: left;
             font-size: 40px;
             font-weight: bold;
-            color : #eee;
+            color: #eee;
         }
+
         .searchTable {
-            position : absolute;
+            position: absolute;
             top: 200px;
             left: 300px;
         }
-        td, th{
+
+        td, th {
             padding: 20px;
         }
+
         .backbutton {
             font-size: 40px;
-            background-color :darkturquoise;
+            background-color: darkturquoise;
             color: #eee;
             display: inline-block;
-            border : none;
-            outline : none;
+            border: none;
+            outline: none;
         }
-        .backbutton:hover{
-            color: black;
-        }
+
+            .backbutton:hover {
+                color: black;
+            }
+
         .cate {
-            border : none;
-            outline : none;
-            width : 300px;
-            height : 150px;
-            background-image:url(go_to_choose_category.png);
-            background-repeat:no-repeat;
-            background-color:white;
-            background-size:100%;
+            border: none;
+            outline: none;
+            width: 300px;
+            height: 150px;
+            background-image: url(go_to_choose_category.png);
+            background-repeat: no-repeat;
+            background-color: white;
+            background-size: 100%;
         }
+
         .cate-skip {
             font-size: 20px;
             border: 3px solid darkturquoise;
-            border-color : darkturquoise;
+            border-color: darkturquoise;
             width: 200px;
             height: 100px;
             background-color: white;
@@ -56,17 +63,20 @@
             letter-spacing: 3px;
             font-weight: bold;
         }
+
             .cate-skip:hover {
                 background-color: darkturquoise;
                 color: #eee;
                 border-color: #eee;
             }
+
         .cate:hover {
             background-image: url(go_to_choose_category_hover.png);
             background-repeat: no-repeat;
             background-color: white;
             background-size: 100%;
         }
+
         .aspe {
             font-size: 20px;
             border: none;
@@ -77,6 +87,7 @@
             letter-spacing: 3px;
             font-weight: bold;
         }
+
         .aspe-skip {
             font-size: 20px;
             border: none;
@@ -87,6 +98,7 @@
             letter-spacing: 3px;
             font-weight: bold;
         }
+
         .ok {
             font-size: 20px;
             border: 3px solid;
@@ -99,26 +111,29 @@
             right: 5%;
             letter-spacing: 3px;
             bottom: 50px;
-           font-weight:bold;
+            font-weight: bold;
         }
-        .ok:hover {
 
-
-        }
+            .ok:hover {
+            }
 
         #arrow {
             background-image: url(arrow_to_down.png);
             background-size: 100%;
-			background-repeat:no-repeat;
-            position:absolute;
-            left:50%;
-            bottom:120px;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 50%;
+            bottom: 120px;
             width: 100px;
-            height:50px;
+            height: 50px;
         }
-        </style>
-
-        </head>
+    </style>
+    <title>search</title>
+    <script src="../jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <link href="../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="./DPsearch_css.css" rel="stylesheet" />
+</head>
         <body>
         <center> <div class="upper-box">
     <input id="backspace"
@@ -130,6 +145,18 @@
             > &nbsp;&nbsp;
         It's time to search
 </div> </center>
+	
+
+		<center>
+		<div class="upper-box">
+		<a href = "../index.html">
+			<input id="backspace"
+				type="button" value="<"
+				class="backbutton" onkeypress="backspace()"> &nbsp;&nbsp;
+				It's time to search
+		</a>
+		</div>
+		</center>
                  <table id="searchTable"
                         class="searchTable">
 
@@ -185,8 +212,10 @@
                     class="ok"
                    onkeypress="okPressListener(event)">
         </div>
-        </body >
-        </html >
+		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
+		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+	</body>
+</html>
 
 
 
