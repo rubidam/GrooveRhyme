@@ -1,0 +1,145 @@
+#upper-box {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 30px;
+	width: 1272px;
+	height: 100px;
+	background-color: darkturquoise;
+	text-align: left;
+	font-size: 40px;
+	font-weight: bold;
+	color : #eee;
+}
+
+.backbutton {
+	font-size: 40px;
+	background-color :darkturquoise;
+	color: #eee;
+	display: inline-block;
+	border : none;
+	outline : none;
+}
+
+.backbutton:hover{
+	color: black;
+}
+
+#title {
+	position : absolute;
+	left : 10%;
+	top : 40px;
+	font-size : 50px;
+}
+
+#middle {
+	position : absolute;
+	top: 160px;
+	left: 0px;
+	padding : 30px;
+	width : 1272px;
+	height : 500px;
+}
+
+.searchTable {
+	position : absolute;
+	top: 20px;
+	left: 20px;
+}
+
+td, th{
+	padding: 20px;
+}
+
+
+.cate {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	width: 200px;
+	height: 80px;
+	color: #eee;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+
+.cate-skip {
+	font-size: 20px;
+	border: none;
+	outline: none;
+	width: 150px;
+	height: 60px;
+	color: #eee;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+
+
+.aspe {
+	border : none;
+	outline : none;
+	width : 300px;
+	height : 150px;
+	background-image:url(go_to_choose_aspects.png);
+	background-repeat:no-repeat;
+	background-color:white;
+	background-size:100%;
+}
+
+.aspe-skip {
+	font-size: 20px;
+	border: 3px solid darkturquoise;
+	border-color : darkturquoise;
+	width: 200px;
+	height: 100px;
+	background-color: white;
+	color: darkturquoise;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+
+.aspe:hover {
+	background-image: url(go_to_choose_aspects_hover.png);
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: 100%;
+}
+
+.aspe-skip:hover {
+	background-color: darkturquoise;
+	color: #eee;
+	border-color: #eee;
+}
+
+.ok {
+	position: absolute;
+	right: 15%;
+	letter-spacing: 3px;
+	bottom: 50px;
+	font-size: 20px;
+	border: 3px solid;
+	border-color: darkturquoise;
+	width: 150px;
+	height: 100px;
+	background-color: white;
+	color: darkturquoise;
+	font-weight:bold;
+}
+
+.ok:hover {
+	background-color: darkturquoise;
+	color: #eee;
+	border-color: #eee;
+
+}
+
+#arrow {
+	background-image: url(arrow_to_down.png);
+	background-size: 100%;
+	background-repeat:no-repeat;
+	position:absolute;
+	left:50%;
+	bottom:170px;
+	width: 100px;
+	height:50px;
+}
