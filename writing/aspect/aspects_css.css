@@ -1,81 +1,60 @@
-body{
-	padding : 0px;
-	margin : 0px;
-}
-
-#taskbar{
-	width:100%;
-	height:100px;
-	text-align:center;
-	background-color:#A3FFF9;
-	display:inline-block;
-	margin:0 auto;
-}
-#back{
-	position : absolute;
-	top : 30px;
-	left : 5%;
-	margin-left : 3px;
-}
-
-#backbutton{
-	
-}
-
-#input_position{
-	padding-left : 40px;
-	padding-top : 20px;
-}
-.pentagon{
-	position: relative;
-	border-style: solid;
-    margin : auto;
-}
-.pentagon:before{
-	content: "";
+#upper-box {
     position: absolute;
-	border-style: solid;
+    top: 0px;
+    left: 0px;
+    padding: 30px;
+    width: 1272px;
+    height: 100px;
+    background-color: darkturquoise;
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    color: #eee;
 }
-#pentagon1{
-      width: 280px;
-      box-sizing: content-box;
-      border-width: 300px 100px 0;
-      border-color: #C4FFB5 transparent;
-	  margin-top : 200px;
+
+.backbutton {
+    font-size: 40px;
+    background-color: darkturquoise;
+    color: #eee;
+    display: inline-block;
+    border: none;
+    outline: none;
+}
+
+    .backbutton:hover {
+        color: black;
     }
 
-#pentagon1:before {
-      height: 0px;
-      width: 0;
-      top: -440px;
-      left: -100px;
-      border-width: 0 240px 140px;
-      border-color: transparent transparent #C4FFB5;
-    }
-#pentagon2{
-	width: 230px;
-      box-sizing: content-box;
-      border-width: 270px 90px 0;
-      border-color: white transparent;
-	  top : -690px;
+#middle {
+    position: absolute;
+    top: 160px;
+    left: 0px;
+    padding: 30px;
+    width: 1272px;
+    height: 500px;
 }
-#pentagon2:before{
-	height: 0px;
-      width: 0;
-      top: -390px;
-      left: -90px;
-      border-width: 0 205px 120px;
-      border-color: transparent transparent white;
+.pentagon {
+    position: relative;
+    left:450px;
+    top:10px;
+    width: 350px;
+    height: 350px;
+    background-image: url(pentagon.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: white;
 }
+
+
 	
 .aspect{
 	position : relative;
 	margin : auto;
 	background : white;
-	border : 5px solid #C4FFB5;
-	width : 70px;
-	height : 70px;
-	border-radius : 70px;
+	border : 4px solid #555555;
+	width : 60px;
+	height : 60px;
+	border-radius : 40px;
 	text-align : center;
 	vertical-align : middle;
 	z-index : 2;
@@ -83,59 +62,55 @@ body{
 }
 
 #Production{
-	top : -470px;
-	right :0px;
+	top : -370px;
+	right : 10px;
 	text-align : right;
 }	
 
 #Acting{
-	top : -420px;
-	right : 230px;
+	top : -310px;
+	right : 190px;
 }
 
 #Synopsis{
-	top : -500px;
-	right : -230px;
+	top : -380px;
+	right : -160px;
 }
 
 #Music{
-	top : -300px;
-	right : -150px;
+	top : -255px;
+	right : -90px;
 }
 
 #Visual{
-	top : -380px;
-	right : 150px;
+	top : -320px;
+	right : 120px;
 }
 
 #content{
 	width : 100%;
 	height : 300px;
 }
-
-#OK_position{
-	float:center;
+.ok {
+    position: absolute;
+    right: 15%;
+    letter-spacing: 3px;
+    bottom: 50px;
+    font-size: 20px;
+    border: 3px solid;
+    border-color: #eee;
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    color: #eee;
+    font-weight: bold;
 }
 
-#OK{
-	background-color : DodgerBlue;
-	border : none;
-	color: white;
-	padding : 12px 16px;
-	font-size:16px;
-	cursor : pointer;
-	margin-top : 30px;
-	width : 80%;
-	height : 40px;
-	margin-left:auto;
-	margin-right:auto;
-}
+    .ok:hover {
+    }
 
-#OK:hover{
-	background-color : RoyalBlue;
-}
 
-#OK:disabled{
+.ok:disabled{
 	border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;

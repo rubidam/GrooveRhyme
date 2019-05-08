@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html> 
   <head> 
 	<meta charset="UTF-8">
@@ -8,49 +8,53 @@
 	<link href="./aspects_css.css" rel= "stylesheet"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head> 
+  <body>
+      <center>
+          <div id="upper-box">
+              <a href="../main.html">
+                  <input id="backspace"
+                         type="button" value="<"
+                         class="backbutton" onkeypress="backspace()">
+              </a>
+              <div id="title">
+                  Choose aspects you want to review
+              </div>
+          </div>
+      </center>
+      <div id="middle">
+          <div id="pentagon1" class="pentagon"></div>
+          <a href="./write_review/write_review.html">
+              <div id="Production" class="aspect">Produnction</div>
+          </a>
+          <a href="./write_review/write_review.html">
+              <div id="Acting" class="aspect">Acting</div>
+          </a>
+          <a href="./write_review/write_review.html">
+              <div id="Synopsis" class="aspect">Synopsis</div>
+          </a>
+          <a href="./write_review/write_review.html">
+              <div id="Music" class="aspect">Music</div>
+          </a>
+          <a href="./write_review/write_review.html">
+              <div id="Visual" class="aspect">Visual</div>
+          </a>
+          
+          <!--
+        <input id = "search_input" placeholder = "Search your movie"> </input>
+        <button id = "searchbutton"><i class = "fa fa-search"></i></input>
+        -->
 
-  <body> 
-    <div id = "taskbar">
-		<div id = "back">
-		<a href = "../writing.html">
-			<button id = "backbutton"> < </button>
-		</a>
-		</div>
-		<div id = "title">
-		<h1>Choose aspects you want to review</h1>
-		</div>
-	</div>
-	<div id = "content">
-		<div id = "pentagon1" class = "pentagon"></div>
-		<a href = "./write_review/write_review.html">
-			<div id = "Production" class = "aspect">P</div>
-		</a>
-		<a href = "./write_review/write_review.html">
-			<div id = "Acting" class = "aspect">A</div>
-		</a>
-		<a href = "./write_review/write_review.html">
-			<div id = "Synopsis" class = "aspect">S</div>
-		</a>
-		<a href = "./write_review/write_review.html">
-			<div id = "Music" class = "aspect">M</div>
-		</a>
-		<a href = "./write_review/write_review.html">
-			<div id = "Visual" class = "aspect">V</div>
-		</a>
-		<div id = "pentagon2" class = "pentagon"></div>
-		<!--
-		<input id = "search_input" placeholder = "Search your movie"> </input>
-		<button id = "searchbutton"><i class = "fa fa-search"></i></input>
-		-->
-		
-	</div>
-	
-	<div id = "OK_position">
-		<a href = "../../profile/profilePage.html">
-			<button id = "OK">OK</button>
-		</a>
-	</div>
-	<script src="jquery/js/jquery-1.9.0.min.js"></script>
-	<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+      </div>
+
+      <div>
+          <input id="ok"
+                 type="button"
+                 value="OK"
+                 class="ok"
+                 onkeypress="okPressListener(event)">
+      </div>
+     
+      <script src="jquery/js/jquery-1.9.0.min.js"></script>
+      <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
   </body> 
 </html>
