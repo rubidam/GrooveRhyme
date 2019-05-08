@@ -9,70 +9,71 @@
 	</head>
 	<body>
 		<center>
-		<div class="upper-box">
-		<a href = "../index.html">
-			<input id="backspace"
-				type="button" value="<"
-				class="backbutton" onkeypress="backspace()"> &nbsp;&nbsp;
-				It's time to search
-		</a>
-		</div>
+			<div id="upper-box">
+				<a href = "../main.html">
+					<input id="backspace"
+						type="button" value="<"
+						class="backbutton" onkeypress="backspace()">
+				</a>
+				<div id = "title">
+					It's time to search
+				</div>
+			</div>
 		</center>
-                 <table id="searchTable"
-                        class="searchTable">
-
-                     <tr>
-                         <th id="Category">
-                             <input id="category"
-                                    type="Button"
-                                    value=""
-                                    class="cate"
-                                    onkeypress="categoryPressListener(event)" />
-                         </th>
-                         <th>
-                             <input id="skip"
-                                    type="button"
-                                    value="Skip?"
-                                    class="cate-skip"
-                                    onkeypress="skipPressListener(event)">
-                         </th>
-
-
-                     </tr>
-                     <tr>
-                         <td >
-                             <div id="arrow"></div>
-                         </td>
-                     </tr>
-                     <tr>
-                     <td id="aspect">
-                         <center>
-                             <input id="aspect"
-                                    type="button"
-                                    value="ASPECTS"
-                                    class="aspe"
-                                    onkeypress="categoryPressListener(event)">
-                         </center>
-                     </td>
-                     <td>
-                         <center>
-                             <input id="skip"
-                                    type="button"
-                                    value="Skip?"
-                                    class="aspe-skip"
-                                    onkeypress="skipPressListener(event)">
-                         </center>
-                     </td>
-                         </tr>
-                    
-                 </table>
-        <div>
-            <input id="ok"
-                   type="button"
-                   value="OK"
-                    class="ok"
-                   onkeypress="okPressListener(event)">
-        </div>
+		<div id = "middle">
+			<table id="searchTable"
+					class="searchTable">
+				<tr>
+					<th id="Category">
+						<input id="category"
+								type="Button"
+								value=""
+								class="cate"
+								onkeypress="categoryPressListener(event)" />
+					</th>
+					<th>
+						<input id="skip"
+								type="button"
+								value="Skip?"
+								class="cate-skip"
+								onkeypress="skipPressListener(event)">
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<div id="arrow"></div>
+					</td>
+				</tr>
+				<tr>
+					<td id="aspect">
+						<center>
+							<input id="aspect"
+									type="button"
+									value="ASPECTS"
+									class="aspe"
+									onkeypress="categoryPressListener(event)">
+						</center>
+					</td>
+					<td>
+						<center>
+							<input id="skip"
+									type="button"
+									value="Skip?"
+									class="aspe-skip"
+									onkeypress="skipPressListener(event)">
+						</center>
+					</td>
+				</tr>
+			</table>
+			<div>
+				<input id="ok"
+						type="button"
+						value="OK"
+						class="ok"
+						onkeypress="okPressListener(event)">
+			</div>
+		</div>
+		
 		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
 		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
 	</body>
