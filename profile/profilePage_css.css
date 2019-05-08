@@ -1,21 +1,43 @@
 .header {
-  background : #95e89e;
+  background : darkturquoise;
   position : relative;
   width : 1272px;
   height : 300px;
+  color : #eee;
+}
+
+.button {
+	position : absolute;
+	top : 40%;
+	left : 0%;
 }
 
 .profileImg{
-	margin-bottom : 10px;
+	background-color : darkturquoise;
+	background-size : 100%;
+	background-repeat : no-repeat;
+	background-position : center;
+	background-image : url(./profile1.png);
+	position : absolute;
+	top : 0%;
+	left : 2%;
+	height : 250px;
+	width : 250px;
 }
 
-#button {
-  margin-left : 10px;
-  font-size : 20px;
-  font-weight : bold;
-  background : #ffffff;
-  border-radius : 0.5em;
-  padding : 3px 10px;
+.profileText {
+	position : absolute;
+	top : 10%;
+	left : 23%;
+}
+
+#backButton {
+  font-size: 40px;
+  background-color :darkturquoise;
+  color: #eee;
+  display: inline-block;
+  border : none;
+  outline : none;
 }
 
 #hashtag {
@@ -43,6 +65,9 @@
   background : #ffffff;
   border-radius : 0.5em;
   padding : 5px 10px;
+  position : absolute;
+  top : 18%;
+  right : 17%;
 }
 
 h1 {

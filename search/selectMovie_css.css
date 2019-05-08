@@ -1,15 +1,28 @@
 .header {
-  background : #95e89e;
-  margin-bottom : 10px;
+  background-color: darkturquoise;
+  color: #eee;
   position : relative;
   width : 1272px;
-  height : 600px;
+  height : 530px;
 }
 
 .buttonPart {
   position : relative;
   width : 1272px;
   height : 100px;
+  margin-top : 10px;
+}
+
+#button {
+  font-size: 40px;
+  background-color :darkturquoise;
+  color: #eee;
+  display: inline-block;
+  border : none;
+  outline : none;
+  position : absolute;
+  top : 2%;
+  left : 10%;
 }
 
 h1 {
@@ -18,10 +31,12 @@ h1 {
 }
 
 #firstMovie{
+  border : black 2px solid; 
   margin-bottom : 20px;
 }
 
 #secondMovie {
+  border : black 2px solid;
   margin-left : 200px;
   margin-bottom : 20px;
 }
@@ -40,19 +55,19 @@ h1 {
 #plusButton {
   font-size : 50px;
   font-weight : bold;
-  color : #95e89e;
+  color : darkturquoise;
   padding : 5px 20px;
   background : #ffffff;
-  border : #95e89e 5px solid;
+  border : darkturquoise 5px solid;
   border-radius : 0.5em;
 }
 
 #refreshButton {
   font-size : 50px;
   font-weight : bold;
-  color : #95e89e;
+  color : darkturquoise;
   padding : 5px 20px;
   background : #ffffff;
-  border : #95e89e 5px solid;
+  border : darkturquoise 5px solid;
   border-radius : 0.5em;
 }
