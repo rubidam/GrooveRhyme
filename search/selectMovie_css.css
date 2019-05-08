@@ -1,6 +1,15 @@
 .header {
   background : #95e89e;
   margin-bottom : 10px;
+  position : relative;
+  width : 1272px;
+  height : 600px;
+}
+
+.buttonPart {
+  position : relative;
+  width : 1272px;
+  height : 100px;
 }
 
 h1 {
