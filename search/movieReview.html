@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>search</title>
+		<title>movieReview</title>
 		<meta charset="UTF-8">
 		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
 		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
@@ -9,16 +9,21 @@
 		<link href="./movieReview_css.css" rel="stylesheet" />
     </head>
     <body>
-		<center> <div class="upper-box">
-			<input id="backspace"
-				type="button"
-				value="<"
-				class="backbutton"
-				onkeypress="backspace()"
-            > &nbsp;&nbsp;
-        Movie_name
-		<input class="homebutton" type = "button" value = "Home">
-		</div> </center>
+		<center>
+			<div id="upper-box">
+				<a href = "../main.html">
+					<input id="backspace"
+						type="button" value="<"
+						class="backbutton" onkeypress="backspace()">
+				</a>
+				<div id = "title">
+					Movie Name
+				</div>
+				<a href = "../main.html">
+					<input type="button" value="🏠" id = "homeButton">
+				</a>
+			</div>
+		</center>
 		<div id = "middle">
 			<div id = "image">
 				<div id = "poster">
