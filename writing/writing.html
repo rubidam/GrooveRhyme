@@ -10,26 +10,30 @@
   </head> 
 
   <body> 
-    <div id = "taskbar">
-		<div id = "back">
-		<a href = "../index.html">
-		<button id = "backbutton"> < </button>
-		</a>
-		</div>
-		<div id = "title">
-		<h1>Choose the movie</h1>
-		</div>
-	</div>
+	<center>
+			<div id="upper-box">
+				<a href = "../main.html">
+					<input id="backspace"
+						type="button" value="<"
+						class="backbutton" onkeypress="backspace()">
+				</a>
+				<div id = "title">
+					Choose the movie
+				</div>
+			</div>
+		</center>
 	<div id = "input_position">
 		<input id = "search_input" placeholder = "Search your movie"> </input>
 		<button id = "searchbutton"><i class = "fa fa-search"></i></input>
 	</div>
 	
-	<div id = "OK_position">
-		<a href = "./aspect/aspects.html">
-		<button id = "OK">OK</button>
-		</a>
-	</div>
+	<div>
+			<input id="ok"
+					type="button"
+					value="OK"
+					class="ok"
+					onkeypress="okPressListener(event)">
+		</div>
 	<script src="jquery/js/jquery-1.9.0.min.js"></script>
 	<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
   </body> 
