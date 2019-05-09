@@ -2,9 +2,9 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	padding: 30px;
+	padding: 0px;
 	width: 1272px;
-	height: 100px;
+	height: 150px;
 	background-color: darkturquoise;
 	text-align: left;
 	font-size: 40px;
@@ -19,8 +19,8 @@
 	display: inline-block;
 	border : none;
 	outline : none;
-    position:absolute;
-    top:55px;
+	position : absolute; 
+	top : 55px;
 }
 
 .backbutton:hover{
@@ -36,7 +36,8 @@
 
 #homeButton {
 	position : absolute;
-	right : 10%;
+	right : 2%;
+	top : 5%;
 	font-size : 20px;
 	font-weight : bold;
 	background : #ffffff;
