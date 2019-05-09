@@ -98,15 +98,18 @@
     bottom: 50px;
     font-size: 20px;
     border: 3px solid;
-    border-color: #eee;
+    border-color: darkturquoise;
     width: 150px;
     height: 100px;
     background-color: white;
-    color: #eee;
+    color: darkturquoise;
     font-weight: bold;
 }
 
     .ok:hover {
+        background-color: darkturquoise;
+        color: #eee;
+        border-color: #eee;
     }
 
 

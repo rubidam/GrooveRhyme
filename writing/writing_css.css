@@ -83,22 +83,23 @@ body{
 
 
 .ok {
-	position: absolute;
-	right: 15%;
-	letter-spacing: 3px;
-	bottom: 50px;
-	font-size: 20px;
-	border: 3px solid;
-	border-color: #eee;
-	width: 150px;
-	height: 100px;
-	background-color: white;
-	color: #eee;
-   font-weight:bold;
+    position: absolute;
+    right: 15%;
+    letter-spacing: 3px;
+    bottom: 50px;
+    font-size: 20px;
+    border: 3px solid;
+    border-color: darkturquoise;
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    color: darkturquoise;
+    font-weight: bold;
 }
 
-.ok:hover {
-
-
-}
+    .ok:hover {
+        background-color: darkturquoise;
+        color: #eee;
+        border-color: #eee;
+    }
 
