@@ -13,6 +13,8 @@
 }
 
 .backbutton {
+	position:absolute;
+	top:55px;
     font-size: 40px;
     background-color: darkturquoise;
     color: #eee;
@@ -34,7 +36,8 @@
 
 #homeButton {
 	position : absolute;
-	right : 10%;
+	right : 2%;
+	top: 5%;
 	font-size : 20px;
 	font-weight : bold;
 	background : #ffffff;
@@ -76,6 +79,7 @@
 	vertical-align : middle;
 	z-index : 2;
 	margin : auto auto;
+	line-height : 55px;
 }
 
 #Production{
@@ -115,15 +119,18 @@
     bottom: 50px;
     font-size: 20px;
     border: 3px solid;
-    border-color: #eee;
+    border-color: darkturquoise;
     width: 150px;
     height: 100px;
     background-color: white;
-    color: #eee;
+    color: darkturquoise;
     font-weight: bold;
 }
 
     .ok:hover {
+        background-color: darkturquoise;
+        color: #eee;
+        border-color: #eee;
     }
 
 

@@ -1,5 +1,7 @@
 
 .backbutton {
+	position : absolute;
+	top : 55px;
 	font-size: 40px;
 	background-color :darkturquoise;
 	color: #eee;
@@ -13,7 +15,8 @@
 }
 #homeButton {
 	position : absolute;
-	right : 10%;
+	top : -1px;
+	right : 2%;
 	font-size : 20px;
 	font-weight : bold;
 	background : #ffffff;

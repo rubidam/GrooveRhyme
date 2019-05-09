@@ -7,7 +7,6 @@ body{
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	padding: 30px;
 	width: 1272px;
 	height: 100px;
 	background-color: darkturquoise;
@@ -15,8 +14,11 @@ body{
 	font-size: 40px;
 	font-weight: bold;
 	color : #eee;
+	height: 150px;
 }
 .backbutton {
+	position:absolute;
+	top:55px;
 	font-size: 40px;
 	background-color :darkturquoise;
 	color: #eee;
@@ -38,7 +40,8 @@ body{
 
 #homeButton {
 	position : absolute;
-	right : 10%;
+	right : 2%;
+	top: 5%;
 	font-size : 20px;
 	font-weight : bold;
 	background : #ffffff;
@@ -94,22 +97,23 @@ body{
 
 
 .ok {
-	position: absolute;
-	right: 15%;
-	letter-spacing: 3px;
-	bottom: 50px;
-	font-size: 20px;
-	border: 3px solid;
-	border-color: #eee;
-	width: 150px;
-	height: 100px;
-	background-color: white;
-	color: #eee;
-   font-weight:bold;
+    position: absolute;
+    right: 15%;
+    letter-spacing: 3px;
+    bottom: 50px;
+    font-size: 20px;
+    border: 3px solid;
+    border-color: darkturquoise;
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    color: darkturquoise;
+    font-weight: bold;
 }
 
-.ok:hover {
-
-
-}
+    .ok:hover {
+        background-color: darkturquoise;
+        color: #eee;
+        border-color: #eee;
+    }
 
