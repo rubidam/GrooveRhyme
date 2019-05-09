@@ -8,12 +8,10 @@
   </head>
   <body>
     <div class ="header">
-      <div>
-        <input type="button" value="←" onclick="history.back(-1);" id = "button">
-        <input type="button" value="→" onclick="history.back(+1);" id = "button">
+      <div class = "button">
+        <input type="button" value="<" onclick="history.back(-1);" id = "backButton">
       </div>
       <div class = "profileImg">
-         <img src = "https://kin-phinf.pstatic.net/20150423_164/1429789095824S6k3i_JPEG/1429789095306.jpg" height = 200 align ="left" hspace = 40 vspace = 10> 
       </div>
       <div class = "profileText">
         <br> <br>
@@ -27,18 +25,17 @@
     <div class = "main">
       <div class = "reviewImg">
         <h2> = Review =</h2>
-        <img src = "https://postfiles.pstatic.net/20110120_247/yegadeun_1295507955827DRtKi_JPEG/%B3%EB%C0%CE%C0%BB%C0%A7%C7%D1%B3%AA%B6%F3%B4%C2%BE%F8%B4%D9_00000.jpg?type=w3" height = 200>
-        <img src = "http://www.thedrive.co.kr/news/data/20190424/p1065577450924748_857_thum.jpg" height = 200 >
-        <img src = "https://cafeptthumb-phinf.pstatic.net/20101206_59/mozart0329_1291637566501fm8v8_jpg/inception_tothem_mozart0329.jpg?type=w740" height = 200 width = 300>
+        <img src = "http://www.thedrive.co.kr/news/data/20190424/p1065577450924748_857_thum.jpg" height = 200 hspace = 20 >
       </div>
       <div class = "collection">
-        <h3>Add to Collection <input type="button" value="+" id = "plusButton"> </h3>
+        <h3>Add to Collection </h3>
         <span>CS374 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></span>
         <hr align = "left" width = 90% style = "border : purple 2px dotted">
         <span>AWESOME &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></span>
         <hr align = "left" width = 90% style = "border : purple 2px dotted">
         <span>Happy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></span>
         <hr align = "left" width = 90% style = "border : purple 2px dotted">
+		<input type="button" value="+" id = "plusButton">
       </div>
     </div>
 	<script src="../jquery/js/jquery-1.9.0.min.js"></script>
