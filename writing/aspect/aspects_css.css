@@ -21,9 +21,26 @@
     outline: none;
 }
 
-    .backbutton:hover {
-        color: black;
-    }
+.backbutton:hover {
+	color: black;
+}
+
+#title {
+	position : absolute;
+	left : 10%;
+	top : 40px;
+	font-size : 50px;
+}
+
+#homeButton {
+	position : absolute;
+	right : 10%;
+	font-size : 20px;
+	font-weight : bold;
+	background : #ffffff;
+	border-radius : 0.5em;
+	padding : 3px 10px;
+}
 
 #middle {
     position: absolute;
