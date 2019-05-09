@@ -24,6 +24,9 @@
   top : 2%;
   left : 10%;
 }
+#button:hover{
+    color:black;
+}
 
 h1 {
   font-size : 50px;
@@ -54,20 +57,28 @@ h1 {
 
 #plusButton {
   font-size : 50px;
-  font-weight : bold;
-  color : darkturquoise;
+  color : #888;
   padding : 5px 20px;
   background : #ffffff;
-  border : darkturquoise 5px solid;
+  border : #888 3px solid;
   border-radius : 0.5em;
 }
+    #plusButton:hover {
+        background-color: darkturquoise;
+        color: #eee;
+        border: #eee 3px solid;
+    }
 
 #refreshButton {
-  font-size : 50px;
-  font-weight : bold;
-  color : darkturquoise;
-  padding : 5px 20px;
+  font-size : 20px;
+  color : #888;
+  padding : 15px 20px;
   background : #ffffff;
-  border : darkturquoise 5px solid;
-  border-radius : 0.5em;
+  border : #888 3px solid;
+  border-radius : 1em;
+}
+#refreshButton:hover {
+    background-color: darkturquoise;
+    color: #eee;
+    border: #eee 3px solid;
 }
