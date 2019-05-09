@@ -13,12 +13,14 @@
 }
 
 .backbutton {
-	font-size: 40px;
-	background-color :darkturquoise;
-	color: #eee;
-	display: inline-block;
-	border : none;
-	outline : none;
+    font-size: 40px;
+    background-color: darkturquoise;
+    color: #eee;
+    display: inline-block;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 55px;
 }
 
 .backbutton:hover{
