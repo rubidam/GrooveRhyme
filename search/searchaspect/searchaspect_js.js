@@ -15,7 +15,7 @@ production.onclick = function() {
 	console.log("production");
 	if (Pon == 0) {
 		Pon = 1;
-		production.style.backgroundColor = 'blue';
+		production.style.backgroundColor = 'darkturquoise';
 	}
 	else {
 		Pon = 0;
@@ -26,7 +26,7 @@ acting.onclick = function() {
 	console.log("acting");
 	if (Aon == 0) {
 		Aon = 1;
-		acting.style.backgroundColor = 'blue';
+        acting.style.backgroundColor = 'darkturquoise';
 	}
 	else {
 		Aon = 0;
@@ -37,7 +37,7 @@ synopsis.onclick = function() {
 	console.log("synopsis");
 	if (Son == 0) {
 		Son = 1;
-		synopsis.style.backgroundColor = 'blue';
+        synopsis.style.backgroundColor = 'darkturquoise';
 	}
 	else {
 		Son = 0;
@@ -48,7 +48,7 @@ music.onclick = function() {
 	console.log("music");
 	if (Mon == 0) {
 		Mon = 1;
-		music.style.backgroundColor = 'blue';
+        music.style.backgroundColor = 'darkturquoise';
 	}
 	else {
 		Mon = 0;
@@ -59,7 +59,7 @@ visual.onclick = function() {
 	console.log("visual");
 	if (Von == 0) {
 		Von = 1;
-		visual.style.backgroundColor = 'blue';
+        visual.style.backgroundColor = 'darkturquoise';
 	}
 	else {
 		Von = 0;
