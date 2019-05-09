@@ -38,6 +38,12 @@
   display: inline-block;
   border : none;
   outline : none;
+  position : absolute;
+  top : 15px;
+}
+
+#backbutton:hover{
+	color: black;
 }
 
 #hashtag {
