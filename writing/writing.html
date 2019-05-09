@@ -12,10 +12,10 @@
   <body> 
 	<center>
 			<div id="upper-box">
-				<a href = "../main.html">
+				<a href = javascript:history.back()>
 					<input id="backspace"
 						type="button" value="<"
-						class="backbutton" onkeypress="backspace()">
+						class="backbutton" onclick="backspace()">
 				</a>
 				<div id = "title">
 					Choose the movie
@@ -36,8 +36,9 @@
 					type="button"
 					value="OK"
 					class="ok"
-					onkeypress="okPressListener(event)">
+					onclick="okPressListener()">
 		</div>
+	<script src="./writing_js.js">
 	<script src="jquery/js/jquery-1.9.0.min.js"></script>
 	<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
   </body> 

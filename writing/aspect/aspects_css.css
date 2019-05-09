@@ -13,6 +13,8 @@
 }
 
 .backbutton {
+	position:absolute;
+	top:55px;
     font-size: 40px;
     background-color: darkturquoise;
     color: #eee;
@@ -76,6 +78,7 @@
 	vertical-align : middle;
 	z-index : 2;
 	margin : auto auto;
+	line-height : 55px;
 }
 
 #Production{
