@@ -11,7 +11,9 @@ var Aon = 0;
 var Son = 0;
 var Mon = 0;
 var Von = 0;
-production.onclick = function() {
+
+function bindeventlistener(){
+	production.onclick = function() {
 	console.log("production");
 	if (Pon == 0) {
 		Pon = 1;
@@ -65,5 +67,7 @@ visual.onclick = function() {
 		Von = 0;
 		visual.style.backgroundColor = '';
 	}
+}
+
 }
 
