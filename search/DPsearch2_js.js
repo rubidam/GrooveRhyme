@@ -24,3 +24,10 @@ function aspectPressListener(){
 function skipPressListener(){
 	
 }
+function okPressListener(){
+	var nextloc = "./selectMovie.html?"
+	var loc = document.location.href;
+	var query = extractquery(loc);
+	nextloc = nextloc + query;
+	location.href = nextloc;
+}
