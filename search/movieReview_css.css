@@ -19,13 +19,8 @@
 	display: inline-block;
 	border : none;
 	outline : none;
-<<<<<<< HEAD
 	position : absolute; 
 	top : 55px;
-=======
-    position:absolute;
-    top:55px;
->>>>>>> cd5bfab0d52d506d2bcff54abf783a0f99e7756b
 }
 
 .backbutton:hover{
