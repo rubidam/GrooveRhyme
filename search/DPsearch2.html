@@ -15,7 +15,7 @@
 				<a href = "../main.html">
 					<input id="backspace"
 						type="button" value="<"
-						class="backbutton" onkeypress="backspace()">
+						class="backbutton" onclick="backspace()">
 				</a>
 				<div id = "title">
 					It's time to search
@@ -34,14 +34,14 @@
 								type="Button"
 								value="CATEGORY"
 								class="cate"
-								onkeypress="categoryPressListener(event)" />
+								onclick="categoryPressListener()" />
 					</th>
 					<th>
 						<input id="skip"
 								type="button"
 								value="Skip?"
 								class="cate-skip"
-								onkeypress="skipPressListener(event)">
+								onclick="skipPressListener()">
 					</th>
 				</tr>
 				<tr>
@@ -52,13 +52,11 @@
 				<tr>
 					<td id="aspect">
 						<center>
-							<a href = "./searchaspect/searchaspect.html">
 							<input id="aspect"
 									type="button"
 									value=""
 									class="aspe"
-									onkeypress="categoryPressListener(event)">
-							</a>
+									onclick="aspectPressListener()">
 						</center>
 					</td>
 					<td>
@@ -67,7 +65,7 @@
 									type="button"
 									value="Skip?"
 									class="aspe-skip"
-									onkeypress="skipPressListener(event)">
+									onclick="skipPressListener()">
 						</center>
 					</td>
 				</tr>
@@ -78,7 +76,7 @@
 						type="button"
 						value="OK"
 						class="ok"
-						onkeypress="okPressListener(event)">
+						onclick="okPressListener(event)">
 				</a>
 			</div>
 		</div>
