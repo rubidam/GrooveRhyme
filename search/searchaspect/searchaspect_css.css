@@ -72,6 +72,7 @@
     height: 60px;
     border-radius: 40px;
     text-align: center;
+	line-height : 55px;
     vertical-align: middle;
     z-index: 2;
     margin: auto auto;
