@@ -37,14 +37,14 @@
 
 #homeButton {
 	position : absolute;
-	right : 10%;
+	right : 2%;
+	top: 5%;
 	font-size : 20px;
 	font-weight : bold;
 	background : #ffffff;
 	border-radius : 0.5em;
 	padding : 3px 10px;
-    border:none;
-    outline:none;
+
 }
 
 #middle {
