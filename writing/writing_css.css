@@ -7,7 +7,6 @@ body{
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	padding: 30px;
 	width: 1272px;
 	height: 100px;
 	background-color: darkturquoise;
@@ -15,6 +14,7 @@ body{
 	font-size: 40px;
 	font-weight: bold;
 	color : #eee;
+	height: 150px;
 }
 .backbutton {
 	position:absolute;
