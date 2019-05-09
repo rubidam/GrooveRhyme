@@ -15,7 +15,7 @@
 }
 #homeButton {
 	position : absolute;
-	top : 5%;
+	top : -1px;
 	right : 2%;
 	font-size : 20px;
 	font-weight : bold;
