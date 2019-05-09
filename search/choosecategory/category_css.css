@@ -1,0 +1,176 @@
+
+.backbutton {
+	font-size: 40px;
+	background-color :darkturquoise;
+	color: #eee;
+	display: inline-block;
+	border : none;
+	outline : none;
+}
+
+.backbutton:hover{
+	color: black;
+}
+
+
+#middle {
+	background-image: url(location.png);
+	background-size: 55%;
+	background-position : center;
+	background-repeat: no-repeat;
+	position : absolute;
+	top: 10px;
+	left: 0px;
+	padding : 30px;
+	width : 1272px;
+	height : 600px;
+}
+#body{
+	background-color : darkturquoise;
+}
+
+#location {
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	left: 25%;
+	bottom: 0%;
+}
+#fantasy {
+	background-image: url(sf.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	left: 342px;
+	top: 15px;
+}
+
+#horror {
+	background-image: url(horror.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 85px;
+	height: 85px;
+	position: absolute;
+	left: 492px;
+	top: 165px;
+}
+
+#crime {
+	background-image: url(crime.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 52px;
+	height: 52px;
+	position: absolute;
+	left: 577px;
+	top: 250px;
+}
+
+
+#drama {
+	background-image: url(drama.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	right: 350px;
+	top: 15px;
+}
+
+#comedy {
+	background-image: url(comedy.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 85px;
+	height: 85px;
+	position: absolute;
+	right: 500px;
+	top: 165px;
+}
+#action {
+	background-image: url(action.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 52px;
+	height: 52px;
+	position: absolute;
+	right: 585px;
+	top: 250px;
+}
+
+
+
+#artistic {
+	background-image: url(art.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	left: 342px;
+	top: 515px;
+}
+
+#mystery {
+	background-image: url(mystery.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 85px;
+	height: 85px;
+	position: absolute;
+	left: 492px;
+	top: 425px;
+}
+
+#biography {
+	background-image: url(bio.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 52px;
+	height: 52px;
+	position: absolute;
+	left: 577px;
+	bottom: 240px;
+}
+#documentary {
+	background-image: url(docu.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	right: 350px;
+	top: 515px;
+}
+#romance {
+	background-image: url(romance.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 85px;
+	height: 85px;
+	position: absolute;
+   right: 500px;
+	top: 425px;
+}
+#music {
+	background-image: url(music.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 52px;
+	height: 52px;
+	position: absolute;
+	right: 585px;
+	bottom: 240px;
+}
+
+
+#intensity{
+
+}
+#realisticity{
+
+}
