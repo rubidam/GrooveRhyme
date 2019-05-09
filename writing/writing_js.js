@@ -3,7 +3,7 @@
 
 function okPressListener(){
 	location.href = "./aspect/aspects.html";
-}
+};
 function backspace(){
-	location.href = javascript:history.back();
-}
+	location.href = javascript.history.back();
+};
