@@ -3,7 +3,7 @@
   color: #eee;
   position : relative;
   width : 1272px;
-  height : 530px;
+  height : 570px;
 }
 
 .buttonPart {
@@ -21,9 +21,9 @@
   border : none;
   outline : none;
   position : absolute;
-  top : 2%;
-  left : 10%;
+  top : 55px;
 }
+
 #button:hover{
     color:black;
 }
@@ -31,23 +31,31 @@
 h1 {
   font-size : 50px;
   color : white;
+  position : absolute;
+  top : 10px;
+  left : 300px;
 }
 
 #firstMovie{
   border : black 2px solid; 
   margin-bottom : 20px;
+  position : absolute;
+  top : 25%;
+  left : 16%;
+  
 }
 
 #secondMovie {
   border : black 2px solid;
-  margin-left : 200px;
-  margin-bottom : 20px;
+  position : absolute;
+  top : 25%;
+  left : 57%;
 }
 
 #homeButton {
   position : absolute;
-  top : 3%;
-  right : 5%;
+  top : 5%;
+  right : 2%;
   font-size : 20px;
   font-weight : bold;
   background : #ffffff;
@@ -62,15 +70,23 @@ h1 {
   background : #ffffff;
   border : #888 3px solid;
   border-radius : 0.5em;
-  position:absolute;
-  right: 2%;
-  top:5%;
 }
-    #plusButton:hover {
-        background-color: darkturquoise;
-        color: #eee;
-        border: #eee 3px solid;
-    }
+
+#plusButton:hover {
+  background-color: darkturquoise;
+  color: #eee;
+  border: #eee 3px solid;
+}
+
+.firstPlusButton {
+	position : absolute;
+	left : 24%;
+}
+
+.secondPlusButton {
+	position : absolute;
+	right : 28%;
+}
 
 #refreshButton {
   font-size : 20px;
@@ -79,6 +95,9 @@ h1 {
   background : #ffffff;
   border : #888 3px solid;
   border-radius : 1em;
+  position : absolute;
+  left : 44%;
+  top : 10%;
 }
 #refreshButton:hover {
     background-color: darkturquoise;
