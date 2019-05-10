@@ -20,11 +20,9 @@ function okDisabled() {
     var ok = document.getElementById("ok");
     console.log(poster.onerror);
     if (poster.src == "file:///C:/Users/user/Desktop/GrooveRhyme/writing/default.jpg" ) {
-        console.log("디폴트");
         ok.disabled = true;
     }
     else {
-        console.log("검색");
         ok.disabled = false;
     }
 }
@@ -123,7 +121,6 @@ function bindEvent(){
 	var searchbutton = document.getElementById("searchbutton");
 	
     searchbutton.onclick = function () {
-        
 		input_event();
 		
 	};

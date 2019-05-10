@@ -122,7 +122,44 @@ function makeTempDB(moviename){
 	});
 	
 }
+function judge_db(){
+	var this_db = firebase.database().ref('/review_temp/').once('value',function(snapshot){
+		var data = snapshot.val();
+		console.log(data);
+		if (data == null) makeTempDB(parse_url());
+		return;
+	});
+}
+function checkreview(){
+	var dbsearch = firebase.database().ref('/review_temp/').once('value',function(snapshot){
+		var data = snapshot.val();
+		if (data != null){
+			var key = Object.keys(data);
+			var value = data[key];
+			console.log(key);
+			console.log(value);
+			if (value[acting["review"]] != undefined){
+				acting.style.backgroundColor = "blue";
+			}
+			if(value[production["review"]] != undefined){
+				production.style.backgroundColor = "blue";
+			}
+			if(value[synopsis["review"]] != undefined){
+				synopsis.style.backgroundColor = "blue";
+			}
+			if(value[music["review"]] != undefined){
+				music.style.backgroundColor = "blue";
+			}
+			if(value[visual["review"]] != undefined){
+				visual.style.backgroundColor = "blue";
+			}
+		}
+		console.log(data);
+		
+	});
+}
 
-makeTempDB(parse_url());
+judge_db();
 bindeventlistener();
+checkreview();
 
