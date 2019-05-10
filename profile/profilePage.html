@@ -1,46 +1,53 @@
 <html>
-  <head>
-	<meta charset="UTF-8">
-	<script src="../jquery/js/jquery-1.9.0.min.js"></script>
-	<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-	<link href="../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-	<link href="./profilePage_css.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class ="header">
-      <div class = "button">
-		<a href = "../main.html">
-        <input type="button" value="<" onkeypress="backspace()" id = "backButton">
-		</a>
-      </div>
-      <div class = "profileImg">
-      </div>
-      <div class = "profileText">
-        <br> <br>
-        <h1> JunJeong </h1>
-        <span id ="hashtag"> #Action #Thriller </span>
-      </div>
-      <div class = "homeButtonPart">
-        <a href = "../main.html"><input type="button" value="🏠" id = "homeButton"></a>
-      </div>
-    </div>
-    <div class = "main">
-      <div class = "reviewImg">
-        <h2> = Review =</h2>
-        <img src = "http://www.thedrive.co.kr/news/data/20190424/p1065577450924748_857_thum.jpg" height = 200 hspace = 20 >
-      </div>
-      <div class = "collection">
-        <h3>Add to Collection </h3>
-        <span>CS374 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></span>
-        <hr align = "left" width = 90% style = "border : purple 2px dotted">
-        <span>AWESOME &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></span>
-        <hr align = "left" width = 90% style = "border : purple 2px dotted">
-        <span>Happy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ></span>
-        <hr align = "left" width = 90% style = "border : purple 2px dotted">
-		<input type="button" value="+" id = "plusButton">
-      </div>
-    </div>
-	<script src="../jquery/js/jquery-1.9.0.min.js"></script>
-	<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
+		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<link href="../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+		<link href="./profilePage_css.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class ="header">
+			<div class = "button">
+				<a href = "../main.html">
+					<input type="button" value="<" onkeypress="backspace()" id = "backButton">
+				</a>
+			</div>
+			<div class = "profileImg">
+			</div>
+			<div class = "profileText">
+				<br> <br>
+				<h1> JunJeong </h1>
+				<span id ="hashtag"> #Action #Thriller </span>
+			</div>
+			<div class = "homeButtonPart">
+				<a href = "../main.html"><input type="button" value="🏠" id = "homeButton"></a>
+			</div>
+		</div>
+		<div class = "main">
+			<div class = "reviewImg">
+				<table id = "reviewTable">
+					<tr>
+						<th colspan = 3 class = "review_th"> = Review = </th>
+					</tr>
+					<tr>
+						<td> <img src ="../movie_poster/Avengers.jpg" height = 200 hspace = 20> </td>
+						<td> <img src ="../movie_poster/Avengers.jpg" height = 200 hspace = 20> </td>
+					</tr>
+				</table>
+			</div>
+			<div class = "collection">
+				<table id = "collectionTable">
+					<tr>
+						<th class = "collection_th"> Add to Collection </th>
+						<th class = "collection_th"> <input type="button" value="+" id = "plusButton"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
+		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+		<script src="./profilePage_js.js"></script>
+	</body>
 </html>
