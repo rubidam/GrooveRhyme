@@ -121,6 +121,11 @@ body{
     color: #eee;
     border-color: #eee;
 }
+.ok:disabled {
+    background-color:white;
+    border : 3px solid #eee;
+    color: #eee;
+}
 
 #poster{
 	width :300px;

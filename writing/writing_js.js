@@ -15,7 +15,19 @@ firebase.initializeApp(firebaseConfig);
 var textbox = document.getElementById("search_input");
 var poster = firebase.storage().ref().bucket;
 console.log(poster);
-
+function okDisabled() {
+    var poster = document.getElementById("poster");
+    var ok = document.getElementById("ok");
+    console.log(poster.onerror);
+    if (poster.src == "file:///C:/Users/user/Desktop/GrooveRhyme/writing/default.jpg" ) {
+        console.log("디폴트");
+        ok.disabled = true;
+    }
+    else {
+        console.log("검색");
+        ok.disabled = false;
+    }
+}
 
 function input_event(){
 	console.log("a");
@@ -36,9 +48,10 @@ function input_event(){
 	var poster = document.getElementById("poster");
 	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
-		poster.src = url;
-	});
-	
+        poster.src = url;
+        okDisabled();
+    });
+    
 }
 
 
@@ -109,10 +122,12 @@ function backspace(){
 function bindEvent(){
 	var searchbutton = document.getElementById("searchbutton");
 	
-	searchbutton.onclick=function(){
+    searchbutton.onclick = function () {
+        
 		input_event();
 		
 	};
 }
 
+okDisabled();
 bindEvent();
