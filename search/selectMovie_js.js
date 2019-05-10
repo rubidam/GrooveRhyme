@@ -23,7 +23,7 @@ function readFromDatabase(){
 			//console.log(category);
 			
 			for (var j = 0 ; j < category.length ; j++){
-				if (category[j] == "Romance"){
+				if (category[j] == "Action"){
 					movieList.push(myKey);
 				}
 			}
@@ -35,6 +35,22 @@ function readFromDatabase(){
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function createMovieName(value) {
+	var movieNameElement = value.split(":");
+
+	var moviePicture = "";
+	for (var i = 0 ; i < movieNameElement.length ; i++){
+		if (i > 0){
+			moviePicture = moviePicture + movieNameElement[i];
+		}
+		else{
+			moviePicture = moviePicture + movieNameElement[i];
+		}
+	}
+	
+	return moviePicture;
 }
 
 function printMovie(){
@@ -50,12 +66,12 @@ function printMovie(){
 		var secondIndex = firstIndex - 1;
 	}
 
-	var getstorageFirst = firebase.storage().ref().child(movieList[firstIndex] + ".jpg").getDownloadURL().then(function(url){
+	var getstorageFirst = firebase.storage().ref().child(createMovieName(movieList[firstIndex]) + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
 		first.src = url;
 	});
 	
-	var getstorageSecond = firebase.storage().ref().child(movieList[secondIndex] + ".jpg").getDownloadURL().then(function(url){
+	var getstorageSecond = firebase.storage().ref().child(createMovieName(movieList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
 		second.src = url;
 	});
@@ -71,12 +87,12 @@ function printMovie(){
 		else{
 			var newsecondIndex = newfirstIndex - 1;
 		}
-		var getstorageFirstNew = firebase.storage().ref().child(movieList[newfirstIndex] + ".jpg").getDownloadURL().then(function(url){
+		var getstorageFirstNew = firebase.storage().ref().child(createMovieName(movieList[newfirstIndex]) + ".jpg").getDownloadURL().then(function(url){
 			console.log(url);
 			first.src = url;
 		});
 		
-		var getstorageSecondNew = firebase.storage().ref().child(movieList[newsecondIndex] + ".jpg").getDownloadURL().then(function(url){
+		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(movieList[newsecondIndex]) + ".jpg").getDownloadURL().then(function(url){
 			console.log(url);
 			second.src = url;
 		});
