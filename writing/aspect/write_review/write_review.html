@@ -1,44 +1,59 @@
 ﻿<!DOCTYPE html>
 <html> 
-	<head> 
-		<meta charset="UTF-8">
-		<script src="jquery/js/jquery-1.9.0.min.js"></script>
-		<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-		<link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-		<link href="./write_review_css.css" rel= "stylesheet"/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head> 
-	<body> 
-		<center>
-			<div id="upper-box">
-				<a href = "../aspects.html">
-					<input id="backspace"
-						type="button" value="<"
-						class="backbutton" onkeypress="backspace()">
-				</a>
-				<div id = "title">
-					It is time to review the movie!
-				</div>
-				<a href = "../../../main.html">
-					<input type="button" value="🏠" id = "homeButton">
-				</a>
-			</div>
-		</center>
-		<div id = "middle">
-			<div id = "content">
-				<h2 id = "review">REVIEW</h2>
-				<textarea id = "review_content"></textarea>
-			</div>
-			<a href = "../aspects.html">
-            <div>
-                <input id="ok"
-                       type="button"
-                       value="OK"
-                       class="ok">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="./write_review_css.css" rel="stylesheet" />
+ 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head> 
+<body>
+    <center>
+        <div id="upper-box">
+            <a href = "../aspects.html">
+            <input id="backspace"
+            type="button" value="<"
+            class="backbutton" onkeypress="        backspace()">
+            </a>
+            <div id = "title">
+            It is time to review the movie!
             </div>
-			</a>
-		</div>
-	<script src="jquery/js/jquery-1.9.0.min.js"></script>
-	<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-  </body> 
+            <a href = "../../../main.html">
+            <input type="button" value="🏠" id = "homeButton">
+            </a>
+        </div>
+    </center>
+    <div id = "middle">
+    <div id="content">
+    <h2 id="review">REVIEW</h2>
+    <div id="s5">☆</div>
+    <div id="s4">☆</div>
+    <div id="s3">☆</div>
+    <div id="s2">☆</div>
+    <div id="s1">☆</div>
+
+
+
+
+
+
+
+    <textarea id="review_content"></textarea>
+    </div>
+    <a href = "../aspects.html">
+    <div>
+    <input id="ok"
+    type="button"
+    value="OK"
+    class="ok">
+    </div>
+    </a>
+    </div>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="./write_review_js.js"></script>
+</body> 
 </html>
