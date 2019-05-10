@@ -20,8 +20,21 @@ console.log(poster);
 function input_event(){
 	console.log("a");
 	var inputvalue = document.getElementById("search_input");
+	var movieName = inputvalue.value;
+	var movieNameElement = movieName.split(":");
+
+	var moviePicture = "";
+	for (var i = 0 ; i < movieNameElement.length ; i++){
+		if (i > 0){
+			moviePicture = moviePicture + movieNameElement[i];
+		}
+		else{
+			moviePicture = moviePicture + movieNameElement[i];
+		}
+	}
+
 	var poster = document.getElementById("poster");
-	var getstorage = firebase.storage().ref().child(inputvalue.value + ".jpg").getDownloadURL().then(function(url){
+	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
 		poster.src = url;
 	});
