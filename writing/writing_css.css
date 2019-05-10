@@ -93,7 +93,12 @@ body{
         background-color: darkturquoise;
     }
 
-
+.ui-autocomplete{
+  max-height : 200px;
+  overflow-y : auto;
+  overflow-x : hidden;
+  padding-right : 20px;
+}
 
 
 .ok {
@@ -111,9 +116,16 @@ body{
     font-weight: bold;
 }
 
-    .ok:hover {
-        background-color: darkturquoise;
-        color: #eee;
-        border-color: #eee;
-    }
+.ok:hover {
+    background-color: darkturquoise;
+    color: #eee;
+    border-color: #eee;
+}
 
+#poster{
+	width :300px;
+	height : 400px;
+	margin-left : 50px;
+	margin-top : 250px;
+	border : 0;
+}
