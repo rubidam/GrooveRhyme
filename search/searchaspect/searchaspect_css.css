@@ -121,21 +121,21 @@
     font-size: 20px;
     width: 150px;
     height: 100px;
-    border: none;
+    border: 3px solid darkturquoise;
     outline: none;
-    background-color: darkturquoise;
-    color: #eee;
+    background-color: white;
+    color: darkturquoise;
     font-weight: bold;
 }
 
     .ok:hover {
         border: 3px solid #eee;
-        background-color: white;
-        color: darkturquoise;
+        background-color: darkturquoise;
+        color: #eee;
     }
 
 .ok:disabled{
-	border: 1px solid #999999;
-	background-color: #cccccc;
-	color: #666666;
+	border: 3px solid #eee;
+	background-color: white;
+	color: #eee;
 }
