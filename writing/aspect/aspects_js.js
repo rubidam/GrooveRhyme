@@ -6,13 +6,46 @@ var acting = document.getElementById("Acting");
 var synopsis = document.getElementById("Synopsis");
 var music = document.getElementById("Music");
 var visual = document.getElementById("Visual");
+var back = document.getElementById("backspace");
 var Pon = 0;
 var Aon = 0;
 var Son = 0;
 var Mon = 0;
 var Von = 0;
+var currenturl = window.location.href;
+var firebaseConfig = {
+    apiKey: "AIzaSyDDFiULsphXfbs8XMTaJr4o4dxCPvCyX8w",
+    authDomain: "movielist-454ba.firebaseapp.com",
+    databaseURL: "https://movielist-454ba.firebaseio.com",
+    projectId: "movielist-454ba",
+    storageBucket: "movielist-454ba.appspot.com",
+    messagingSenderId: "444347257371",
+    appId: "1:444347257371:web:080d977ab1da9906"
+  };
+firebase.initializeApp(firebaseConfig);
+
+
+function parse_url(){
+	var moviename = "";
+	var queryflag = false;
+	for (var i = 0; i< currenturl.length; i++){
+		if (queryflag == true) {
+			moviename = moviename + currenturl[i]; 
+		}
+		
+		else if (currenturl[i] == '?') queryflag = true;
+	}
+	console.log(moviename);
+	moviename.slice(5);
+	return moviename;
+}
 
 function bindeventlistener(){
+	back.onclick = function(){
+		var deletetemp = firebase.database().ref('/').child('/review_temp/').remove();
+		document.location.href = "../writing.html"
+	}
+	
 	production.onclick = function() {
 	console.log("production");
 	if (Pon == 0) {
@@ -70,4 +103,29 @@ visual.onclick = function() {
 }
 
 }
+function makeTempDB(moviename){
+	var initaspect = {
+						rating:0, 
+						review : ""
+						};
+
+	var temp = firebase.database().ref('/review_temp/');
+	var pushaspect = temp.push();
+	pushaspect.set({"moviename" : moviename})
+	
+	pushaspect = temp.push();
+	pushaspect.set({"production" : initaspect});
+	pushaspect = temp.push();
+	pushaspect.set({"acting" : initaspect});
+	pushaspect = temp.push();
+	pushaspect.set({"synopsis" : initaspect});
+	pushaspect = temp.push();
+	pushaspect.set({"visual" : initaspect});
+	pushaspect = temp.push();
+	pushaspect.set({"music" : initaspect});
+	
+}
+
+parse_url();
+
 
