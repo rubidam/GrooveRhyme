@@ -41,9 +41,11 @@ function parse_url(){
 }
 
 function bindeventlistener(){
+	
 	back.onclick = function(){
 		var deletetemp = firebase.database().ref('/').child('/review_temp/').remove();
-		document.location.href = "../writing.html"
+		console.log("a");
+		document.location.href = "../writing.html";
 	}
 	
 	production.onclick = function() {
@@ -111,21 +113,16 @@ function makeTempDB(moviename){
 
 	var temp = firebase.database().ref('/review_temp/');
 	var pushaspect = temp.push();
-	pushaspect.set({"moviename" : moviename})
-	
-	pushaspect = temp.push();
-	pushaspect.set({"production" : initaspect});
-	pushaspect = temp.push();
-	pushaspect.set({"acting" : initaspect});
-	pushaspect = temp.push();
-	pushaspect.set({"synopsis" : initaspect});
-	pushaspect = temp.push();
-	pushaspect.set({"visual" : initaspect});
-	pushaspect = temp.push();
-	pushaspect.set({"music" : initaspect});
+	pushaspect.set({"moviename" : moviename,
+					"production" : initaspect,
+					"acting" : initaspect,
+					"synopsis" : initaspect,
+					"visual" : initaspect,
+					"music" : initaspect
+	});
 	
 }
 
-parse_url();
-
+makeTempDB(parse_url());
+bindeventlistener();
 
