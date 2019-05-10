@@ -1,0 +1,56 @@
+#middle {
+	background-image : url("./collectionbg.png");
+	background-repeat : no-repeat;
+	background-size : 100%;
+	background-position : center;
+    position: relative;
+	z-index: 1;
+    top:0px;
+    left: 0px;
+    padding: 30px;
+    width: 1272px;
+    height: 700px;
+}
+.bgBlur:before {
+	content: '';
+	position : absolute;
+	top: 0; left: 0; right:0; bottom: 0;
+	background: inherit;
+	z-index: -1;
+	filter: blur(4px);
+	-webkit-filter: blur(4px);
+	-moz-filter: blur (4px);
+	-o-filter : blur (4px);
+	filter: url(#blur);
+}
+
+#collectiontable {
+	background-color: white;
+	position : absolute;
+	width : 500px;
+	height : 400px;
+	border : 1px black solid;
+	top : 150px;
+	left : 350px;
+}
+
+table {
+	position : absolute;
+	width : 480px;
+	top: 15px;
+	left : 15px;
+}
+
+th {
+	border-bottom : 3px purple dotted;
+	height : 40px;
+	font-size: 30px;
+	padding: 5px;
+}
+
+td {
+	border-bottom: 2px purple dotted;
+	height : 35px;
+	font-size: 25px;
+	padding : 4px;
+}
