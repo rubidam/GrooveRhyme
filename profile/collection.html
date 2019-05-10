@@ -8,23 +8,26 @@
 	</head>
 	<body>
 		<div id = "middle" class = "bgBlur">
-			<div id = "collectiontable">
-				<table>
+			<div id = "collectiontable" class = "overlap">
+				<table id = "myTable" class = "overlap">
 					<tr>
-						<th> CS374 </th>
+						<th id = "collectionname" class = "overlap"> </th>
 					</tr>
 					<tr>
-						<td> MovieName1 </td>
+						<td class = "overlap"> MovieName1 </td>
 					</tr>
 					<tr>
-						<td> MovieName2 </td>
+						<td class = "overlap"> MovieName2 </td>
 					</tr>
 					<tr>
-						<td> MovieName3 </td>
+						<td class = "overlap"> MovieName3 </td>
 					</tr>
+				</table>
 		</div>
 		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
 		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+		<script src="./collection_js.js"></script>
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
 			<filter id="blur">
 				<feGaussianBlur stdDeviation="6" />

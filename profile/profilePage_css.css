@@ -1,3 +1,17 @@
+h1 {
+  font-size : 50px;
+}
+
+h2 {
+  margin-left : 50px;
+  font-size : 50px;
+}
+
+h3 {
+  text-decoration : underline;
+  margin-right : 20px;
+}
+
 .header {
   background : darkturquoise;
   position : relative;
@@ -65,24 +79,10 @@
   right : 2%;
 }
 
-#plusButton {
-  font-size : 20px;
-  font-weight : bold;
-  background : #ffffff;
-  border-radius : 0.5em;
-  padding : 5px 10px;
-  position : absolute;
-  top : 18%;
-  right : 17%;
-}
-
-h1 {
-  font-size : 50px;
-}
-
-h2 {
-  margin-left : 50px;
-  font-size : 50px;
+.main {
+	position : relative;
+	width : 1272px;
+	height : 600px;
 }
 
 .reviewImg {
@@ -92,9 +92,10 @@ h2 {
   width : 50%;
 }
 
-h3 {
-  text-decoration : underline;
-  margin-right : 20px;
+.review_th {
+	height : 70px;
+	font-size: 50px;
+	padding: 3px;
 }
 
 .collection {
@@ -103,14 +104,38 @@ h3 {
   border: 1px solid;
   padding : 20px;
   width : 45%;
+  height : 400px;
   position : absolute;
   right : 0%;
   top : 0%;
   margin-top : 10px;
 }
 
-.main {
-	position : relative;
-	width : 1272px;
-	height : 600px;
+#collectionTable {
+	position : absolute;
+	width : 550px;
+	top: 15px;
+	left : 30px;
+}
+
+#plusButton {
+  font-size : 20px;
+  font-weight : bold;
+  background : #ffffff;
+  border-radius : 0.5em;
+  padding : 5px 10px;
+}
+
+.collection_th {
+	border-bottom : 3px purple dotted;
+	height : 70px;
+	font-size: 50px;
+	padding: 3px;
+}
+
+.collection_td {
+	border-bottom: 2px purple dotted;
+	height : 50px;
+	font-size: 35px;
+	padding : 4px;
 }
