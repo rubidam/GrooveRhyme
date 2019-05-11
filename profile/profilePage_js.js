@@ -10,7 +10,68 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+/*********************review part**********************************/
+function initializereviewTable() {
+  /*
+    Initialize the courses in the right plane
+  */
+  var myTable = document.getElementById("reviewTable");
+  var numRows = myTable.rows.length;
+  for(var i=1;i<numRows;i++){
+    myTable.deleteRow(1);
+  }
+  myTable.insertRow(1);
+}
+function refreshreviewList(name) {
+	console.log(name)
+	/* parsing movie name */
+	var movieNameElement = name.split(":");
+	var moviePicture = "";
+	for (var i = 0 ; i < movieNameElement.length ; i++){
+		moviePicture = moviePicture + movieNameElement[i];
+	}
+	/* parsing movie name */
+	console.log(moviePicture);
+	var resultTable = document.getElementById("reviewTable");
+	var row = resultTable.rows[maxreviewrow];
+	
+	var col1 = row.insertCell(row.cells.length);
+	col1.addEventListener("click",function(e){
+		console.log(name);
+		//location.href = "./collection.html?collection=" + name;
+	})
+	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
+		console.log(url);
+		col1.innerHTML = "<img src =" + url + " height = 200 width = 130 hspace = 7>";
+    });
+	
+	if(row.cells.length == 4){
+		maxreviewrow +=1;
+		resultTable.insertRow(maxreviewrow);
+	}
+	
+}
+function makereviewTable(lst) {
+	initializereviewTable();
+	var len = lst.length;
+	for (var i=0;i<len;i++) {
+		refreshreviewList(lst[i]);
+	}
+}
 
+function getReviewList() {
+	return firebase.database().ref('/UserProfile/MyReview/').once('value', function(snapshot){
+		var myValue = snapshot.val();
+		if (myValue != null) {
+			var keys = Object.keys(myValue);
+			reviewlist = keys;
+			console.log(reviewlist);
+		}
+		makereviewTable(reviewlist);
+	});
+}
+/*********************review part**********************************/
+/*****************collection part**********************************/
 function initializecollectionTable() {
   /*
     Initialize the courses in the right plane
@@ -58,6 +119,9 @@ function getCollectionList() {
 		makecollectionTable(collectionlist);
 	});
 }
-
+/*****************collection part**********************************/
+var reviewlist=[];
+var maxreviewrow = 1;
+getReviewList();
 var collectionlist=[];
 getCollectionList();
