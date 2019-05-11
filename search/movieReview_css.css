@@ -29,9 +29,10 @@
 
 #title {
 	position : absolute;
-	left : 10%;
-	top : 40px;
-	font-size : 50px;
+	left : 5%;
+	top : 50px;
+	font-size : 40px;
+    color:black;
 }
 
 #homeButton {
@@ -57,64 +58,49 @@
 #image {
 	border: 1px black solid;
 	position: relative;
-	width:220px;
-	height:500px;
+	width:300px;
+	height:400px;
 	margin-left: 2%;
 	float: left;
 	text-align:center;
 	font-size:50px;
 }
 
-#poster {
-	background-image: url("movieimage.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color:red;
-	position: relative;
-	border: 1px black solid;
-	width:100%;
-	height:290px;
-	top: 0;
-	text-align:center;
-	font-size:50px;
-}
 
 #star {
-	background-image: url("review_star.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: blue;
-	position: absolute;
-	border: 1px black solid;
-	width:100%;
-	height:180px;
-	bottom: 0;
-	text-align:center;
-	font-size:50px;
+
 }
 
 #review {
-	border: 1px black solid;
+	border: 2px black solid;
 	position: relative;
-	width:950px;
+	width:830px;
 	height:500px;
-	float: left;
+	float: right;
 	text-align:left;
-	margin-left: 2%;
+	margin-right: 2.5%;
 	padding: 10px;
 }
 
 #post {
-	background-color :darkturquoise;
-	color: #eee;
+	background-color : white;
+	color: darkturquoise;
 	display: inline-block;
-	border : none;
+	border : 3px solid darkturquoise;
 	outline : none;
 	padding: 10px;
-	font-size: 30px;
+	font-size: 15px;
+    letter-spacing:1px;
+    font-weight:bold;
+    width:90px;
+    height:70px;
 	margin-bottom: 3px;
+    margin-top:3%;
+}
+#post:hover{
+    background-color:darkturquoise;
+    color :#eee;
+    border:3px solid #eee;
 }
 
 .searchTable {
@@ -122,25 +108,44 @@
 	top: 200px;
 	left: 50px;
 }
-td, th{
-	padding: 20px;
+#star{
+    width : 50%;
+    position:absolute;
+    top:15px;
+    left:120px;
+    color: black;
+}
+#p {
+}
+#a {
+    letter-spacing:9px;
+}
+#s{
+    letter-spacing:4px;
+}
+#v{
+    letter-spacing:9.5px;
+}
+#m {
+    letter-spacing: 13px;
+}
+td, th {
+    padding: 10px;
+    background-color: #eee
 }
 
 table {
-	width: 100%;
-	border: 1px solid #444444;
+	width: 80%;
+	border: none;
+    position:relative;
+    margin-top:5%;
 }
-tr {
-	
-}
+
 th {
 	text-align: center;
-	border: 1px solid #444444;
-	padding: 5px;
+	padding: 10px;
 }
 td {
-	border: 1px solid #444444;
-	padding: 5px;
 }
 
 .person {

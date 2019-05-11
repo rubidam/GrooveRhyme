@@ -104,12 +104,12 @@ td, th{
     font-size: 20px;
     border: 3px solid darkturquoise;
     border-color: darkturquoise;
+    width : 200px;
     height: 100px;
     background-color: white;
     color: darkturquoise;
     letter-spacing: 1px;
     font-weight: bold;
-    white-space : pre-line;
 }
 
 .ok {

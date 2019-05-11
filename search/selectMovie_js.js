@@ -89,7 +89,8 @@ function printMovie(){
 		var secondIndex = firstIndex - 1;
 	}
 
-	var getstorageFirst = firebase.storage().ref().child(createMovieName(movieList[firstIndex]) + ".jpg").getDownloadURL().then(function(url){
+    var getstorageFirst = firebase.storage().ref().child(createMovieName(movieList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
+        console.log("create : " + createMovieName(movieList[firstIndex]));
 		console.log(url);
 		first.src = url;
 	});
@@ -100,15 +101,15 @@ function printMovie(){
 	});
 	
 	var refreshButton = document.getElementById("refreshButton");
-	
-	refreshButton.onclick = function(){
-		var newfirstIndex = getRandomInt(0, movieList.length - 1);
+    var newfirstIndex = getRandomInt(0, movieList.length - 1);
+    var newsecondIndex;
+    refreshButton.onclick = function () {
 	
 		if (newfirstIndex + 1 < movieList.length - 1){
-			var newsecondIndex = newfirstIndex + 1;
+			newsecondIndex = newfirstIndex + 1;
 		}
 		else{
-			var newsecondIndex = newfirstIndex - 1;
+			newsecondIndex = newfirstIndex - 1;
 		}
 		var getstorageFirstNew = firebase.storage().ref().child(createMovieName(movieList[newfirstIndex]) + ".jpg").getDownloadURL().then(function(url){
 			console.log(url);
@@ -118,9 +119,24 @@ function printMovie(){
 		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(movieList[newsecondIndex]) + ".jpg").getDownloadURL().then(function(url){
 			console.log(url);
 			second.src = url;
-		});
-	}
+        });
+        firstIndex = newfirstIndex;
+        secondIndex = newsecondIndex;
+    }
+    var nextMove = "./movieReview.html";
+    first.onclick = function () {
+        console.log("first's clicked");
+        nextMove = nextMove + "?" + createMovieName(movieList[firstIndex]);
+        location.href = nextMove;
+    }
+    second.onclick = function () {
+        console.log("second's clicked");
+        nextMove = nextMove + "?" + createMovieName(movieList[secondIndex]);
+        location.href = nextMove;
+
+    }
 }
+
 
 getCategory();
 readFromDatabase();
