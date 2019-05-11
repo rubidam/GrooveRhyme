@@ -110,6 +110,16 @@ td, th{
 	letter-spacing: 3px;
 	font-weight: bold;
 }
+.aspe-skip:disabled {
+        font-size: 20px;
+        color: #eee;
+        border:none;
+        background-color:#ddd;
+        width: 200px;
+        height: 100px;
+        letter-spacing: 3px;
+        font-weight: bold;
+}
 
 .aspe:hover {
 	background-image: url(go_to_choose_aspects_hover.png);
@@ -118,7 +128,7 @@ td, th{
 	background-size: 100%;
 }
 
-.aspe-skip:hover {
+.aspe-skip:hover:enabled {
 	background-color: darkturquoise;
 	color: #eee;
 	border-color: #eee;

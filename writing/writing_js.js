@@ -114,7 +114,7 @@ function okPressListener(){
 	location.href = next_move;
 };
 function backspace(){
-	location.href = javascript.history.back();
+	location.href = "../main.html";
 };
 
 function bindEvent(){

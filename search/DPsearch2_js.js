@@ -21,8 +21,8 @@ function aspectPressListener(){
 	location.href = nextloc;
 }
 
-function skipPressListener(){
-	
+function skipPressListener() {
+    okPressListener();
 }
 function okPressListener(){
 	var nextloc = "./selectMovie.html?"
@@ -31,3 +31,21 @@ function okPressListener(){
 	nextloc = nextloc + query;
 	location.href = nextloc;
 }
+function apply() {
+    var loc = document.location.href;
+    var query = extractquery(loc);
+    var category = document.getElementById("category");
+    if (query != "") {
+        category.value = query.split("=")[1].split("&")[0].toUpperCase();
+    }
+    else {
+        category.value = "NONE";
+    }
+    console.log("applying enter");
+    if (category.value == "NONE" || category.value == "") {
+        console.log("if enter");
+        var skip = document.getElementById("aspeskip");
+        skip.disabled = true;
+    }
+}
+apply();
