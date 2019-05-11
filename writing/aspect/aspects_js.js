@@ -8,6 +8,7 @@ var music = document.getElementById("Music");
 var visual = document.getElementById("Visual");
 var back = document.getElementById("backspace");
 var okbtn = document.getElementById("ok");
+var homebtn = document.getElementById("homeButton");
 var Pon = 0;
 var Aon = 0;
 var Son = 0;
@@ -48,6 +49,11 @@ function parse_url(){
 }
 
 function bindeventlistener(){
+	homebtn.onclick = function(){
+		var deletetemp = firebase.database().ref('/').child('/review_temp/').remove();
+		document.location.href = "../../main.html";
+	}
+	
 	back.onclick = function(){
 		var deletetemp = firebase.database().ref('/').child('/review_temp/').remove();
 		console.log("a");
