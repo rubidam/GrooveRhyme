@@ -12,11 +12,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function copy_review(name) {
-	return firebase.database().ref('/MyReview/' + name).once('value', function(snapshot) {
+	return firebase.database().ref('/UserProfile/MyReview/' + name).once('value', function(snapshot) {
 		var v = snapshot.val();
-		//console.log(v);
 		var newlog = firebase.database().ref('/review_temp/' + name);
 		newlog.set(v);
+		location.href = "../writing/aspect/aspects.html?name=" + name;
 	});
 }
 /*********************review part**********************************/
@@ -48,7 +48,6 @@ function refreshreviewList(name) {
 	col1.addEventListener("click",function(e){
 		console.log(name);
 		copy_review(name);
-		location.href = "../writing/aspect/aspects.html?name=" + name;
 	})
 	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
