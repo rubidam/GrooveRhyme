@@ -122,7 +122,7 @@ function bindeventlistener(){
 					
 				}
 				firebase.database().ref("/review_temp/").remove();
-				//location.href = "../../profile/profilePage.html";
+				location.href = "../../profile/profilePage.html";
 			});
 		});
 	}
@@ -171,7 +171,7 @@ function checkreview(){
 				if(data[key[i]] === 'string'){}
 				else {
 					var temp = data[key[i]];
-					if (temp["rating"] != 0 || temp["review"] != ""){
+					if (temp["Rating"] != 0 || temp["Review"] != ""){
 						okbtn.disabled = false;
 						if(key[i] == "Acting"){acting.style.backgroundColor = "darkturquoise"}
 						else if(key[i] == "Music"){music.style.backgroundColor = "darkturquoise"}
