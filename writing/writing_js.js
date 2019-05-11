@@ -15,23 +15,15 @@ firebase.initializeApp(firebaseConfig);
 var textbox = document.getElementById("search_input");
 var poster = firebase.storage().ref().bucket;
 console.log(poster);
-function okDisabled() {
-    var poster = document.getElementById("poster");
-    var ok = document.getElementById("ok");
-    console.log(poster.onerror);
-    if (poster.src == "file:///C:/Users/user/Desktop/GrooveRhyme/writing/default.jpg" ) {
-        ok.disabled = true;
-    }
-    else {
-        ok.disabled = false;
-    }
-}
 
 function input_event(){
-	console.log("a");
+	//console.log("a");
 	var inputvalue = document.getElementById("search_input");
 	var movieName = inputvalue.value;
 	var movieNameElement = movieName.split(":");
+	var okButton = document.getElementById("ok");
+	
+	okButton.disabled = false;
 
 	var moviePicture = "";
 	for (var i = 0 ; i < movieNameElement.length ; i++){
@@ -47,7 +39,6 @@ function input_event(){
 	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
         poster.src = url;
-        okDisabled();
     });
     
 }
@@ -56,7 +47,7 @@ function input_event(){
 var searching = firebase.database().ref('/MovieList/').once('value',function(snapshot){
 	var moviedic = snapshot.val();
 	var movielist = Object.keys(moviedic);
-	console.log(movielist);
+	//console.log(movielist);
 	
 	$( function() {
 
@@ -113,6 +104,7 @@ function okPressListener(){
 	next_move = next_move + "name=" + textbox.value;
 	location.href = next_move;
 };
+
 function backspace(){
 	location.href = "../main.html";
 };
@@ -122,9 +114,7 @@ function bindEvent(){
 	
     searchbutton.onclick = function () {
 		input_event();
-		
 	};
 }
 
-okDisabled();
 bindEvent();
