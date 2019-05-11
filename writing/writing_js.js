@@ -13,7 +13,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var textbox = document.getElementById("search_input");
-var poster = firebase.storage().ref().bucket;
 console.log(poster);
 
 function input_event(){
@@ -98,10 +97,35 @@ var searching = firebase.database().ref('/MovieList/').once('value',function(sna
 });
 })
 
+function makeTempDB(moviename){
+	var initaspect = {
+						Rating:0, 
+						Review : ""
+						};
+
+	var temp = firebase.database().ref('/review_temp/'+moviename);
+	/*var pushaspect = temp.push();
+	pushaspect.set({"moviename" : moviename,
+					"production" : initaspect,
+					"acting" : initaspect,
+					"synopsis" : initaspect,
+					"visual" : initaspect,
+					"music" : initaspect
+	});
+	*/
+	temp.set({		"Production" : initaspect,
+					"Acting" : initaspect,
+					"Synopsis" : initaspect,
+					"Visual" : initaspect,
+					"Music" : initaspect
+	});
+}
+
 next_move = "./aspect/aspects.html?"
 
 function okPressListener(){
 	next_move = next_move + "name=" + textbox.value;
+	makeTempDB(textbox.value);
 	location.href = next_move;
 };
 

@@ -38,6 +38,7 @@ function parse_url(){
 	}
 	console.log(moviename);
 	moviename = moviename.slice(5);
+	moviename = moviename.replace("%20"," ");
 	return moviename;
 }
 
@@ -107,18 +108,19 @@ function bindeventlistener(){
 	okbtn.onclick = function(){
 		var updateUserReview = firebase.database().ref("/review_temp/").once('value',function(snapshot){
 			var data = snapshot.val();
-			
+			console.log(data);
 		});
 	}
 }
+/*
 function makeTempDB(moviename){
 	var initaspect = {
-						rating:0, 
-						review : ""
+						Rating:0, 
+						Review : ""
 						};
 
-	var temp = firebase.database().ref('/review_temp/');
-	/*var pushaspect = temp.push();
+	var temp = firebase.database().ref('/review_temp/'+moviename);
+	var pushaspect = temp.push();
 	pushaspect.set({"moviename" : moviename,
 					"production" : initaspect,
 					"acting" : initaspect,
@@ -126,15 +128,14 @@ function makeTempDB(moviename){
 					"visual" : initaspect,
 					"music" : initaspect
 	});
-	*/
-	temp.set({"moviename" : moviename,
-					"Production" : initaspect,
+	
+	temp.set({		"Production" : initaspect,
 					"Acting" : initaspect,
 					"Synopsis" : initaspect,
 					"Visual" : initaspect,
 					"Music" : initaspect
 	});
-}
+}*/
 function judge_db(){
 	var this_db = firebase.database().ref('/review_temp/').once('value',function(snapshot){
 		var data = snapshot.val();
@@ -156,6 +157,7 @@ function checkreview(){
 				else {
 					var temp = data[key[i]];
 					if (temp["rating"] != 0 || temp["review"] != ""){
+						okbtn.disabled = false;
 						if(key[i] == "Acting"){acting.style.backgroundColor = "darkturquoise"}
 						else if(key[i] == "Music"){music.style.backgroundColor = "darkturquoise"}
 						else if(key[i] == "Synopsis"){synopsis.style.backgroundColor = "darkturquoise"}
