@@ -21,7 +21,7 @@ var drama = document.getElementById("drama");
 var docu = document.getElementById("documentary");
 var action = document.getElementById("action");
 var romance = document.getElementById("romance");
-var next_move = "../DPsearch2.html"
+var next_move = "../DPsearch2.html?"
 
 var category = [];
 
@@ -34,6 +34,7 @@ function sflistener(){
 	});
 	sf.addEventListener('click',function(e){
 		category = category + "SF Fantasy";
+		next_move = next_move + "category=SF FANTASY";
 		pushCategory(category);
 	});
 }
@@ -47,6 +48,7 @@ function horrorlistener(){
 	});
 	horror.addEventListener('click',function(e){
 		category = category + "Horror";
+		next_move = next_move + "category=HORROR";
 		pushCategory(category);
 	});
 }
@@ -60,6 +62,7 @@ function crimelistener(){
 	});
 	crime.addEventListener('click',function(e){
 		category = category + "Crime Noir";
+		next_move = next_move + "category=CRIME NOIR";
 		pushCategory(category);
 	});
 }
@@ -73,6 +76,7 @@ function biographylistener(){
 	});
 	biography.addEventListener('click',function(e){
 		category = category + "Biography";
+		next_move = next_move + "category=BIOGRAPHY";
 		pushCategory(category);
 	});
 
@@ -87,6 +91,7 @@ function mysterylistener(){
 	});
 	mystery.addEventListener('click',function(e){
 		category = category + "Mystery";
+		next_move = next_move + "category=MYSTERY";
 		pushCategory(category);
 	});
 
@@ -101,6 +106,7 @@ function artlistener(){
 	});
 	art.addEventListener('click',function(e){
 		category = category + "Artistic";
+		next_move = next_move + "category=ARTISTIC";
 		pushCategory(category);
 	});
 }
@@ -115,6 +121,7 @@ function comedylistener(){
 	});
 	comedy.addEventListener('click',function(e){
 		category = category + "Comedy";
+		next_move = next_move + "category=COMEDY";
 		pushCategory(category);
 	});
 }
@@ -129,6 +136,7 @@ function musiclistener(){
 	});
 	music.addEventListener('click',function(e){
 		category = category + "Music";
+		next_move = next_move + "category=MUSIC";
 		pushCategory(category);
 	});
 }
@@ -143,6 +151,7 @@ function dramalistener(){
 	});
 	drama.addEventListener('click',function(e){
 		category = category + "Drama";
+		next_move = next_move + "category=DRAMA";
 		pushCategory(category);
 	});
 }
@@ -157,6 +166,7 @@ function doculistener(){
 	});
 	docu.addEventListener('click',function(e){
 		category = category + "Documentary";
+		next_move = next_move + "category=DOCU";
 		pushCategory(category);
 	});
 }
@@ -171,6 +181,7 @@ function actionlistener(){
 	});
 	action.addEventListener('click',function(e){
 		category = category + "Action";
+		next_move = next_move + "category=ACTION";
 		pushCategory(category);
 	});
 }
@@ -185,6 +196,7 @@ function romancelistener(){
 	});
 	romance.addEventListener('click',function(e){
 		category = category + "Romance";
+		next_move = next_move + "category=ROMANCE";
 		pushCategory(category);
 	});
 }
