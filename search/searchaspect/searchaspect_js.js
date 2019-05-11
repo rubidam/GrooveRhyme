@@ -1,5 +1,15 @@
 // This allows the Javascript code inside this block to only run when the page
 // has finished loading in the browser.
+var firebaseConfig = {
+    apiKey: "AIzaSyDDFiULsphXfbs8XMTaJr4o4dxCPvCyX8w",
+    authDomain: "movielist-454ba.firebaseapp.com",
+    databaseURL: "https://movielist-454ba.firebaseio.com",
+    projectId: "movielist-454ba",
+    storageBucket: "movielist-454ba.appspot.com",
+    messagingSenderId: "444347257371",
+    appId: "1:444347257371:web:080d977ab1da9906"
+  };
+firebase.initializeApp(firebaseConfig);
 
 var production = document.getElementById("Production");
 var acting = document.getElementById("Acting");
@@ -15,12 +25,15 @@ var Son = 0;
 var Mon = 0;
 var Von = 0;
 var para = document.location.href.split("?");
+console.log(para);
+
+var aspect = [];
 
 if (para.length == 2) {
 	next_move = next_move + para[1];
 	nm_havevalue = true;
 }
-console.log(next_move);
+
 production.onclick = function() {
 	console.log("production");
 	if (Pon == 0) {
