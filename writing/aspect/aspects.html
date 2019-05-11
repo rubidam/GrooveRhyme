@@ -1,66 +1,64 @@
 ﻿<!DOCTYPE html>
 <html> 
-  <head> 
-	<meta charset="UTF-8">
-	<script src="jquery/js/jquery-1.9.0.min.js"></script>
-	<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-	<link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-	<link href="./aspects_css.css" rel= "stylesheet"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head> 
-  <body>
-      <center>
-          <div id="upper-box">
-                  <input id="backspace"
-                         type="button" value="<"
-                         class="backbutton" onkeypress="backspace()">
-              <div id="title">
-                  Choose aspects you want to review
-              </div>
-			  <a href = "../../main.html">
+	<head> 
+		<meta charset="UTF-8">
+		<script src="jquery/js/jquery-1.9.0.min.js"></script>
+		<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+		<link href="./aspects_css.css" rel= "stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head> 
+	<body>
+		<center>
+			<div id="upper-box">
+				<input id="backspace"
+						type="button" value="<"
+						class="backbutton" onkeypress="backspace()">
+				<div id="title">
+					Choose aspects you want to review
+				</div>
+				<a href = "../../main.html">
 					<input type="button" value="🏠" id = "homeButton">
-			  </a>
-          </div>
-      </center>
-      <div id="middle">
-          <div id="pentagon1" class="pentagon"></div>
-          <a href="./write_review/write_review.html?aspect=production">
-              <div id="Production" class="aspect">Produnction</div>
-          </a>
-          <a href="./write_review/write_review.html?aspect=acting">
-              <div id="Acting" class="aspect">Acting</div>
-          </a>
-          <a href="./write_review/write_review.html?aspect=synopsis">
-              <div id="Synopsis" class="aspect">Synopsis</div>
-          </a>
-          <a href="./write_review/write_review.html?aspect=music">
-              <div id="Music" class="aspect">Music</div>
-          </a>
-          <a href="./write_review/write_review.html?aspect=visual">
-              <div id="Visual" class="aspect">Visual</div>
-          </a>
+				</a>
+			</div>
+		</center>
+		<div id="middle">
+			<div id="pentagon1" class="pentagon"></div>
+			<a href="./write_review/write_review.html?aspect=production">
+				<div id="Production" class="aspect">Produnction</div>
+			</a>
+			<a href="./write_review/write_review.html?aspect=acting">
+				<div id="Acting" class="aspect">Acting</div>
+			</a>
+			<a href="./write_review/write_review.html?aspect=synopsis">
+				<div id="Synopsis" class="aspect">Synopsis</div>
+			</a>
+			<a href="./write_review/write_review.html?aspect=music">
+				<div id="Music" class="aspect">Music</div>
+			</a>
+			<a href="./write_review/write_review.html?aspect=visual">
+				<div id="Visual" class="aspect">Visual</div>
+			</a>
           
           <!--
         <input id = "search_input" placeholder = "Search your movie"> </input>
         <button id = "searchbutton"><i class = "fa fa-search"></i></input>
         -->
-		  <div>
-			  <a href="../../profile/profilePage.html">
-				  <input id="ok"
-						 type="button"
-						 value="OK"
-						 class="ok"
-						 onclick="okPressListener()">
-			  </a>
-	      </div>
+			<div>
+				<input id="ok"
+						type="button"
+						value="OK"
+						class="ok"
+						onclick="okPressListener()">
+			</div>
 
-      </div>
+		</div>
      
-      <script src="jquery/js/jquery-1.9.0.min.js"></script>
-      <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-	  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-	  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
-	  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
-	  <script src="./aspects_js.js"></script>
-  </body> 
+		<script src="jquery/js/jquery-1.9.0.min.js"></script>
+		<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+		<script src="./aspects_js.js"></script>
+	</body> 
 </html>
