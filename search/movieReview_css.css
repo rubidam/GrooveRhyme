@@ -129,25 +129,74 @@
 #m {
     letter-spacing: 13px;
 }
-td, th {
+#starp {
+    position: absolute;
+    top: -2px;
+    left: 115px;
+    letter-spacing: 0px;
+    color: darkturquoise;
+}
+#stara {
+    position: absolute;
+    top: 20px;
+    left: 115px;
+    letter-spacing: 0px;
+    color:darkturquoise;
+}
+#stars {
+    position: absolute;
+    top: 42px;
+    left: 115px;
+    letter-spacing: 0px;
+    color: darkturquoise;
+}
+#starv {
+    position: absolute;
+    top: 64px;
+    left: 115px;
+    letter-spacing: 0px;
+    color: darkturquoise;
+}
+#starm {
+    position: absolute;
+    top: 86px;
+    left: 115px;
+    letter-spacing: 0px;
+    color: darkturquoise;
+}
+th {
     padding: 10px;
-    background-color: #eee
+    background-color: #eee;
+    text-align: center;
+    padding: 10px;
 }
 
 table {
-	width: 80%;
+	width: 90%;
 	border: none;
     position:relative;
     margin-top:5%;
 }
 
-th {
-	text-align: center;
-	padding: 10px;
-}
+
 td {
+    padding: 5px;
+    border : 3px solid #eee;
+    font-size: 18px;
 }
 
 .person {
 	width: 150px;
+}
+
+.aspect {
+    width: 100px;
+}
+
+.rating {
+    width: 50px;
+}
+
+.review {
+    width: 250px;
 }

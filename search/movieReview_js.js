@@ -25,4 +25,80 @@ function imgSrc() {
     });
 }
 
+function star() {
+    var starp = document.getElementById("starp");
+    var starm = document.getElementById("starm");
+    var stars = document.getElementById("stars");
+    var starv = document.getElementById("starv");
+    var stara = document.getElementById("stara");
+    var star = firebase.database().ref("/MovieList/" + movieName + "/Rating/").once('value', function (snapshot) {
+        var dict = snapshot.val();
+        var star = " ";
+        for (var i = 0; i < dict.Production; i++) {
+            star += " &#9733";
+        }
+        for (var i = 0; i < 5 - dict.Production; i++) {
+            star += " &#9734";
+        }
+        starp.innerHTML = star;
+        star = " ";
+        for (var i = 0; i < dict.Synopsis; i++) {
+            star += " &#9733";
+        }
+        for (var i = 0; i < 5 - dict.Synopsis; i++) {
+            star += " &#9734";
+        }
+        stars.innerHTML = star;
+        star = " ";
+        for (var i = 0; i < dict.Acting; i++) {
+            star += " &#9733";
+        }
+        for (var i = 0; i < 5 - dict.Acting; i++) {
+            star += " &#9734";
+        }
+        stara.innerHTML = star;
+        star = " ";
+        for (var i = 0; i < dict.Visual; i++) {
+            star += " &#9733";
+        }
+        for (var i = 0; i < 5 - dict.Visual; i++) {
+            star += " &#9734";
+        }
+        starv.innerHTML = star;
+        star = " ";
+        for (var i = 0; i < dict.Music; i++) {
+            star += " &#9733";
+        }
+        for (var i = 0; i < 5 - dict.Music; i++) {
+            star += " &#9734";
+        }
+        starm.innerHTML = star;
+    })
+}
+function insertCell() {
+    
+    var star = firebase.database().ref("/MovieList/" + movieName + "/ReviewList/").once('value', function (snapshot) {
+        var table = document.getElementById("table");
+        var dict = snapshot.val();
+        var nameList = Object.keys(dict);
+        for (var i = 0; i < nameList.length; i++) {
+            var row = table.insertRow(1),
+                person = row.insertCell(0),
+                aspect = row.insertCell(1),
+                star = row.insertCell(2),
+                review = row.insertCell(3);
+            person.innerHTML = nameList[i];
+            console.log(nameList);
+            var aspectList = Object.keys(dict[nameList[i]]);
+            for (var j = 0; j < aspectList.length; j++) {
+                aspect.innerHTML = aspectList[j];
+                star.innerHTML = dict[nameList[i]][aspectList[j]]["Rating"];
+                review.innerHTML = dict[nameList[i]][aspectList[j]]["Review"];
+            }
+        }
+        
+    })
+}
+insertCell();
 imgSrc();
+star();
