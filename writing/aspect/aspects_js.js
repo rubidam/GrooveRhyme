@@ -36,7 +36,7 @@ function parse_url(){
 		else if (currenturl[i] == '?') queryflag = true;
 	}
 	console.log(moviename);
-	moviename.slice(5);
+	moviename = moviename.slice(5);
 	return moviename;
 }
 
@@ -112,7 +112,7 @@ function makeTempDB(moviename){
 						};
 
 	var temp = firebase.database().ref('/review_temp/');
-	var pushaspect = temp.push();
+	/*var pushaspect = temp.push();
 	pushaspect.set({"moviename" : moviename,
 					"production" : initaspect,
 					"acting" : initaspect,
@@ -120,7 +120,14 @@ function makeTempDB(moviename){
 					"visual" : initaspect,
 					"music" : initaspect
 	});
-	
+	*/
+	temp.set({"moviename" : moviename,
+					"production" : initaspect,
+					"acting" : initaspect,
+					"synopsis" : initaspect,
+					"visual" : initaspect,
+					"music" : initaspect
+	});
 }
 function judge_db(){
 	var this_db = firebase.database().ref('/review_temp/').once('value',function(snapshot){
@@ -135,7 +142,7 @@ function checkreview(){
 		var data = snapshot.val();
 		if (data != null){
 			var key = Object.keys(data);
-			var value = data[key];
+			var value = data[key[1]];
 			console.log(key);
 			console.log(value);
 			if (value[acting["review"]] != undefined){
