@@ -36,9 +36,14 @@ function parse_url(){
 		
 		else if (currenturl[i] == '?') queryflag = true;
 	}
-	console.log(moviename);
 	moviename = moviename.slice(5);
-	moviename = moviename.replace("%20"," ");
+	tempname = "";
+	while(moviename != tempname) {
+		tempname = moviename;
+		moviename = tempname.replace("%20"," ");
+		
+	}
+	console.log(moviename);
 	return moviename;
 }
 
