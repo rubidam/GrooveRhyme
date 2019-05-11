@@ -15,6 +15,9 @@ var Son = 0;
 var Mon = 0;
 var Von = 0;
 var currenturl = document.location.href;
+var username = "Junjeong";
+
+
 var firebaseConfig = {
     apiKey: "AIzaSyDDFiULsphXfbs8XMTaJr4o4dxCPvCyX8w",
     authDomain: "movielist-454ba.firebaseapp.com",
@@ -46,6 +49,31 @@ function parse_url(){
 	}
 	console.log(moviename);
 	return moviename;
+}
+
+function AddToMovieList(moviename){
+	return firebase.database().ref("/review_temp/").once('value',function(snapshot){
+		var data = snapshot.val();
+		var reviewdata = data[moviename];
+		var sendToMovieList = {};
+		var reviewdata_key = Object.keys(reviewdata);
+		var newreview; 
+		var update = {};
+		console.log(data);
+		console.log(reviewdata);
+		for (var i = 0; i< reviewdata_key.length; i++){
+			var temp = reviewdata[reviewdata_key[i]]
+			if(temp["Rating"] != 0 && temp["Review"] != ""){
+				sendToMovieList[reviewdata_key[i]] = temp;
+			}
+		}
+		console.log(sendToMovieList);
+		//newreview = firebase.database().child('/MovieList/' + moviename+'/ReviewList/)
+			firebase.database().ref('/MovieList/' + moviename+'/ReviewList/'+username+'/').update(
+				sendToMovieList
+		)
+		
+	})
 }
 
 function bindeventlistener(){
@@ -127,6 +155,7 @@ function bindeventlistener(){
 				if(movienames.includes(keys[0])){
 					firebase.database().ref("/UserProfile/MyReview/"+keys[0] + "/").remove();
 				}
+				AddToMovieList(keys[0]);
 				firebase.database().ref("/review_temp/" + keys[0] + "/").once('value',function(snapshot){
 					var content = snapshot.val();
 					console.log(content);
