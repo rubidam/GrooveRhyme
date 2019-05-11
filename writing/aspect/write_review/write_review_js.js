@@ -97,7 +97,7 @@ function clickOK(){
 				}
 				else{
 					console.log("Success!");
-					//window.history.back();
+					window.history.back();
 				}
 			});
 		});
