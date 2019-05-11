@@ -108,7 +108,18 @@ function bindeventlistener(){
 	okbtn.onclick = function(){
 		var updateUserReview = firebase.database().ref("/review_temp/").once('value',function(snapshot){
 			var data = snapshot.val();
-			console.log(data);
+			var keys = Object.keys(data);
+			console.log(keys);
+			firebase.database().ref("/UserProfile/MyReview/").once('value',function(snapshot){
+				var reviewlist = snapshot.val();
+				var movienames = Object.keys(reviewlist);
+				if(movienames.includes(keys[0])){
+					firebase.database().ref("/UserProfile/MyReview/"+keys[0] + "/").remove();
+				}
+				firebase.database().ref("/UserProfile/MyReview/").set(data);
+				firebase.database().ref("/review_temp/").remove();
+				//location.href = "../../profile/profilePage.html";
+			});
 		});
 	}
 }
