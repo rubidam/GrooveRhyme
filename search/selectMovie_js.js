@@ -11,6 +11,8 @@ firebase.initializeApp(firebaseConfig);
 
 var movieList = [];
 
+var factor = [];
+
 function readFromDatabase(){
 	return firebase.database().ref('/MovieList/').once('value', 
 	function(snapshot){
@@ -23,13 +25,23 @@ function readFromDatabase(){
 			//console.log(category);
 			
 			for (var j = 0 ; j < category.length ; j++){
-				if (category[j] == "Action"){
+				if (category[j] == factor[0]["category"]){
 					movieList.push(myKey);
 				}
 			}
 		}
 		//console.log(movieList);
 		printMovie();
+	});
+}
+
+function getFactor(){
+	return firebase.database().ref('/Search/').once('value', 
+	function(snapshot){
+		var myValue = snapshot.val();
+		var keyList = Object.keys(myValue);
+		var myKey = keyList[0];
+		factor.push({"category" : myValue[myKey].Category, "aspect" : myValue[myKey].Aspect});
 	});
 }
 
@@ -99,4 +111,5 @@ function printMovie(){
 	}
 }
 
+getFactor();
 readFromDatabase();

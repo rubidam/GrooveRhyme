@@ -43,7 +43,6 @@ function parse_url(){
 }
 
 function bindeventlistener(){
-	
 	back.onclick = function(){
 		var deletetemp = firebase.database().ref('/').child('/review_temp/').remove();
 		console.log("a");
@@ -60,6 +59,7 @@ function bindeventlistener(){
 			Pon = 0;
 			production.style.backgroundColor = '';
 		}
+		
 	}
 	acting.onclick = function() {
 		console.log("acting");
@@ -160,14 +160,14 @@ function judge_db(){
 	});
 }
 function checkreview(){
-	var dbsearch = firebase.database().ref('/review_temp/').once('value',function(snapshot){
+	var dbsearch = firebase.database().ref('/review_temp/'+parse_url()).once('value',function(snapshot){
 		var data = snapshot.val();
 		if (data != null){
 			var key = Object.keys(data);
 			var value = data[key[0]];
 			console.log(key);
 			console.log(value);
-			for (var i = 0; i<= 5; i++){
+			for (var i = 0; i<= 4; i++){
 				if(data[key[i]] === 'string'){}
 				else {
 					var temp = data[key[i]];
