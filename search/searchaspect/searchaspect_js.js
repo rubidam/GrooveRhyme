@@ -66,6 +66,7 @@ acting.onclick = function() {
 }
 synopsis.onclick = function() {
 	console.log("synopsis");
+	
 	if (Son == 0) {
 		Son = 1;
         synopsis.style.backgroundColor = 'darkturquoise';
@@ -111,6 +112,8 @@ visual.onclick = function() {
 }
 
 okbtn.onclick = function() {
+	
+	
 	if (Pon == 1){
 		console.log("pon");
 		if(nm_havevalue){
@@ -168,5 +171,20 @@ okbtn.onclick = function() {
 	}
 	console.log(next_move);
 	
-	location.href = next_move;
+	
+	var giveDataToDB = firebase.database().ref('/SearchAspect/').set({
+		Production : Pon,
+		Acting: Aon,
+		Visual: Von,
+		Synopsis: Son,
+		Music:Mon 
+	},function(error){
+		if(error){
+			console.log("error occur");
+		}
+		else{
+			location.href = next_move;
+		}
+	})
+	
 }
