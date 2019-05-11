@@ -112,6 +112,7 @@ function bindeventlistener(){
 		});
 	}
 }
+/*
 function makeTempDB(moviename){
 	var initaspect = {
 						Rating:0, 
@@ -119,7 +120,7 @@ function makeTempDB(moviename){
 						};
 
 	var temp = firebase.database().ref('/review_temp/'+moviename);
-	/*var pushaspect = temp.push();
+	var pushaspect = temp.push();
 	pushaspect.set({"moviename" : moviename,
 					"production" : initaspect,
 					"acting" : initaspect,
@@ -127,14 +128,14 @@ function makeTempDB(moviename){
 					"visual" : initaspect,
 					"music" : initaspect
 	});
-	*/
+	
 	temp.set({		"Production" : initaspect,
 					"Acting" : initaspect,
 					"Synopsis" : initaspect,
 					"Visual" : initaspect,
 					"Music" : initaspect
 	});
-}
+}*/
 function judge_db(){
 	var this_db = firebase.database().ref('/review_temp/').once('value',function(snapshot){
 		var data = snapshot.val();
