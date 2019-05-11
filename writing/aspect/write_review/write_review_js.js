@@ -84,39 +84,54 @@ function clickOK(){
 		var content = inputbox.value;
 		var starrating = rating;
 		console.log(content);
-		var sendToServer = firebase.database().ref("/review_temp/"+aspect+"/").set({
-			rating : starrating,
-			review : content
-		}, function(error){
-			if (error){
-				console.log("data update failed... :(");
-			}
-			else{
-				console.log("Success!");
-				window.history.back();
-			}
+		var sendToServer = firebase.database().ref("/review_temp/").once('value',function(snapshot){
+			var data = snapshot.val();
+			var moviename = Object.keys(data);
+			console.log(moviename);
+			var sending = firebase.database().ref("/review_temp/"+moviename+"/"+aspect+"/").set({
+				Rating : starrating,
+				Review : content
+			}, function(error){
+				if (error){
+					console.log("data update failed... :(");
+				}
+				else{
+					console.log("Success!");
+					//window.history.back();
+				}
+			});
 		});
+		
 	}
 }
 
 function initialize(){
 	var aspect = parse_url();
 	var inputbox = document.getElementById("review_content");
-	var init = firebase.database().ref('/review_temp/'+aspect+'/').once('value',function(snapshot){
+	var first = firebase.database().ref('/review_temp/').once('value',function(snapshot){
 		var data = snapshot.val();
-		var rating = data["rating"];
-		var content = data["review"];
-		console.log(snapshot.val());
-		console.log(rating);
-		console.log(content);
-		if(rating == 1) s1.click();
-		else if (rating == 2) s2.click();
-		else if (rating == 3) s3.click();
-		else if (rating == 4) s4.click();
-		else if (rating == 5) s5.click();
-		
-		if (content != "") inputbox.value = content;
+		console.log(data);
+		var moviename = (Object.keys(data))[0];
+		console.log(moviename);
+		console.log(aspect);
+		var init = firebase.database().ref('/review_temp/'+moviename+"/"+aspect+'/').once('value',function(snapshot){
+			var data = snapshot.val();
+			console.log(data);
+			var rating = data["Rating"];
+			var content = data["Review"];
+			console.log(snapshot.val());
+			console.log(rating);
+			console.log(content);
+			if(rating == 1) s1.click();
+			else if (rating == 2) s2.click();
+			else if (rating == 3) s3.click();
+			else if (rating == 4) s4.click();
+			else if (rating == 5) s5.click();
+			
+			if (content != "") inputbox.value = content;
 	});
+	});
+	
 }
 
 function bindevent(){
