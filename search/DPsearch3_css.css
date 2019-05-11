@@ -90,49 +90,27 @@ td, th{
 
 
 .aspe {
-	border : none;
-	outline : none;
-	width : 300px;
-	height : 150px;
-	background-image:url(go_to_choose_aspects.png);
-	background-repeat:no-repeat;
-	background-color:white;
-	background-size:100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 80px;
+    color: #eee;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 .aspe-skip {
-	font-size: 20px;
-	border: 3px solid darkturquoise;
-	border-color : darkturquoise;
-	width: 200px;
-	height: 100px;
-	background-color: white;
-	color: darkturquoise;
-	letter-spacing: 3px;
-	font-weight: bold;
-}
-.aspe-skip:disabled {
-        font-size: 20px;
-        color: #eee;
-        border:none;
-        background-color:#ddd;
-        width: 200px;
-        height: 100px;
-        letter-spacing: 3px;
-        font-weight: bold;
-}
-
-.aspe:hover {
-	background-image: url(go_to_choose_aspects_hover.png);
-	background-repeat: no-repeat;
-	background-color: white;
-	background-size: 100%;
-}
-
-.aspe-skip:hover:enabled {
-	background-color: darkturquoise;
-	color: #eee;
-	border-color: #eee;
+    font-size: 20px;
+    border: 3px solid darkturquoise;
+    border-color: darkturquoise;
+    height: 100px;
+    background-color: white;
+    color: darkturquoise;
+    letter-spacing: 1px;
+    font-weight: bold;
+    word-wrap: break-word;
+    max-width: 200px;
 }
 
 .ok {
@@ -162,8 +140,8 @@ td, th{
 	background-size: 100%;
 	background-repeat:no-repeat;
 	position:absolute;
-	left:50%;
-	bottom:170px;
+	left:40%;
+	bottom:135px;
 	width: 100px;
 	height:50px;
 }
