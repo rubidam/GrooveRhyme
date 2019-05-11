@@ -10,6 +10,10 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+function copy_and_remove_review(name) {
+	
+}
 /*********************review part**********************************/
 function initializereviewTable() {
   /*
@@ -38,7 +42,8 @@ function refreshreviewList(name) {
 	var col1 = row.insertCell(row.cells.length);
 	col1.addEventListener("click",function(e){
 		console.log(name);
-		//location.href = "./collection.html?collection=" + name;
+		copy_and_remove_review(name);
+		location.href = "../writing/aspect/aspects.html?name=" + name;
 	})
 	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
