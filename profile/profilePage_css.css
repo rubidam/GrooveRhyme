@@ -86,29 +86,37 @@ h3 {
 }
 
 .reviewImg {
-  position : absolute;
-  left : 0%;
-  top : 0%;
-  width : 50%;
+	margin-top : 10px;
+	background-color : #eee;
+	letter-spacing: 2px;
+	height : 440px;
+	max-height: 440px;
+    overflow-y: auto;
+	position : absolute;
+	left : 0%;
+	top : 0%;
+	width : 50%;
 }
 
 .review_th {
 	height : 70px;
-	font-size: 50px;
+	font-size: 40px;
 	padding: 3px;
 }
 
 .collection {
-  font-size : 45px;
-  font-weight : bold;
-  border: 1px solid;
-  padding : 20px;
-  width : 45%;
-  height : 400px;
-  position : absolute;
-  right : 0%;
-  top : 0%;
-  margin-top : 10px;
+	font-size : 45px;
+	font-weight : bold;
+	border: 1px solid;
+	padding : 20px;
+	width : 45%;
+	height : 400px;
+	max-height: 400px;
+    overflow-y: auto;
+	position : absolute;
+	right : 0%;
+	top : 0%;
+	margin-top : 10px;
 }
 
 #collectionTable {
@@ -129,7 +137,7 @@ h3 {
 .collection_th {
 	border-bottom : 3px purple dotted;
 	height : 70px;
-	font-size: 50px;
+	font-size: 40px;
 	padding: 3px;
 }
 
