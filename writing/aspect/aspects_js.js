@@ -120,7 +120,7 @@ function bindeventlistener(){
 					var content = snapshot.val();
 					firebase.database().ref("/UserProfile/MyReview/" + keys[0]).set(content);
 					
-				}
+				})
 				firebase.database().ref("/review_temp/").remove();
 				location.href = "../../profile/profilePage.html";
 			});
