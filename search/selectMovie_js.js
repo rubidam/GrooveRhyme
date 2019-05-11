@@ -46,6 +46,16 @@ function getCategory(){
 	});
 }
 
+function deleteFromDatabase(){
+	return firebase.database().ref('/SearchCategory/').once('value', 
+	function(snapshot){
+		var myValue = snapshot.val();
+		var keyList = Object.keys(myValue);
+		var myKey = keyList[0];
+		firebase.database().ref('/SearchCategory/').child(myKey).remove();
+	});
+}
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -114,3 +124,4 @@ function printMovie(){
 
 getCategory();
 readFromDatabase();
+deleteFromDatabase();
