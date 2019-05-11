@@ -13,7 +13,7 @@ var Aon = 0;
 var Son = 0;
 var Mon = 0;
 var Von = 0;
-var currenturl = window.location.href;
+var currenturl = document.location.href;
 var firebaseConfig = {
     apiKey: "AIzaSyDDFiULsphXfbs8XMTaJr4o4dxCPvCyX8w",
     authDomain: "movielist-454ba.firebaseapp.com",
@@ -118,11 +118,12 @@ function bindeventlistener(){
 				}
 				firebase.database().ref("/review_temp/" + keys[0] + "/").once('value',function(snapshot){
 					var content = snapshot.val();
-					firebase.database().ref("/UserProfile/MyReview/" + keys[0]).set(content);
+					console.log(content);
+					firebase.database().ref("/UserProfile/MyReview/" + keys[0] + '/').set(content);
+					firebase.database().ref("/review_temp/").remove();
+					location.href = "../../profile/profilePage.html";
 					
 				})
-				firebase.database().ref("/review_temp/").remove();
-				location.href = "../../profile/profilePage.html";
 			});
 		});
 	}
@@ -160,11 +161,12 @@ function judge_db(){
 	});
 }
 function checkreview(){
-	var dbsearch = firebase.database().ref('/review_temp/'+parse_url()).once('value',function(snapshot){
+	var dbsearch = firebase.database().ref('/review_temp/'+parse_url() + '/').once('value',function(snapshot){
 		var data = snapshot.val();
 		if (data != null){
 			var key = Object.keys(data);
 			var value = data[key[0]];
+			console.log("checkreview");
 			console.log(key);
 			console.log(value);
 			for (var i = 0; i<= 4; i++){
