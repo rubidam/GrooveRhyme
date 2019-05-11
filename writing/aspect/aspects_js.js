@@ -57,7 +57,7 @@ function bindeventlistener(){
 	back.onclick = function(){
 		var deletetemp = firebase.database().ref('/').child('/review_temp/').remove();
 		console.log("a");
-		document.location.href = "../writing.html";
+		history.back();
 	}
 	
 	production.onclick = function() {
