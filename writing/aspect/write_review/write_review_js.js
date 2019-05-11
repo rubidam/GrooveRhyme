@@ -103,8 +103,10 @@ function initialize(){
 	var aspect = parse_url();
 	var inputbox = document.getElementById("review_content");
 	var init = firebase.database().ref('/review_temp/'+aspect+'/').once('value',function(snapshot){
-		var rating = snapshot.val().rating;
-		var content = snapshot.val().review;
+		var data = snapshot.val();
+		var rating = data["rating"];
+		var content = data["review"];
+		console.log(snapshot.val());
 		console.log(rating);
 		console.log(content);
 		if(rating == 1) s1.click();

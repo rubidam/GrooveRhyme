@@ -26,20 +26,23 @@
 			</div>
 		</center>
 	<div id = "middle">
-		<input id = "search_input" placeholder = "Search your movie">
-		<button id = "searchbutton"
-               type="button"><i class = "fa fa-search"></i>
-	</div>
-	<div>
-		<img src = "" id = "poster" onerror = "this.src = './default.jpg'">
-	</div>
-	<div>
+		<div>
+			<input id = "search_input" placeholder = "Search your movie">
+			<button id = "searchbutton"
+				   type="button"><i class = "fa fa-search"></i>
+		</div>
+		<div>
+			<img src = "" id = "poster" onerror = "this.src = './default.jpg'">
+		</div>
+		<div>
 			<input id="ok"
 					type="button"
 					value="OK"
 					class="ok"
-					onclick="okPressListener()">
+					onclick="okPressListener()"
+					disabled = true>
 		</div>
+	</div>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
