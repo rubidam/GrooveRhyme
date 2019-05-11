@@ -34,12 +34,11 @@ function apply() {
     var loc = document.location.href;
     var query = extractquery(loc);
     var splitquery;
+    var aspeq;
     var list = [];
     var category = document.getElementById("skip");
-    splitquery = query.split("=");
-    for (var i = 1; i < splitquery.length - 1; i++) {
-        list.push(splitquery[i].split("&")[1].toUpperCase());
-    }
+    aspeq = query.split("=");
+   
     if (query != "") {
         splitquery = query.split("=")[1].split("&")[0].toUpperCase();
         console.log("splitquery1 : " + splitquery);
@@ -52,6 +51,17 @@ function apply() {
         splitquery = "NONE";
         category.value = splitquery;
     }
+    if (splitquery == "NONE") {
+        for (var i = 0; i < aspeq.length - 1; i++) {
+            list.push(aspeq[i].split("&")[1].toUpperCase());
+        }
+    }
+    else {
+        for (var i = 1; i < aspeq.length - 1; i++) {
+            list.push(aspeq[i].split("&")[1].toUpperCase());
+        }
+    }
+    
     var aspeskip = document.getElementById("aspeskip");
     var listjoin = list.join(", ");
     aspeskip.value = listjoin;

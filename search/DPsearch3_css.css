@@ -109,8 +109,7 @@ td, th{
     color: darkturquoise;
     letter-spacing: 1px;
     font-weight: bold;
-    word-wrap: break-word;
-    max-width: 200px;
+    white-space : pre-line;
 }
 
 .ok {
