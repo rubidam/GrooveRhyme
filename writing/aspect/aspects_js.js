@@ -116,7 +116,11 @@ function bindeventlistener(){
 				if(movienames.includes(keys[0])){
 					firebase.database().ref("/UserProfile/MyReview/"+keys[0] + "/").remove();
 				}
-				firebase.database().ref("/UserProfile/MyReview/").set(data);
+				firebase.database().ref("/review_temp/" + keys[0] + "/").once('value',function(snapshot){
+					var content = snapshot.val();
+					firebase.database().ref("/UserProfile/MyReview/" + keys[0]).set(content);
+					
+				}
 				firebase.database().ref("/review_temp/").remove();
 				//location.href = "../../profile/profilePage.html";
 			});
