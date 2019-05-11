@@ -1,6 +1,19 @@
 // This allows the Javascript code inside this block to only run when the page
 // has finished loading in the browser.
 
+var firebaseConfig = {
+    apiKey: "AIzaSyDDFiULsphXfbs8XMTaJr4o4dxCPvCyX8w",
+    authDomain: "movielist-454ba.firebaseapp.com",
+    databaseURL: "https://movielist-454ba.firebaseio.com",
+    projectId: "movielist-454ba",
+    storageBucket: "movielist-454ba.appspot.com",
+    messagingSenderId: "444347257371",
+    appId: "1:444347257371:web:080d977ab1da9906"
+  };
+firebase.initializeApp(firebaseConfig);
+
+var main = "../main.html";
+
 function extractquery(loc){
 	var query = ""
 	var queryflag = 0;
@@ -31,6 +44,7 @@ function okPressListener(){
 	nextloc = nextloc + query;
 	location.href = nextloc;
 }
+
 function apply() {
     var loc = document.location.href;
     var query = extractquery(loc);
@@ -54,5 +68,28 @@ function apply() {
         var skip = document.getElementById("aspeskip");
         skip.disabled = true;
     }
+	
+	var deleteButton = document.getElementById("backspace");
+	var homeButton = document.getElementById("homeButton");
+	
+	deleteButton.onclick = function(){
+		deleteFromDatabase();
+	}
+	homeButton.onclick = function(){
+		deleteFromDatabase();
+	}
 }
+
+function deleteFromDatabase(){
+	return firebase.database().ref('/SearchCategory/').once('value', 
+	function(snapshot){
+		var myValue = snapshot.val();
+		var keyList = Object.keys(myValue);
+		var myKey = keyList[0];
+		firebase.database().ref('/SearchCategory/').child(myKey).remove();
+		location.href = main;
+		
+	});
+}
+
 apply();
