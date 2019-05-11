@@ -34,7 +34,7 @@ function sflistener(){
 	});
 	sf.addEventListener('click',function(e){
 		category = category + "SF Fantasy";
-		next_move = next_move + "category=SF FANTASY";
+		next_move = next_move + "category=SF";
 		pushCategory(category);
 	});
 }
@@ -62,7 +62,7 @@ function crimelistener(){
 	});
 	crime.addEventListener('click',function(e){
 		category = category + "Crime Noir";
-		next_move = next_move + "category=CRIME NOIR";
+		next_move = next_move + "category=CRIME";
 		pushCategory(category);
 	});
 }
