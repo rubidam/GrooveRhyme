@@ -134,3 +134,7 @@ var maxreviewrow = 1;
 getReviewList();
 var collectionlist=[];
 getCollectionList();
+//////////////////////////backpart
+function backback(){
+	document.location.href = "../main.html";
+}
