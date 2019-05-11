@@ -7,6 +7,7 @@ var synopsis = document.getElementById("Synopsis");
 var music = document.getElementById("Music");
 var visual = document.getElementById("Visual");
 var back = document.getElementById("backspace");
+var okbtn = document.getElementById("ok");
 var Pon = 0;
 var Aon = 0;
 var Son = 0;
@@ -49,61 +50,66 @@ function bindeventlistener(){
 	}
 	
 	production.onclick = function() {
-	console.log("production");
-	if (Pon == 0) {
-		Pon = 1;
-		production.style.backgroundColor = 'darkturquoise';
+		console.log("production");
+		if (Pon == 0) {
+			Pon = 1;
+			production.style.backgroundColor = 'darkturquoise';
+		}
+		else {
+			Pon = 0;
+			production.style.backgroundColor = '';
+		}
 	}
-	else {
-		Pon = 0;
-		production.style.backgroundColor = '';
+	acting.onclick = function() {
+		console.log("acting");
+		if (Aon == 0) {
+			Aon = 1;
+			acting.style.backgroundColor = 'darkturquoise';
+		}
+		else {
+			Aon = 0;
+			acting.style.backgroundColor = '';
+		}
 	}
-}
-acting.onclick = function() {
-	console.log("acting");
-	if (Aon == 0) {
-		Aon = 1;
-        acting.style.backgroundColor = 'darkturquoise';
+	synopsis.onclick = function() {
+		console.log("synopsis");
+		if (Son == 0) {
+			Son = 1;
+			synopsis.style.backgroundColor = 'darkturquoise';
+		}
+		else {
+			Son = 0;
+			synopsis.style.backgroundColor = '';
+		}
 	}
-	else {
-		Aon = 0;
-		acting.style.backgroundColor = '';
+	music.onclick = function() {
+		console.log("music");
+		if (Mon == 0) {
+			Mon = 1;
+			music.style.backgroundColor = 'darkturquoise';
+		}
+		else {
+			Mon = 0;
+			music.style.backgroundColor = '';
+		}
 	}
-}
-synopsis.onclick = function() {
-	console.log("synopsis");
-	if (Son == 0) {
-		Son = 1;
-        synopsis.style.backgroundColor = 'darkturquoise';
+	visual.onclick = function() {
+		console.log("visual");
+		if (Von == 0) {
+			Von = 1;
+			visual.style.backgroundColor = 'darkturquoise';
+		}
+		else {
+			Von = 0;
+			visual.style.backgroundColor = '';
+		}
 	}
-	else {
-		Son = 0;
-		synopsis.style.backgroundColor = '';
+	okbtn.onclick = function(){
+		var updateUserReview = firebase.database().ref("/review_temp/").once('value',function(snapshot){
+			var data = snapshot.val();
+			
+		});
 	}
-}
-music.onclick = function() {
-	console.log("music");
-	if (Mon == 0) {
-		Mon = 1;
-        music.style.backgroundColor = 'darkturquoise';
-	}
-	else {
-		Mon = 0;
-		music.style.backgroundColor = '';
-	}
-}
-visual.onclick = function() {
-	console.log("visual");
-	if (Von == 0) {
-		Von = 1;
-        visual.style.backgroundColor = 'darkturquoise';
-	}
-	else {
-		Von = 0;
-		visual.style.backgroundColor = '';
-	}
-}
-
 }
 function makeTempDB(moviename){
 	var initaspect = {
@@ -122,11 +128,11 @@ function makeTempDB(moviename){
 	});
 	*/
 	temp.set({"moviename" : moviename,
-					"production" : initaspect,
-					"acting" : initaspect,
-					"synopsis" : initaspect,
-					"visual" : initaspect,
-					"music" : initaspect
+					"Production" : initaspect,
+					"Acting" : initaspect,
+					"Synopsis" : initaspect,
+					"Visual" : initaspect,
+					"Music" : initaspect
 	});
 }
 function judge_db(){
@@ -142,23 +148,21 @@ function checkreview(){
 		var data = snapshot.val();
 		if (data != null){
 			var key = Object.keys(data);
-			var value = data[key[1]];
+			var value = data[key[0]];
 			console.log(key);
 			console.log(value);
-			if (value[acting["review"]] != undefined){
-				acting.style.backgroundColor = "blue";
-			}
-			if(value[production["review"]] != undefined){
-				production.style.backgroundColor = "blue";
-			}
-			if(value[synopsis["review"]] != undefined){
-				synopsis.style.backgroundColor = "blue";
-			}
-			if(value[music["review"]] != undefined){
-				music.style.backgroundColor = "blue";
-			}
-			if(value[visual["review"]] != undefined){
-				visual.style.backgroundColor = "blue";
+			for (var i = 0; i<= 5; i++){
+				if(data[key[i]] === 'string'){}
+				else {
+					var temp = data[key[i]];
+					if (temp["rating"] != 0 || temp["review"] != ""){
+						if(key[i] == "Acting"){acting.style.backgroundColor = "darkturquoise"}
+						else if(key[i] == "Music"){music.style.backgroundColor = "darkturquoise"}
+						else if(key[i] == "Synopsis"){synopsis.style.backgroundColor = "darkturquoise"}
+						else if(key[i] == "Production"){production.style.backgroundColor = "darkturquoise"}
+						else if(key[i] == "Visual"){visual.style.backgroundColor = "darkturquoise"}
+					}
+				}
 			}
 		}
 		console.log(data);
