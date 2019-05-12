@@ -13,6 +13,13 @@ var movieList = [];
 
 var categorySelected = [];
 var aspectSelected = [];
+var starRating = [];
+
+var firstidx = 0;
+var secondidx = 0;
+var collectionnames = [];
+var idx = -1;
+var fstorsnd = 0;
 
 function readFromDatabase(){
 	return firebase.database().ref('/MovieList/').once('value', 
@@ -20,18 +27,23 @@ function readFromDatabase(){
 		var myValue = snapshot.val();
 		var keyList = Object.keys(myValue);
 		
-		for(var i = 0 ; i < keyList.length - 1 ; i++){
+		for(var i = 0 ; i < keyList.length ; i++){
 			var myKey = keyList[i];
 			var category = Object.keys(myValue[myKey].Category);
 			//console.log(category);
+			var rating = myValue[myKey].Rating;
+			//console.log(rating);
+			var aspect = Object.keys(rating);
+			//console.log(aspect);
 			
 			for (var j = 0 ; j < category.length ; j++){
 				if (category[j] == categorySelected[0]){
 					movieList.push(myKey);
+					starRating.push({"movie" : myKey, "Acting" : rating[aspect[0]], "Music" : rating[aspect[1]], "Production" : rating[aspect[2]], "Synopsis" : rating[aspect[3]], "Visual" : rating[aspect[4]]});
 				}
 			}
 		}
-		//console.log(movieList);
+		console.log(movieList);
 		printMovie();
 	});
 }
@@ -43,7 +55,44 @@ function getCategory(){
 		var keyList = Object.keys(myValue);
 		var myKey = keyList[0];
 		categorySelected.push(myValue[myKey]);
+		console.log(categorySelected);
 	});
+}
+
+function getAspect(){
+	return firebase.database().ref('/SearchAspect/').once('value',
+	function(snapshot){
+		var myValue = snapshot.val();
+		var keyList = Object.keys(myValue);
+		
+		for (var i = 0 ; i < keyList.length ; i++){
+			var myKey = keyList[i];
+			//console.log(myKey);
+			//console.log(myValue[myKey]);
+			if (myValue[myKey] == 1){
+				aspectSelected.push(myKey);
+				console.log(aspectSelected);
+			}
+		}
+	});
+}
+
+function sortByRating(){
+	var sortedMovie = [];
+	for (var i = 0 ; i < starRating.length ; i++){
+		for (var j = i ; j > 0 ; j--){
+			if (starRating[j-1][aspectSelected] < starRating[j][aspectSelected]){
+				var temp = starRating[j];
+				starRating[j] = starRating[j-1];
+				starRating[j-1] = temp;
+			}
+		}  
+	}
+	for (var k = 0 ; k < starRating.length ; k++){
+		sortedMovie[k] = starRating[k]["movie"]; 
+	}
+	console.log(sortedMovie);
+	return sortedMovie;
 }
 
 function deleteFromDatabase(){
@@ -55,10 +104,6 @@ function deleteFromDatabase(){
 		firebase.database().ref('/SearchCategory/').child(myKey).remove();
 		firebase.database().ref('/').child("SearchAspect").remove();
 	});
-}
-
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function createMovieName(value) {
@@ -81,22 +126,18 @@ function printMovie(){
 	var first = document.getElementById("firstMovie");
 	var second = document.getElementById("secondMovie");
 	
-	var firstIndex = getRandomInt(0, movieList.length - 1);
+	var firstIndex = 0;
+	var secondIndex = 1;
 	
-	if (firstIndex + 1 < movieList.length - 1){
-		var secondIndex = firstIndex + 1;
-	}
-	else{
-		var secondIndex = firstIndex - 1;
-	}
-
-    var getstorageFirst = firebase.storage().ref().child(createMovieName(movieList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
-        console.log("create : " + createMovieName(movieList[firstIndex]));
+	var sortedList = sortByRating();
+	
+    var getstorageFirst = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
+        console.log("create : " + createMovieName(sortedList[firstIndex]));
 		console.log(url);
 		first.src = url;
 	});
 	
-	var getstorageSecond = firebase.storage().ref().child(createMovieName(movieList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
+	var getstorageSecond = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
 		second.src = url;
 	});
@@ -104,27 +145,32 @@ function printMovie(){
 	
     refreshButton.onclick = function () {
         var refreshButton = document.getElementById("refreshButton");
-        var newfirstIndex = getRandomInt(0, movieList.length - 1);
-        var newsecondIndex;
-		if (newfirstIndex + 1 < movieList.length - 1){
-			newsecondIndex = newfirstIndex + 1;
+		firstIndex = firstIndex + 2;
+		secondIndex = secondIndex + 2;
+		
+		if (firstIndex > sortedList.length - 1){
+			if (secondIndex == 2){
+				firstIndex = 1;
+			}
+			else {
+				firstIndex = 0;
+				secondIndex = 1;
+			}
 		}
-		else{
-			newsecondIndex = newfirstIndex - 1;
+		else if (secondIndex > sortedList.length - 1){
+			secondIndex = 0;
 		}
-        var getstorageFirstNew = firebase.storage().ref().child(createMovieName(movieList[newfirstIndex]) + ".jpg").getDownloadURL().then(function (url) {
-            console.log("create : " + createMovieName(movieList[firstIndex]));
+        var getstorageFirstNew = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
+            console.log("create : " + createMovieName(sortedList[firstIndex]));
 
 			console.log(url);
 			first.src = url;
 		});
 		
-		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(movieList[newsecondIndex]) + ".jpg").getDownloadURL().then(function(url){
+		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
 			console.log(url);
 			second.src = url;
         });
-        firstIndex = newfirstIndex;
-        secondIndex = newsecondIndex;
     }
     var nextMove = "./movieReview.html";
     first.onclick = function () {
@@ -140,37 +186,60 @@ function printMovie(){
     }
 }
 
-function collection_click(){
+
+function closeForm(){
+	var popup = document.getElementById("collection");
+	var table = document.getElementById("collectionList");
+	for (var i = 1; i<= collectionnames.length; i++){
+		console.log(collectionnames[i]);
+		table.deleteRow(1);
+	}
+	popup.style.display = "none";
 	
 }
 
+function checkrow(index,row){
+	var okbtn = document.getElementById("OKsign");
+	if (idx != index){
+		var table = document.getElementById("collectionList").rows;
+		//console.log(table);
+		for (var i = 1; i<table.length; i++){
+			if (table[i].style.backgroundColor != "#ddd") {
+				table[i].style.backgroundColor = "#ddd";
+			}
+		}
+		row.style.backgroundColor = "#ccc";
+		okbtn.disabled = false;
+		idx = index;
+		//console.log(idx);
+	}
+	else{
+		//console.log("#ddd wrong");
+		//console.log(row);
+		//console.log(row.style.backgroundColor);
+		row.style.backgroundColor = "#ddd";
+		okbtn.disabled = true;
+		idx = -1;
+	}
+}
+
 function showcollectionlist(collectionbutton){
+	document.getElementById("collection").style.display = "block";
+	
 	var ctable = document.getElementById("collectionList");
+	document.getElementById("collection").style.display = "block";
 	var collection = firebase.database().ref('/UserProfile/MyCollection').once('value',function(snapshot){
-		var list = snapshot.val()
+		var list = snapshot.val();
 		var keys = Object.keys(list);
-		for (var i = 1; i< keys.length; i++){
-			var row = ctable.insertRow(i);
+		collectionnames = keys;
+		console.log(keys);
+		for (var k = 1; k <= keys.length; k++){
+			var row = ctable.insertRow(k);
 			var cell = row.insertCell(0);
-			cell.innerHTML = keys[i];
-			cell.addEventListener('click',function(event){
-				document.getElementById("collcetion").style.display = "block";
-				var buttonid = collectionbutton.id;
-				var update = firebase.database().ref('/UserProfile/MyCollection/' + keys[i]);
-				if (buttonid === "firstPlusButton"){
-					var entry ={};
-					entry[movieList[firstIndex]] = 1;
-					update.update(entry);
-				}
-				else if(buttonid === "secondPlusButton"){
-					var entry = {};
-					entry[movieList[secondIndex]] = 1;
-					update.update(entry);
-				}
-				else{
-					console.log("---------------errorerror-----------------");
-				}
-			});
+			cell.innerHTML = keys[k-1];
+			var temp = k;
+			row.style.backgroundColor = "#ddd";
+			row.addEventListener('click',checkrow.bind(this,k-1,row));
 		}
 	});
 }
@@ -180,6 +249,35 @@ function showcollectionlist(collectionbutton){
 function bindevent(){
 	var backbutton = document.getElementById("backbutton");
 	var homebutton = document.getElementById("homeButton");
+	var firstbtn = document.getElementById("firstPlusButton");
+	var secondbtn = document.getElementById("secondPlusButton");
+	var okbtn = document.getElementById("OKsign");
+	
+	
+	okbtn.onclick = function(){
+		var closebtn = document.getElementById("closebtn");
+		console.log(collectionnames[idx]);
+		var update = firebase.database().ref('/UserProfile/MyCollection/' + collectionnames[idx]);
+		if (fstorsnd === 1){
+			var entry ={};
+			entry[movieList[firstidx]] = 1;
+			console.log(entry);
+			update.update(entry);
+		}
+		
+		else if(fstorsnd === 2){
+			var entry = {};
+			entry[movieList[secondidx]] = 1;
+			console.log(entry);
+			update.update(entry);
+		}
+		else{
+			console.log("---------------errorerror-----------------");
+		}
+		fstorsnd = 0;
+		idx = -1;
+		closebtn.click();
+	};
 	
 	backbutton.onclick = function(){
 		var value = deleteFromDatabase();
@@ -204,11 +302,21 @@ function bindevent(){
 				console.log(reason);
 			}
 		)
-		//location.href = 
 	};
+	firstbtn.onclick = function(){
+		console.log("first");
+		fstorsnd = 1;
+		showcollectionlist(firstbtn);
+	};
+	secondbtn.onclick = function(){
+		console.log("second");
+		fstorsnd = 2;
+		showcollectionlist(secondbtn);
+	}
 }
 
 getCategory();
+getAspect();
 readFromDatabase();
 bindevent();
 //deleteFromDatabase();
