@@ -13,6 +13,9 @@ var movieList = [];
 
 var categorySelected = [];
 var aspectSelected = [];
+var firstidx = 0;
+var secondidx = 0;
+var collectionnames = [];
 
 function readFromDatabase(){
 	return firebase.database().ref('/MovieList/').once('value', 
@@ -89,7 +92,10 @@ function printMovie(){
 	else{
 		var secondIndex = firstIndex - 1;
 	}
-
+	
+	firstidx = firstIndex;
+	secondidx = secondIndex;
+	
     var getstorageFirst = firebase.storage().ref().child(createMovieName(movieList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
         console.log("create : " + createMovieName(movieList[firstIndex]));
 		console.log(url);
@@ -140,37 +146,54 @@ function printMovie(){
     }
 }
 
-function collection_click(){
+
+function closeForm(){
+	var popup = document.getElementById("collection");
+	var table = document.getElementById("collectionList");
+	for (var i = 0; i< collectionnames.length; i++){
+		console.log(collectionnames[i]);
+		table.deleteRow(0);
+	}
+	popup.style.display = "none";
 	
 }
 
+function clickcollection(collectionbutton,idx){
+	console.log(collectionnames[idx]);
+	var buttonid = collectionbutton.id;
+	var update = firebase.database().ref('/UserProfile/MyCollection/' + collectionnames[idx]);
+	if (buttonid === "firstPlusButton"){
+		var entry ={};
+		entry[movieList[firstidx]] = 1;
+		console.log(entry);
+		update.update(entry);
+	}
+	else if(buttonid === "secondPlusButton"){
+		var entry = {};
+		entry[movieList[secondidx]] = 1;
+		console.log(entry);
+		update.update(entry);
+	}
+	else{
+		console.log("---------------errorerror-----------------");
+	}
+}
+
+
 function showcollectionlist(collectionbutton){
 	var ctable = document.getElementById("collectionList");
+	document.getElementById("collection").style.display = "block";
 	var collection = firebase.database().ref('/UserProfile/MyCollection').once('value',function(snapshot){
-		var list = snapshot.val()
+		var list = snapshot.val();
 		var keys = Object.keys(list);
-		for (var i = 1; i< keys.length; i++){
-			var row = ctable.insertRow(i);
+		collectionnames = keys;
+		console.log(keys);
+		for (var k = 0; k< keys.length; k++){
+			var row = ctable.insertRow(k);
 			var cell = row.insertCell(0);
-			cell.innerHTML = keys[i];
-			cell.addEventListener('click',function(event){
-				document.getElementById("collcetion").style.display = "block";
-				var buttonid = collectionbutton.id;
-				var update = firebase.database().ref('/UserProfile/MyCollection/' + keys[i]);
-				if (buttonid === "firstPlusButton"){
-					var entry ={};
-					entry[movieList[firstIndex]] = 1;
-					update.update(entry);
-				}
-				else if(buttonid === "secondPlusButton"){
-					var entry = {};
-					entry[movieList[secondIndex]] = 1;
-					update.update(entry);
-				}
-				else{
-					console.log("---------------errorerror-----------------");
-				}
-			});
+			cell.innerHTML = keys[k];
+			var temp = k;
+			row.addEventListener('click',clickcollection.bind(this,collectionbutton,k));
 		}
 	});
 }
@@ -180,7 +203,8 @@ function showcollectionlist(collectionbutton){
 function bindevent(){
 	var backbutton = document.getElementById("backbutton");
 	var homebutton = document.getElementById("homeButton");
-	
+	var firstbtn = document.getElementById("firstPlusButton");
+	var secondbtn = document.getElementById("secondPlusButton");
 	backbutton.onclick = function(){
 		var value = deleteFromDatabase();
 		value.then(
@@ -206,6 +230,14 @@ function bindevent(){
 		)
 		//location.href = 
 	};
+	firstbtn.onclick = function(){
+		console.log("first");
+		showcollectionlist(firstbtn);
+	};
+	secondbtn.onclick = function(){
+		console.log("second");
+		showcollectionlist(secondbtn);
+	}
 }
 
 getCategory();
