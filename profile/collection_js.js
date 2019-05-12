@@ -34,6 +34,7 @@ function refreshList(name) {
 	col1.setAttribute("class","overlap");
 	col1.addEventListener("click",function(e){
 		console.log(name);
+		location.href = "../search/movieReview.html?" + name;
 	})
 	col1.innerHTML = name;
 }
@@ -41,6 +42,9 @@ function makeTable(lst) {
 	initializeTable();
 	var len = lst.length;
 	for (var i=len-1;i>=0;i--) {
+		if(lst[i] == 'z'){
+			continue;
+		}
 		refreshList(lst[i]);
 	}
 }
