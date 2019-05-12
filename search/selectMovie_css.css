@@ -13,6 +13,33 @@
   margin-top : 10px;
 }
 
+.popup{
+	position : relative;
+	width : 300px;
+	height : 500px;
+	top : -500px;
+	left : 300px;
+	border : 3px solid #f1f1f1;
+	background-color : #eee;
+	
+	z-index : 3;
+}
+
+#closebtn{
+	position:absolute;
+	float : right;
+}
+
+#collectionList{
+	border:1px solid #444444;
+}
+
+#OKsign{
+	position : static;
+	background-color : #ddd;
+	z-index : 5;
+}
+
 #backbutton {
   font-size: 40px;
   background-color :darkturquoise;

@@ -137,6 +137,29 @@ function printMovie(){
 
     }
 }
+
+function collection_click(){
+	
+}
+
+function showcollectionlist(){
+	var ctable = document.getElementById("collectionList");
+	var collection = firebase.database().ref('/UserProfile/MyCollection').once('value',function(snapshot){
+		var list = snapshot.val()
+		var keys = Object.keys(list);
+		for (var i = 1; i< keys.length; i++){
+			var row = ctable.insertRow(i);
+			var cell = row.insertCell(0);
+			cell.innerHTML = keys[i];
+			cell.addEventListener('click',function(event){
+				var 
+			});
+		}
+	});
+}
+
+
+
 function bindevent(){
 	var backbutton = document.getElementById("backbutton");
 	var homebutton = document.getElementById("homeButton");
@@ -171,4 +194,5 @@ function bindevent(){
 getCategory();
 readFromDatabase();
 bindevent();
+showcollectionlist();
 //deleteFromDatabase();
