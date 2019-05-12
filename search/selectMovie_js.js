@@ -144,7 +144,7 @@ function collection_click(){
 	
 }
 
-function showcollectionlist(){
+function showcollectionlist(collectionbutton){
 	var ctable = document.getElementById("collectionList");
 	var collection = firebase.database().ref('/UserProfile/MyCollection').once('value',function(snapshot){
 		var list = snapshot.val()
@@ -154,7 +154,22 @@ function showcollectionlist(){
 			var cell = row.insertCell(0);
 			cell.innerHTML = keys[i];
 			cell.addEventListener('click',function(event){
-				var 
+				document.getElementById("collcetion").style.display = "block";
+				var buttonid = collectionbutton.id;
+				var update = firebase.database().ref('/UserProfile/MyCollection/' + keys[i]);
+				if (buttonid === "firstPlusButton"){
+					var entry ={};
+					entry[movieList[firstIndex]] = 1;
+					update.update(entry);
+				}
+				else if(buttonid === "secondPlusButton"){
+					var entry = {};
+					entry[movieList[secondIndex]] = 1;
+					update.update(entry);
+				}
+				else{
+					console.log("---------------errorerror-----------------");
+				}
 			});
 		}
 	});
@@ -196,5 +211,4 @@ function bindevent(){
 getCategory();
 readFromDatabase();
 bindevent();
-showcollectionlist();
 //deleteFromDatabase();
