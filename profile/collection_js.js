@@ -16,7 +16,14 @@ $('html').click(function(e) {
 		location.href = "./profilePage.html";
 	}
 });
-
+function collectiondelete() {
+	var para = getUrlVars();
+	var colname = para['collection'].split('%20').join(' ');
+	return firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').once('value', function(snapshot){
+		firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').remove();
+		location.href = "./profilePage.html";
+	});
+}
 function initializeTable() {
   /*
     Initialize the courses in the right plane
