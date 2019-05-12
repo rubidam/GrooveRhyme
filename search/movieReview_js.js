@@ -114,6 +114,33 @@ function insertCell() {
         
     })
 }
+
+
+function makeTempDB(moviename) {
+    var initaspect = {
+        Rating: 0,
+        Review: ""
+    };
+
+    var temp = firebase.database().ref('/review_temp/' + moviename);
+	
+    temp.set({
+        "Production": initaspect,
+        "Acting": initaspect,
+        "Synopsis": initaspect,
+        "Visual": initaspect,
+        "Music": initaspect
+    });
+}
+
+var next_move = "../writing/aspect/aspects.html?"
+
+function postPressListener() {
+    next_move = next_move + "name=" + movieName;
+    makeTempDB(movieName);
+    location.href = next_move;
+};
+
 insertCell();
 imgSrc();
 star();
