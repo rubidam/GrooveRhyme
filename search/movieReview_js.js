@@ -17,10 +17,25 @@ console.log(movieName);
 var title = document.getElementById("title");
 title.innerHTML = movieName;
 
+function createMovieName(value) {
+    var movieNameElement = value.split(":");
+
+    var moviePicture = "";
+    for (var i = 0; i < movieNameElement.length; i++) {
+        if (i > 0) {
+            moviePicture = moviePicture + movieNameElement[i];
+        }
+        else {
+            moviePicture = moviePicture + movieNameElement[i];
+        }
+    }
+
+    return moviePicture;
+}
+
 function imgSrc() {
     var image = document.getElementById("image");
-    var getstorageFirst = firebase.storage().ref().child(movieName + ".jpg").getDownloadURL().then(function (url) {
-        console.log("create : " + movieName);
+    var getstorageFirst = firebase.storage().ref().child(createMovieName(movieName) + ".jpg").getDownloadURL().then(function (url) {
         image.src = url;
     });
 }
@@ -99,6 +114,33 @@ function insertCell() {
         
     })
 }
+
+
+function makeTempDB(moviename) {
+    var initaspect = {
+        Rating: 0,
+        Review: ""
+    };
+
+    var temp = firebase.database().ref('/review_temp/' + moviename);
+	
+    temp.set({
+        "Production": initaspect,
+        "Acting": initaspect,
+        "Synopsis": initaspect,
+        "Visual": initaspect,
+        "Music": initaspect
+    });
+}
+
+var next_move = "../writing/aspect/aspects.html?"
+
+function postPressListener() {
+    next_move = next_move + "name=" + movieName;
+    makeTempDB(movieName);
+    location.href = next_move;
+};
+
 insertCell();
 imgSrc();
 star();
