@@ -211,12 +211,8 @@ function checkrow(index,row){
 		row.style.backgroundColor = "#ccc";
 		okbtn.disabled = false;
 		idx = index;
-		//console.log(idx);
 	}
 	else{
-		//console.log("#ddd wrong");
-		//console.log(row);
-		//console.log(row.style.backgroundColor);
 		row.style.backgroundColor = "#ddd";
 		okbtn.disabled = true;
 		idx = -1;
