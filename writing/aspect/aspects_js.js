@@ -188,8 +188,6 @@ function bindeventlistener(){
 				})
 			}
 		})
-		console.log(movielistreview);
-		movielistreview.then(function(){console.log("this")});
 	}
 }
 /*
