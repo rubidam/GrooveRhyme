@@ -36,14 +36,30 @@ function readFromDatabase(){
 			var aspect = Object.keys(rating);
 			//console.log(aspect);
 			
-			for (var j = 0 ; j < category.length ; j++){
-				if (category[j] == categorySelected[0]){
+			if (aspectSelected = ''){
+				for (var j = 0 ; j < category.length ; j++){
+					if (category[j] == categorySelected[0]){
+						movieList.push(myKey);
+					}
+				}
+			}
+			else{
+				if (categorySelected == ''){
 					movieList.push(myKey);
 					starRating.push({"movie" : myKey, "Acting" : rating[aspect[0]], "Music" : rating[aspect[1]], "Production" : rating[aspect[2]], "Synopsis" : rating[aspect[3]], "Visual" : rating[aspect[4]]});
+				}
+				else{
+					for (var j = 0 ; j < category.length ; j++){
+						if (category[j] == categorySelected[0]){
+							movieList.push(myKey);
+							starRating.push({"movie" : myKey, "Acting" : rating[aspect[0]], "Music" : rating[aspect[1]], "Production" : rating[aspect[2]], "Synopsis" : rating[aspect[3]], "Visual" : rating[aspect[4]]});
+						}
+					}
 				}
 			}
 		}
 		console.log(movieList);
+		console.log(starRating);
 		printMovie();
 	});
 }
@@ -52,9 +68,11 @@ function getCategory(){
 	return firebase.database().ref('/SearchCategory/').once('value', 
 	function(snapshot){
 		var myValue = snapshot.val();
-		var keyList = Object.keys(myValue);
-		var myKey = keyList[0];
-		categorySelected.push(myValue[myKey]);
+		if (myValue != null){
+			var keyList = Object.keys(myValue);
+			var myKey = keyList[0];
+			categorySelected.push(myValue[myKey]);
+		}
 		console.log(categorySelected);
 	});
 }
@@ -63,15 +81,18 @@ function getAspect(){
 	return firebase.database().ref('/SearchAspect/').once('value',
 	function(snapshot){
 		var myValue = snapshot.val();
-		var keyList = Object.keys(myValue);
 		
-		for (var i = 0 ; i < keyList.length ; i++){
-			var myKey = keyList[i];
-			//console.log(myKey);
-			//console.log(myValue[myKey]);
-			if (myValue[myKey] == 1){
-				aspectSelected.push(myKey);
-				console.log(aspectSelected);
+		if (myValue != null){
+			var keyList = Object.keys(myValue);
+			
+			for (var i = 0 ; i < keyList.length ; i++){
+				var myKey = keyList[i];
+				//console.log(myKey);
+				//console.log(myValue[myKey]);
+				if (myValue[myKey] == 1){
+					aspectSelected.push(myKey);
+					console.log(aspectSelected);
+				}
 			}
 		}
 	});
@@ -99,10 +120,24 @@ function deleteFromDatabase(){
 	return firebase.database().ref('/SearchCategory/').once('value', 
 	function(snapshot){
 		var myValue = snapshot.val();
-		var keyList = Object.keys(myValue);
-		var myKey = keyList[0];
-		firebase.database().ref('/SearchCategory/').child(myKey).remove();
-		firebase.database().ref('/').child("SearchAspect").remove();
+		if (myValue != null){
+			if (aspectSelected == ''){
+				var keyList = Object.keys(myValue);
+				var myKey = keyList[0];
+				firebase.database().ref('/SearchCategory/').child(myKey).remove();
+			}
+			else{
+				var keyList = Object.keys(myValue);
+				var myKey = keyList[0];
+				firebase.database().ref('/SearchCategory/').child(myKey).remove();
+				firebase.database().ref('/').child("SearchAspect").remove();
+			}
+		}
+		else{
+			if (aspectSelected != ''){
+				firebase.database().ref('/').child("SearchAspect").remove();
+			}
+		}
 	});
 }
 
@@ -129,7 +164,12 @@ function printMovie(){
 	var firstIndex = 0;
 	var secondIndex = 1;
 	
-	var sortedList = sortByRating();
+	if (aspectSelected == ''){
+		var sortedList = movieList;
+	}
+	else{
+		var sortedList = sortByRating();
+	}
 	
     var getstorageFirst = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
         console.log("create : " + createMovieName(sortedList[firstIndex]));
