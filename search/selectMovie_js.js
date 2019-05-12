@@ -36,7 +36,7 @@ function readFromDatabase(){
 			var aspect = Object.keys(rating);
 			//console.log(aspect);
 			
-			if (aspectSelected = ''){
+			if (aspectSelected == ''){
 				for (var j = 0 ; j < category.length ; j++){
 					if (category[j] == categorySelected[0]){
 						movieList.push(myKey);
@@ -74,6 +74,7 @@ function getCategory(){
 			categorySelected.push(myValue[myKey]);
 		}
 		console.log(categorySelected);
+		getAspect();
 	});
 }
 
@@ -95,6 +96,7 @@ function getAspect(){
 				}
 			}
 		}
+		readFromDatabase();
 	});
 }
 
@@ -134,9 +136,7 @@ function deleteFromDatabase(){
 			}
 		}
 		else{
-			if (aspectSelected != ''){
-				firebase.database().ref('/').child("SearchAspect").remove();
-			}
+			firebase.database().ref('/').child("SearchAspect").remove();
 		}
 	});
 }
@@ -164,11 +164,12 @@ function printMovie(){
 	var firstIndex = 0;
 	var secondIndex = 1;
 	
-	if (aspectSelected == ''){
-		var sortedList = movieList;
+	console.log(aspectSelected);
+	if (aspectSelected != ''){
+		var sortedList = sortByRating();
 	}
 	else{
-		var sortedList = sortByRating();
+		var sortedList = movieList;
 	}
 	
     var getstorageFirst = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
@@ -355,7 +356,7 @@ function bindevent(){
 }
 
 getCategory();
-getAspect();
-readFromDatabase();
+//getAspect();
+//readFromDatabase();
 bindevent();
 //deleteFromDatabase();
