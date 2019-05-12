@@ -246,7 +246,6 @@ function checkrow(index,row){
 	var okbtn = document.getElementById("OKsign");
 	if (idx != index){
 		var table = document.getElementById("collectionList").rows;
-		//console.log(table);
 		for (var i = 1; i<table.length; i++){
 			if (table[i].style.backgroundColor != "#ddd") {
 				table[i].style.backgroundColor = "#ddd";
