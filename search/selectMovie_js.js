@@ -53,6 +53,7 @@ function deleteFromDatabase(){
 		var keyList = Object.keys(myValue);
 		var myKey = keyList[0];
 		firebase.database().ref('/SearchCategory/').child(myKey).remove();
+		firebase.database().ref('/').child("SearchAspect").remove();
 	});
 }
 
@@ -138,8 +139,38 @@ function printMovie(){
 
     }
 }
-
+function bindevent(){
+	var backbutton = document.getElementById("backbutton");
+	var homebutton = document.getElementById("homeButton");
+	
+	backbutton.onclick = function(){
+		var value = deleteFromDatabase();
+		value.then(
+			function(value){
+				location.href = "./DPsearch1.html";
+			},
+			function(reason){
+				console.log("failed because of....");
+				console.log(reason);
+			}
+		)
+	};
+	homebutton.onclick = function(){
+		var value = deleteFromDatabase();
+		value.then(
+			function(value){
+				location.href = "../main.html";
+			},
+			function(reason){
+				console.log("failed because of....");
+				console.log(reason);
+			}
+		)
+		//location.href = 
+	};
+}
 
 getCategory();
 readFromDatabase();
-deleteFromDatabase();
+bindevent();
+//deleteFromDatabase();

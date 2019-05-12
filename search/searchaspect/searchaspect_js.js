@@ -33,10 +33,33 @@ if (para.length == 2) {
 	next_move = next_move + para[1];
 	nm_havevalue = true;
 }
+function clean_aspect(){
+	if (Pon == 1){
+		Pon = 0;
+		production.style.backgroundColor = '';
+	}
+	if (Mon == 1){
+		Mon = 0;
+		music.style.backgroundColor = '';
+	}
+	if (Von == 1){
+		Von = 0;
+		visual.style.backgroundColor = '';
+	}
+	if (Aon == 1){
+		Aon = 0;
+		acting.style.backgroundColor = '';
+	}
+	if (Son == 1){
+		Son = 0;
+		synopsis.style.backgroundColor = '';
+	}
+}
 
 production.onclick = function() {
 	console.log("production");
 	if (Pon == 0) {
+		clean_aspect();
 		Pon = 1;
 		production.style.backgroundColor = 'darkturquoise';
 		okbtn.disabled = false;
@@ -52,6 +75,7 @@ production.onclick = function() {
 acting.onclick = function() {
 	console.log("acting");
 	if (Aon == 0) {
+		clean_aspect();
 		Aon = 1;
         acting.style.backgroundColor = 'darkturquoise';
 		okbtn.disabled = false;
@@ -68,6 +92,7 @@ synopsis.onclick = function() {
 	console.log("synopsis");
 	
 	if (Son == 0) {
+		clean_aspect();
 		Son = 1;
         synopsis.style.backgroundColor = 'darkturquoise';
 		okbtn.disabled = false;
@@ -83,6 +108,7 @@ synopsis.onclick = function() {
 music.onclick = function() {
 	console.log("music");
 	if (Mon == 0) {
+		clean_aspect();
 		Mon = 1;
         music.style.backgroundColor = 'darkturquoise';
 		okbtn.disabled = false;
@@ -98,6 +124,7 @@ music.onclick = function() {
 visual.onclick = function() {
 	console.log("visual");
 	if (Von == 0) {
+		clean_aspect();
 		Von = 1;
         visual.style.backgroundColor = 'darkturquoise';
 		okbtn.disabled = false;
