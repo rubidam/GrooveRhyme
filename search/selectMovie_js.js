@@ -42,7 +42,7 @@ function getCategory(){
 		var myValue = snapshot.val();
 		var keyList = Object.keys(myValue);
 		var myKey = keyList[0];
-		categorySelected.push(myValue[myKey].category);
+		categorySelected.push(myValue[myKey]);
 	});
 }
 

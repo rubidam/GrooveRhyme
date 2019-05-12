@@ -202,12 +202,14 @@ function romancelistener(){
 }
 
 function pushCategory(category){
-	var newKey = firebase.database().ref('/SearchCategory/').push();
-	newKey.set({
-		category : category
+	firebase.database().ref('/SearchCategory/').once('value',
+	function(snapshot){
+		firebase.database().ref('/SearchCategory/').set({
+			category : category
+		});
+		readFromDatabase();
 	});
 	
-	readFromDatabase();
 }
 
 function readFromDatabase(){
