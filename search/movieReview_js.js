@@ -13,6 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 var para = document.location.href.split("?")[1];
 var movieName = para.split("%20").join(' ');
+movieName = movieName.split("%27").join("'");
 console.log(movieName);
 var title = document.getElementById("title");
 title.innerHTML = movieName;
