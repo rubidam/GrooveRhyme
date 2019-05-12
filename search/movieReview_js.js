@@ -66,10 +66,10 @@ function star() {
         }
         stars.innerHTML = star;
         star = " ";
-        for (var i = 0; i < dict.Acting; i++) {
+        for (var i = 0; i < dict.Music; i++) {
             star += " &#9733";
         }
-        for (var i = 0; i < 5 - dict.Acting; i++) {
+        for (var i = 0; i < 5 - dict.Music; i++) {
             star += " &#9734";
         }
         stara.innerHTML = star;
@@ -82,10 +82,10 @@ function star() {
         }
         starv.innerHTML = star;
         star = " ";
-        for (var i = 0; i < dict.Music; i++) {
+        for (var i = 0; i < dict.Acting; i++) {
             star += " &#9733";
         }
-        for (var i = 0; i < 5 - dict.Music; i++) {
+        for (var i = 0; i < 5 - dict.Acting; i++) {
             star += " &#9734";
         }
         starm.innerHTML = star;
@@ -98,15 +98,17 @@ function insertCell() {
         var dict = snapshot.val();
         var nameList = Object.keys(dict);
         for (var i = 0; i < nameList.length; i++) {
-            var row = table.insertRow(1),
+            
+            console.log(nameList);
+            var aspectList = Object.keys(dict[nameList[i]]);
+			console.log(aspectList);
+            for (var j = 0; j < aspectList.length; j++) {
+				var row = table.insertRow(1),
                 person = row.insertCell(0),
                 aspect = row.insertCell(1),
                 star = row.insertCell(2),
                 review = row.insertCell(3);
-            person.innerHTML = nameList[i];
-            console.log(nameList);
-            var aspectList = Object.keys(dict[nameList[i]]);
-            for (var j = 0; j < aspectList.length; j++) {
+				person.innerHTML = nameList[i];
                 aspect.innerHTML = aspectList[j];
                 star.innerHTML = dict[nameList[i]][aspectList[j]]["Rating"];
                 review.innerHTML = dict[nameList[i]][aspectList[j]]["Review"];
