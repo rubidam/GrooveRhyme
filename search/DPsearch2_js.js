@@ -91,5 +91,8 @@ function deleteFromDatabase(){
 		
 	});
 }
-
+var back = document.getElementById("backspace").addEventListener("click", function () {
+    console.log("backback");
+    location.href = "./DPsearch1.html";
+})
 apply();

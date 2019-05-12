@@ -29,5 +29,8 @@ function bindeventlistner(){
 	};
 	
 }
+function backspace() {
+    location.href = "../main.html";
+}
 console.log("aaaaaa");
 bindeventlistner();

@@ -67,4 +67,9 @@ function apply() {
     aspeskip.value = listjoin;
     console.log(listjoin);
 }
+var back = document.getElementById("backspace").addEventListener("click", function () {
+    var loc = document.location.href;
+    var query = extractquery(loc).split("&")[0];
+    location.href = "./DPsearch2.html" + "?" + query;
+})
 apply();
