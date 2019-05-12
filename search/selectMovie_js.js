@@ -150,9 +150,9 @@ function printMovie(){
 function closeForm(){
 	var popup = document.getElementById("collection");
 	var table = document.getElementById("collectionList");
-	for (var i = 0; i< collectionnames.length; i++){
+	for (var i = 1; i<= collectionnames.length; i++){
 		console.log(collectionnames[i]);
-		table.deleteRow(0);
+		table.deleteRow(1);
 	}
 	popup.style.display = "none";
 	
@@ -179,8 +179,11 @@ function clickcollection(collectionbutton,idx){
 	}
 }
 
+function 
 
 function showcollectionlist(collectionbutton){
+	document.getElementById("collection").style.display = "block";
+	
 	var ctable = document.getElementById("collectionList");
 	document.getElementById("collection").style.display = "block";
 	var collection = firebase.database().ref('/UserProfile/MyCollection').once('value',function(snapshot){
@@ -188,10 +191,10 @@ function showcollectionlist(collectionbutton){
 		var keys = Object.keys(list);
 		collectionnames = keys;
 		console.log(keys);
-		for (var k = 0; k< keys.length; k++){
+		for (var k = 1; k <= keys.length; k++){
 			var row = ctable.insertRow(k);
 			var cell = row.insertCell(0);
-			cell.innerHTML = keys[k];
+			cell.innerHTML = keys[k-1];
 			var temp = k;
 			row.addEventListener('click',clickcollection.bind(this,collectionbutton,k));
 		}
