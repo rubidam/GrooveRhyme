@@ -114,7 +114,7 @@
 }
 .ok {
     position: absolute;
-    right: 15%;
+    right: 30%;
 	bottom : 10%;
     letter-spacing: 3px;
     font-size: 20px;
@@ -127,14 +127,41 @@
     font-weight: bold;
 }
 
-    .ok:hover {
-        background-color: darkturquoise;
-        color: #eee;
-        border-color: #eee;
-    }
+.ok:hover {
+    background-color: darkturquoise;
+    color: #eee;
+    border-color: #eee;
+}
 
 
 .ok:disabled{
+	border: 3px solid #eee;
+  color: #eee;
+}
+
+.delete {
+    position: absolute;
+    right: 15%;
+	bottom : 10%;
+    letter-spacing: 3px;
+    font-size: 20px;
+    border: 3px solid;
+    border-color: darkred;
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    color: darkred;
+    font-weight: bold;
+}
+
+.delete:hover {
+    background-color: darkred;
+    color: #eee;
+    border-color: #eee;
+}
+
+
+.delete:disabled{
 	border: 3px solid #eee;
   color: #eee;
 }

@@ -8,6 +8,7 @@ var music = document.getElementById("Music");
 var visual = document.getElementById("Visual");
 var back = document.getElementById("backspace");
 var okbtn = document.getElementById("ok");
+var deletebtn = document.getElementById("delete");
 var homebtn = document.getElementById("homeButton");
 var Pon = 0;
 var Aon = 0;
@@ -167,6 +168,29 @@ function bindeventlistener(){
 			});
 		});
 	}
+	deletebtn.onclick = function(){
+		var moviename = parse_url()
+		var movielistreview = firebase.database().ref('/MovieList/'+moviename+"/ReviewList/"+username+"/");
+		movielistreview.set(null,function(error){
+			if (error){console.log("error occur...")}
+			else {
+				firebase.database().ref('/review_temp/').set(null,function(error2){
+					if(error2){console.log("another error occur...")}
+					else{
+						firebase.database().ref('/UserProfile/MyReview/'+moviename+'/').set(null,function(error3){
+							if(error3){console.log("almost done...")}
+							else{
+								location.href = "../../profile/profilePage.html"
+							}
+						})
+						
+						}
+				})
+			}
+		})
+		console.log(movielistreview);
+		movielistreview.then(function(){console.log("this")});
+	}
 }
 /*
 function makeTempDB(moviename){
@@ -193,12 +217,18 @@ function makeTempDB(moviename){
 	});
 }*/
 function judge_db(){
+	var deletebtn = document.getElementById("delete");
 	var this_db = firebase.database().ref('/review_temp/').once('value',function(snapshot){
 		var data = snapshot.val();
 		console.log(data);
 		if (data == null) makeTempDB(parse_url());
 		return;
 	});
+	var readmovielist = firebase.database().ref('/MovieList/'+parse_url()+"/ReviewList/"+username+"/").once('value',function(snapshot){
+		var data=snapshot.val();
+		console.log(data);
+		if(data != null) deletebtn.disabled = false;
+	})
 }
 function checkreview(){
 	var dbsearch = firebase.database().ref('/review_temp/'+parse_url() + '/').once('value',function(snapshot){
