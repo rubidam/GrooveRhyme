@@ -147,3 +147,65 @@ h3 {
 	font-size: 35px;
 	padding : 4px;
 }
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: absolute;
+  bottom: 400px;
+  right: 100px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 800px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text] {
+  width: 88%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+	position : relative;
+	top: -10px;
+	right : 2px;
+	background : #ffffff;
+	font-size : 20px;
+	font-weight : bold;
+	border-radius : 0.5em;
+	padding : 5px 10px;
+}
+
+#popup_head {
+	font-size : 40px;
+}
+
+#add {
+	position : relative;
+	left : 5px;
+	background : #ffffff;
+	font-size : 20px;
+	font-weight : bold;
+	border-radius : 0.5em;
+	padding : 5px 10px;
+	
+}

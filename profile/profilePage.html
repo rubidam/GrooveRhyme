@@ -42,9 +42,20 @@
 				<table id = "collectionTable">
 					<tr>
 						<th class = "collection_th"> Add to Collection </th>
-						<th class = "collection_th"> <input type="button" value="+" id = "plusButton"></th>
+						<th class = "collection_th"> <input type="button" value="+" id = "plusButton" class = "open-button" onclick="openForm()"></th>
 					</tr>
 				</table>
+			</div>
+			<div class="form-popup" id="myForm">
+				<div class="form-container">
+					<div id = "popup_head"><b>Write a new collection name</b>
+						<button type="button" class="btn cancel" onclick="closeForm()">X</button>
+					</div>
+					<div id = "popup_body">
+						<input type="text" placeholder="collection name" id="new_name" required>
+						<button id = "add">Add</button>
+					</div>
+				</div>
 			</div>
 		</div>
 		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
