@@ -211,6 +211,8 @@ function printMovie(){
 			console.log(url);
 			second.src = url;
         });
+		firstidx = firstIndex;
+		secondidx = secondIndex;
     }
     var nextMove = "./movieReview.html";
     first.onclick = function () {
@@ -222,8 +224,10 @@ function printMovie(){
         console.log("second's clicked");
         nextMove = nextMove + "?" + movieList[secondIndex];
         location.href = nextMove;
-
     }
+	
+	
+	
 }
 
 
