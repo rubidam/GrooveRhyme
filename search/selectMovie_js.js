@@ -18,6 +18,8 @@ var starRating = [];
 var firstidx = 0;
 var secondidx = 0;
 var collectionnames = [];
+var idx = -1;
+var fstorsnd = 0;
 
 function readFromDatabase(){
 	return firebase.database().ref('/MovieList/').once('value', 
@@ -196,24 +198,28 @@ function closeForm(){
 	
 }
 
-function clickcollection(collectionbutton,idx){
-	console.log(collectionnames[idx]);
-	var buttonid = collectionbutton.id;
-	var update = firebase.database().ref('/UserProfile/MyCollection/' + collectionnames[idx]);
-	if (buttonid === "firstPlusButton"){
-		var entry ={};
-		entry[movieList[firstidx]] = 1;
-		console.log(entry);
-		update.update(entry);
-	}
-	else if(buttonid === "secondPlusButton"){
-		var entry = {};
-		entry[movieList[secondidx]] = 1;
-		console.log(entry);
-		update.update(entry);
+function checkrow(index,row){
+	var okbtn = document.getElementById("OKsign");
+	if (idx != index){
+		var table = document.getElementById("collectionList").rows;
+		//console.log(table);
+		for (var i = 1; i<table.length; i++){
+			if (table[i].style.backgroundColor != "#ddd") {
+				table[i].style.backgroundColor = "#ddd";
+			}
+		}
+		row.style.backgroundColor = "#ccc";
+		okbtn.disabled = false;
+		idx = index;
+		//console.log(idx);
 	}
 	else{
-		console.log("---------------errorerror-----------------");
+		//console.log("#ddd wrong");
+		//console.log(row);
+		//console.log(row.style.backgroundColor);
+		row.style.backgroundColor = "#ddd";
+		okbtn.disabled = true;
+		idx = -1;
 	}
 }
 
@@ -232,7 +238,8 @@ function showcollectionlist(collectionbutton){
 			var cell = row.insertCell(0);
 			cell.innerHTML = keys[k-1];
 			var temp = k;
-			row.addEventListener('click',clickcollection.bind(this,collectionbutton,k));
+			row.style.backgroundColor = "#ddd";
+			row.addEventListener('click',checkrow.bind(this,k-1,row));
 		}
 	});
 }
@@ -244,6 +251,34 @@ function bindevent(){
 	var homebutton = document.getElementById("homeButton");
 	var firstbtn = document.getElementById("firstPlusButton");
 	var secondbtn = document.getElementById("secondPlusButton");
+	var okbtn = document.getElementById("OKsign");
+	
+	
+	okbtn.onclick = function(){
+		var closebtn = document.getElementById("closebtn");
+		console.log(collectionnames[idx]);
+		var update = firebase.database().ref('/UserProfile/MyCollection/' + collectionnames[idx]);
+		if (fstorsnd === 1){
+			var entry ={};
+			entry[movieList[firstidx]] = 1;
+			console.log(entry);
+			update.update(entry);
+		}
+		
+		else if(fstorsnd === 2){
+			var entry = {};
+			entry[movieList[secondidx]] = 1;
+			console.log(entry);
+			update.update(entry);
+		}
+		else{
+			console.log("---------------errorerror-----------------");
+		}
+		fstorsnd = 0;
+		idx = -1;
+		closebtn.click();
+	};
+	
 	backbutton.onclick = function(){
 		var value = deleteFromDatabase();
 		value.then(
@@ -270,10 +305,12 @@ function bindevent(){
 	};
 	firstbtn.onclick = function(){
 		console.log("first");
+		fstorsnd = 1;
 		showcollectionlist(firstbtn);
 	};
 	secondbtn.onclick = function(){
 		console.log("second");
+		fstorsnd = 2;
 		showcollectionlist(secondbtn);
 	}
 }

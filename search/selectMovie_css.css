@@ -70,8 +70,13 @@ td{
 	cursor : pointer;
 	margin-bottom : 10px;
 }
-#OKsign.hover{
+#OKsign:hover{
 	opacity:1;
+}
+
+#Oksign:disabled{
+	cursor : not-allowed;
+	background : #ddd;
 }
 
 #backbutton {
