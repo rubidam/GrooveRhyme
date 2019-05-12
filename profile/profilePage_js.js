@@ -10,7 +10,14 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+function openForm() {
+	document.getElementById("myForm").style.display = "block";
+}
 
+function closeForm() {
+	document.getElementById("myForm").style.display = "none";
+  
+}
 function copy_review(name) {
 	return firebase.database().ref('/UserProfile/MyReview/' + name).once('value', function(snapshot) {
 		var v = snapshot.val();
@@ -134,6 +141,15 @@ var maxreviewrow = 1;
 getReviewList();
 var collectionlist=[];
 getCollectionList();
+var add_btn = document.getElementById("add");
+add_btn.onclick = function() {
+	input_box = document.getElementById("new_name");
+	console.log(input_box.value);
+	firebase.database().ref('/UserProfile/MyCollection/' + input_box.value + '/').set({'z':1});
+	input_box.value = '';
+	closeForm();
+	getCollectionList();
+}
 //////////////////////////backpart
 function backback(){
 	document.location.href = "../main.html";
