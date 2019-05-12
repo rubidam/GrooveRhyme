@@ -57,7 +57,8 @@ function getUrlVars() {
 }
 
 function getMovieList() {
-	return firebase.database().ref('/UserProfile/MyCollection/' + para['collection'] + '/').once('value', function(snapshot){
+	var colname = para['collection'].split('%20').join(' ');
+	return firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').once('value', function(snapshot){
 		var myValue = snapshot.val();
 		if (myValue != null) {
 			var keys = Object.keys(myValue);
@@ -65,7 +66,7 @@ function getMovieList() {
 			console.log(movielist);
 		}
 		var tablehead = document.getElementById("collectionname");
-		tablehead.innerHTML = para['collection'];
+		tablehead.innerHTML = colname;
 		makeTable(movielist);
 	});
 }
