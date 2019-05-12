@@ -104,10 +104,6 @@ function deleteFromDatabase(){
 	});
 }
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 function createMovieName(value) {
 	var movieNameElement = value.split(":");
 
@@ -128,27 +124,18 @@ function printMovie(){
 	var first = document.getElementById("firstMovie");
 	var second = document.getElementById("secondMovie");
 	
+	var firstIndex = 0;
+	var secondIndex = 1;
+	
 	var sortedList = sortByRating();
 	
-	var firstIndex = getRandomInt(0, movieList.length - 1);
-	
-	if (firstIndex + 1 < movieList.length - 1){
-		var secondIndex = firstIndex + 1;
-	}
-	else{
-		var secondIndex = firstIndex - 1;
-	}
-	
-	firstidx = firstIndex;
-	secondidx = secondIndex;
-	
-    var getstorageFirst = firebase.storage().ref().child(createMovieName(movieList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
-        console.log("create : " + createMovieName(movieList[firstIndex]));
+    var getstorageFirst = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
+        console.log("create : " + createMovieName(sortedList[firstIndex]));
 		console.log(url);
 		first.src = url;
 	});
 	
-	var getstorageSecond = firebase.storage().ref().child(createMovieName(movieList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
+	var getstorageSecond = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
 		second.src = url;
 	});
@@ -156,27 +143,32 @@ function printMovie(){
 	
     refreshButton.onclick = function () {
         var refreshButton = document.getElementById("refreshButton");
-        var newfirstIndex = getRandomInt(0, movieList.length - 1);
-        var newsecondIndex;
-		if (newfirstIndex + 1 < movieList.length - 1){
-			newsecondIndex = newfirstIndex + 1;
+		firstIndex = firstIndex + 2;
+		secondIndex = secondIndex + 2;
+		
+		if (firstIndex > sortedList.length - 1){
+			if (secondIndex == 2){
+				firstIndex = 1;
+			}
+			else {
+				firstIndex = 0;
+				secondIndex = 1;
+			}
 		}
-		else{
-			newsecondIndex = newfirstIndex - 1;
+		else if (secondIndex > sortedList.length - 1){
+			secondIndex = 0;
 		}
-        var getstorageFirstNew = firebase.storage().ref().child(createMovieName(movieList[newfirstIndex]) + ".jpg").getDownloadURL().then(function (url) {
-            console.log("create : " + createMovieName(movieList[firstIndex]));
+        var getstorageFirstNew = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
+            console.log("create : " + createMovieName(sortedList[firstIndex]));
 
 			console.log(url);
 			first.src = url;
 		});
 		
-		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(movieList[newsecondIndex]) + ".jpg").getDownloadURL().then(function(url){
+		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
 			console.log(url);
 			second.src = url;
         });
-        firstIndex = newfirstIndex;
-        secondIndex = newsecondIndex;
     }
     var nextMove = "./movieReview.html";
     first.onclick = function () {
