@@ -100,18 +100,20 @@ function printMovie(){
 		second.src = url;
 	});
 	
-	var refreshButton = document.getElementById("refreshButton");
-    var newfirstIndex = getRandomInt(0, movieList.length - 1);
-    var newsecondIndex;
-    refreshButton.onclick = function () {
 	
+    refreshButton.onclick = function () {
+        var refreshButton = document.getElementById("refreshButton");
+        var newfirstIndex = getRandomInt(0, movieList.length - 1);
+        var newsecondIndex;
 		if (newfirstIndex + 1 < movieList.length - 1){
 			newsecondIndex = newfirstIndex + 1;
 		}
 		else{
 			newsecondIndex = newfirstIndex - 1;
 		}
-		var getstorageFirstNew = firebase.storage().ref().child(createMovieName(movieList[newfirstIndex]) + ".jpg").getDownloadURL().then(function(url){
+        var getstorageFirstNew = firebase.storage().ref().child(createMovieName(movieList[newfirstIndex]) + ".jpg").getDownloadURL().then(function (url) {
+            console.log("create : " + createMovieName(movieList[firstIndex]));
+
 			console.log(url);
 			first.src = url;
 		});
@@ -126,12 +128,12 @@ function printMovie(){
     var nextMove = "./movieReview.html";
     first.onclick = function () {
         console.log("first's clicked");
-        nextMove = nextMove + "?" + createMovieName(movieList[firstIndex]);
+        nextMove = nextMove + "?" + movieList[firstIndex];
         location.href = nextMove;
     }
     second.onclick = function () {
         console.log("second's clicked");
-        nextMove = nextMove + "?" + createMovieName(movieList[secondIndex]);
+        nextMove = nextMove + "?" + movieList[secondIndex];
         location.href = nextMove;
 
     }
