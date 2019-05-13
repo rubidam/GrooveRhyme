@@ -15,6 +15,7 @@ html,body{
 	font-size: 40px;
 	font-weight: bold;
 	color : #eee;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .backbutton {
@@ -81,7 +82,7 @@ td, th{
 }
 
 .cate-skip {
-	font-size: 20px;
+	font-size: 25px;
 	border: 3px solid #3E606F;
 	border-color : #3E606F;
 	width: 200px;
@@ -106,7 +107,7 @@ td, th{
 }
 
 .aspe {
-	font-size: 20px;
+	font-size: 25px;
 	border: none;
 	outline: none;
 	width: 200px;
@@ -117,7 +118,7 @@ td, th{
 }
 
 .aspe-skip {
-	font-size: 20px;
+	font-size: 25px;
 	border: none;
 	outline: none;
 	width: 150px;
@@ -130,7 +131,7 @@ td, th{
 .ok {
 	position: absolute;
 	letter-spacing: 3px;
-	font-size: 20px;
+	font-size: 25px;
 	border: 3px solid;
 	border-color: #eee;
 	width: 150px;

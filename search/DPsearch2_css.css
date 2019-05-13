@@ -15,6 +15,7 @@ html,body{
 	font-size: 40px;
 	font-weight: bold;
 	color : #eee;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .backbutton {
@@ -34,7 +35,7 @@ html,body{
 
 #title {
 	position : absolute;
-	left : 10%;
+	left : 80px;
 	top : 40px;
 	font-size : 50px;
 }
@@ -71,7 +72,7 @@ td, th{
 
 
 .cate {
-	font-size: 20px;
+	font-size: 25px;
 	border: none;
 	outline: none;
 	width: 200px;
@@ -82,7 +83,7 @@ td, th{
 }
 
 .cate-skip {
-    font-size: 20px;
+    font-size: 25px;
     border: 3px solid #3E606F;
     border-color: #3E606F;
     width: 200px;
@@ -106,7 +107,7 @@ td, th{
 }
 
 .aspe-skip {
-	font-size: 20px;
+	font-size: 25px;
 	border: 3px solid #3E606F;
 	border-color : #3E606F;
 	width: 200px;
@@ -117,7 +118,7 @@ td, th{
 	font-weight: bold;
 }
 .aspe-skip:disabled {
-        font-size: 20px;
+        font-size: 25px;
         color: #eee;
         border:none;
         background-color:#ddd;
@@ -143,7 +144,7 @@ td, th{
 .ok {
 	position: absolute;
 	letter-spacing: 3px;
-	font-size: 20px;
+	font-size: 25px;
 	border: 3px solid;
 	border-color: #3E606F;
 	width: 150px;
@@ -151,6 +152,7 @@ td, th{
 	background-color: white;
 	color: #3E606F;
 	font-weight:bold;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .ok:hover {
