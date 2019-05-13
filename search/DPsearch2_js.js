@@ -41,7 +41,8 @@ function okPressListener(){
 	var nextloc = "./selectMovie.html?"
 	var loc = document.location.href;
 	var query = extractquery(loc);
-	nextloc = nextloc + query;
+    nextloc = nextloc + query;
+    console.log(query);
 	location.href = nextloc;
 }
 

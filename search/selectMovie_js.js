@@ -218,12 +218,12 @@ function printMovie(){
     var nextMove = "./movieReview.html";
     first.onclick = function () {
         console.log("first's clicked");
-        nextMove = nextMove + "?" + movieList[firstIndex];
+        nextMove = nextMove + "?" + sortedList[firstIndex];
         location.href = nextMove;
     }
     second.onclick = function () {
         console.log("second's clicked");
-        nextMove = nextMove + "?" + movieList[secondIndex];
+        nextMove = nextMove + "?" + sortedList[secondIndex];
         location.href = nextMove;
     }
 	
