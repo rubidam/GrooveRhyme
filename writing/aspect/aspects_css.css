@@ -80,7 +80,7 @@ html,body{
 	position : absolute;
 	width : 100%;
 	left : 30%;
-	top : 0%;
+	top : -10px;
 }
 #mid{
 	position : absolute;
