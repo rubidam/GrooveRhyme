@@ -10,7 +10,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var movieList = [];
-
+var sorted = [];
 var categorySelected = [];
 var aspectSelected = [];
 var starRating = [];
@@ -171,6 +171,7 @@ function printMovie(){
 	else{
 		var sortedList = movieList;
 	}
+	sorted = sortedList;
 	
     var getstorageFirst = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
         console.log("create : " + createMovieName(sortedList[firstIndex]));
@@ -182,7 +183,8 @@ function printMovie(){
 		console.log(url);
 		second.src = url;
 	});
-	
+	firstidx = firstIndex;
+	secondidx = secondIndex;
 	
     refreshButton.onclick = function () {
         var refreshButton = document.getElementById("refreshButton");
@@ -300,14 +302,14 @@ function bindevent(){
 		var update = firebase.database().ref('/UserProfile/MyCollection/' + collectionnames[idx]);
 		if (fstorsnd === 1){
 			var entry ={};
-			entry[movieList[firstidx]] = 1;
+			entry[sorted[firstidx]] = 1;
 			console.log(entry);
 			update.update(entry);
 		}
 		
 		else if(fstorsnd === 2){
 			var entry = {};
-			entry[movieList[secondidx]] = 1;
+			entry[sorted[secondidx]] = 1;
 			console.log(entry);
 			update.update(entry);
 		}
