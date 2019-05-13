@@ -93,7 +93,7 @@ function bindeventlistener(){
 		console.log("production");
 		if (Pon == 0) {
 			Pon = 1;
-			production.style.backgroundColor = 'darkturquoise';
+			production.style.backgroundColor = '#3E606F';
 		}
 		else {
 			Pon = 0;
@@ -105,7 +105,7 @@ function bindeventlistener(){
 		console.log("acting");
 		if (Aon == 0) {
 			Aon = 1;
-			acting.style.backgroundColor = 'darkturquoise';
+			acting.style.backgroundColor = '#3E606F';
 		}
 		else {
 			Aon = 0;
@@ -116,7 +116,7 @@ function bindeventlistener(){
 		console.log("synopsis");
 		if (Son == 0) {
 			Son = 1;
-			synopsis.style.backgroundColor = 'darkturquoise';
+			synopsis.style.backgroundColor = '#3E606F';
 		}
 		else {
 			Son = 0;
@@ -127,7 +127,7 @@ function bindeventlistener(){
 		console.log("music");
 		if (Mon == 0) {
 			Mon = 1;
-			music.style.backgroundColor = 'darkturquoise';
+			music.style.backgroundColor = '#3E606F';
 		}
 		else {
 			Mon = 0;
@@ -138,7 +138,7 @@ function bindeventlistener(){
 		console.log("visual");
 		if (Von == 0) {
 			Von = 1;
-			visual.style.backgroundColor = 'darkturquoise';
+			visual.style.backgroundColor = '#3E606F';
 		}
 		else {
 			Von = 0;
@@ -243,11 +243,11 @@ function checkreview(){
 					var temp = data[key[i]];
 					if (temp["Rating"] != 0 || temp["Review"] != ""){
 						okbtn.disabled = false;
-						if(key[i] == "Acting"){acting.style.backgroundColor = "darkturquoise"}
-						else if(key[i] == "Music"){music.style.backgroundColor = "darkturquoise"}
-						else if(key[i] == "Synopsis"){synopsis.style.backgroundColor = "darkturquoise"}
-						else if(key[i] == "Production"){production.style.backgroundColor = "darkturquoise"}
-						else if(key[i] == "Visual"){visual.style.backgroundColor = "darkturquoise"}
+						if(key[i] == "Acting"){acting.style.backgroundColor = "#3E606F"}
+						else if(key[i] == "Music"){music.style.backgroundColor = "#3E606F"}
+						else if(key[i] == "Synopsis"){synopsis.style.backgroundColor = "#3E606F"}
+						else if(key[i] == "Production"){production.style.backgroundColor = "#3E606F"}
+						else if(key[i] == "Visual"){visual.style.backgroundColor = "#3E606F"}
 					}
 				}
 			}

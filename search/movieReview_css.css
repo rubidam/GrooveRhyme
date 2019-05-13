@@ -5,7 +5,7 @@
 	padding: 0px;
 	width: 1272px;
 	height: 150px;
-	background-color: darkturquoise;
+	background-color: #3E606F;
 	text-align: left;
 	font-size: 40px;
 	font-weight: bold;
@@ -14,7 +14,7 @@
 
 .backbutton {
 	font-size: 40px;
-	background-color :darkturquoise;
+	background-color :#3E606F;
 	color: #eee;
 	display: inline-block;
 	border : none;
@@ -32,7 +32,7 @@
 	left : 5%;
 	top : 50px;
 	font-size : 40px;
-    color:black;
+    color:white;
 }
 
 #homeButton {
@@ -84,9 +84,9 @@
 
 #post {
 	background-color : white;
-	color: darkturquoise;
+	color: #3E606F;
 	display: inline-block;
-	border : 3px solid darkturquoise;
+	border : 3px solid #3E606F;
 	outline : none;
 	padding: 10px;
 	font-size: 15px;
@@ -98,7 +98,7 @@
     margin-top:3%;
 }
 #post:hover{
-    background-color:darkturquoise;
+    background-color:#3E606F;
     color :#eee;
     border:3px solid #eee;
 }
@@ -116,53 +116,68 @@
     color: black;
 }
 #p {
+	width : 28%;
+	letter-spacing:2px;
+	text-align : right;
+	margin-bottom : 0.3%;
 }
 #a {
-    letter-spacing:9px;
+	width : 28%;
+    letter-spacing:2px;
+	text-align : right;
 }
 #s{
-    letter-spacing:4px;
+	width : 28%;
+    letter-spacing:2px;
+	text-align : right;
+	margin-bottom : 0.3%;
 }
 #v{
-    letter-spacing:9.5px;
+	width : 28%;
+    letter-spacing:2px;
+	text-align : right;
+	margin-bottom : 0.3%;
 }
 #m {
-    letter-spacing: 13px;
+	width : 28%;
+    letter-spacing:2px;
+	text-align : right;
+	margin-bottom : 0.3%;
 }
 #starp {
     position: absolute;
     top: -2px;
-    left: 115px;
+    left: 123px;
     letter-spacing: 0px;
-    color: darkturquoise;
+    color: #3E606F;
 }
 #stara {
     position: absolute;
     top: 20px;
-    left: 115px;
+    left: 123px;
     letter-spacing: 0px;
-    color:darkturquoise;
+    color:#3E606F;
 }
 #stars {
     position: absolute;
     top: 42px;
-    left: 115px;
+    left: 123px;
     letter-spacing: 0px;
-    color: darkturquoise;
+    color: #3E606F;
 }
 #starv {
     position: absolute;
     top: 64px;
-    left: 115px;
+    left: 123px;
     letter-spacing: 0px;
-    color: darkturquoise;
+    color: #3E606F;
 }
 #starm {
     position: absolute;
     top: 86px;
-    left: 115px;
+    left: 123px;
     letter-spacing: 0px;
-    color: darkturquoise;
+    color: #3E606F;
 }
 th {
     padding: 10px;

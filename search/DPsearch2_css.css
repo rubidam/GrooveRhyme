@@ -5,7 +5,7 @@
 	padding: 0px;
 	width: 1272px;
 	height: 150px;
-	background-color: darkturquoise;
+	background-color: #3E606F;
 	text-align: left;
 	font-size: 40px;
 	font-weight: bold;
@@ -14,7 +14,7 @@
 
 .backbutton {
 	font-size: 40px;
-	background-color :darkturquoise;
+	background-color :#3E606F;
 	color: #eee;
 	display: inline-block;
 	border : none;
@@ -78,12 +78,12 @@ td, th{
 
 .cate-skip {
     font-size: 20px;
-    border: 3px solid darkturquoise;
-    border-color: darkturquoise;
+    border: 3px solid #3E606F;
+    border-color: #3E606F;
     width: 200px;
     height: 100px;
     background-color: white;
-    color: darkturquoise;
+    color: #3E606F;
     letter-spacing: 3px;
     font-weight: bold;
 }
@@ -102,12 +102,12 @@ td, th{
 
 .aspe-skip {
 	font-size: 20px;
-	border: 3px solid darkturquoise;
-	border-color : darkturquoise;
+	border: 3px solid #3E606F;
+	border-color : #3E606F;
 	width: 200px;
 	height: 100px;
 	background-color: white;
-	color: darkturquoise;
+	color: #3E606F;
 	letter-spacing: 3px;
 	font-weight: bold;
 }
@@ -130,7 +130,7 @@ td, th{
 }
 
 .aspe-skip:hover:enabled {
-	background-color: darkturquoise;
+	background-color: #3E606F;
 	color: #eee;
 	border-color: #eee;
 }
@@ -142,16 +142,16 @@ td, th{
 	bottom: 50px;
 	font-size: 20px;
 	border: 3px solid;
-	border-color: darkturquoise;
+	border-color: #3E606F;
 	width: 150px;
 	height: 100px;
 	background-color: white;
-	color: darkturquoise;
+	color: #3E606F;
 	font-weight:bold;
 }
 
 .ok:hover {
-	background-color: darkturquoise;
+	background-color: #3E606F;
 	color: #eee;
 	border-color: #eee;
 

@@ -9,7 +9,7 @@
 
 #search {
 	background-color: #eee;
-    color:darkturquoise;
+    color:#3E606F;
 	width:49%;
 	height:430px;
 	float: left;
@@ -21,7 +21,7 @@
 }
 
 #write {
-    background-color: darkturquoise;
+    background-color: #3E606F;
     color: #eee;
     width: 50%;
     height: 430px;
@@ -34,7 +34,7 @@
     z-index: 1;
 }
 #profile {
-	background-color:darkturquoise;
+	background-color:#3E606F;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;

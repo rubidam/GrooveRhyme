@@ -9,7 +9,7 @@ body{
 	left: 0px;
 	width: 1272px;
 	height: 100px;
-	background-color: darkturquoise;
+	background-color: #3E606F;
 	text-align: left;
 	font-size: 40px;
 	font-weight: bold;
@@ -20,7 +20,7 @@ body{
 	position:absolute;
 	top:55px;
 	font-size: 40px;
-	background-color :darkturquoise;
+	background-color :#3E606F;
 	color: #eee;
 	display: inline-block;
 	border : none;
@@ -75,8 +75,8 @@ body{
 #searchbutton {
     background-color: white;
     border: 3px solid;
-    border-color : darkturquoise;
-    color: darkturquoise;
+    border-color : #3E606F;
+    color: #3E606F;
     padding: 12px 16px;
     font-size: 20px;
     cursor: pointer;
@@ -90,7 +90,7 @@ body{
     #searchbutton:hover {
         border-color: #eee;
         color: #eee;
-        background-color: darkturquoise;
+        background-color: #3E606F;
     }
 
 .ui-autocomplete{
@@ -108,16 +108,16 @@ body{
     bottom: 0%;
     font-size: 20px;
     border: 3px solid;
-    border-color: darkturquoise;
+    border-color: #3E606F;
     width: 150px;
     height: 100px;
     background-color: white;
-    color: darkturquoise;
+    color: #3E606F;
     font-weight: bold;
 }
 
 .ok:hover {
-    background-color: darkturquoise;
+    background-color: #3E606F;
     color: #eee;
     border-color: #eee;
 }

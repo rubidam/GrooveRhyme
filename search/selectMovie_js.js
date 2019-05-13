@@ -160,6 +160,8 @@ function createMovieName(value) {
 function printMovie(){
 	var first = document.getElementById("firstMovie");
 	var second = document.getElementById("secondMovie");
+	var firstName = document.getElementById("firstName");
+	var secondName = document.getElementById("secondName");
 	
 	var firstIndex = 0;
 	var secondIndex = 1;
@@ -178,11 +180,13 @@ function printMovie(){
 		console.log(url);
 		first.src = url;
 	});
+	firstName.innerHTML = sortedList[firstIndex];
 	
 	var getstorageSecond = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
 		second.src = url;
 	});
+	secondName.innerHTML = sortedList[secondIndex];
 	firstidx = firstIndex;
 	secondidx = secondIndex;
 	
@@ -209,11 +213,13 @@ function printMovie(){
 			console.log(url);
 			first.src = url;
 		});
+		firstName.innerHTML = sortedList[firstIndex];
 		
 		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
 			console.log(url);
 			second.src = url;
         });
+		secondName.innerHTML = sortedList[secondIndex];
 		firstidx = firstIndex;
 		secondidx = secondIndex;
     }

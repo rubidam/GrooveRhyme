@@ -5,7 +5,7 @@
     padding: 30px;
     width: 1272px;
     height: 100px;
-    background-color: darkturquoise;
+    background-color: #3E606F;
     text-align: left;
     font-size: 40px;
     font-weight: bold;
@@ -16,7 +16,7 @@
 	position:absolute;
 	top:55px;
     font-size: 40px;
-    background-color: darkturquoise;
+    background-color: #3E606F;
     color: #eee;
     display: inline-block;
     border: none;
@@ -119,16 +119,16 @@
     letter-spacing: 3px;
     font-size: 20px;
     border: 3px solid;
-    border-color: darkturquoise;
+    border-color: #3E606F;
     width: 150px;
     height: 100px;
     background-color: white;
-    color: darkturquoise;
+    color: #3E606F;
     font-weight: bold;
 }
 
 .ok:hover {
-    background-color: darkturquoise;
+    background-color: #3E606F;
     color: #eee;
     border-color: #eee;
 }

@@ -61,7 +61,7 @@ production.onclick = function() {
 	if (Pon == 0) {
 		clean_aspect();
 		Pon = 1;
-		production.style.backgroundColor = 'darkturquoise';
+		production.style.backgroundColor = '#3E606F';
 		okbtn.disabled = false;
 	}
 	else {
@@ -77,7 +77,7 @@ acting.onclick = function() {
 	if (Aon == 0) {
 		clean_aspect();
 		Aon = 1;
-        acting.style.backgroundColor = 'darkturquoise';
+        acting.style.backgroundColor = '#3E606F';
 		okbtn.disabled = false;
 	}
 	else {
@@ -94,7 +94,7 @@ synopsis.onclick = function() {
 	if (Son == 0) {
 		clean_aspect();
 		Son = 1;
-        synopsis.style.backgroundColor = 'darkturquoise';
+        synopsis.style.backgroundColor = '#3E606F';
 		okbtn.disabled = false;
 	}
 	else {
@@ -110,7 +110,7 @@ music.onclick = function() {
 	if (Mon == 0) {
 		clean_aspect();
 		Mon = 1;
-        music.style.backgroundColor = 'darkturquoise';
+        music.style.backgroundColor = '#3E606F';
 		okbtn.disabled = false;
 	}
 	else {
@@ -126,7 +126,7 @@ visual.onclick = function() {
 	if (Von == 0) {
 		clean_aspect();
 		Von = 1;
-        visual.style.backgroundColor = 'darkturquoise';
+        visual.style.backgroundColor = '#3E606F';
 		okbtn.disabled = false;
 	}
 	else {

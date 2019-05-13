@@ -3,7 +3,7 @@
 	position : absolute;
 	top : 55px;
 	font-size: 40px;
-	background-color :darkturquoise;
+	background-color :#3E606F;
 	color: #eee;
 	display: inline-block;
 	border : none;
@@ -37,7 +37,7 @@
 	height : 600px;
 }
 #body{
-	background-color : darkturquoise;
+	background-color : #3E606F;
 }
 
 #location {
