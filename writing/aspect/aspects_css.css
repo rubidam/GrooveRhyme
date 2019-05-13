@@ -1,13 +1,17 @@
+html,body{
+	width : 100%;
+	height:100%;
+}
 #upper-box {
     position: absolute;
     top: 0px;
     left: 0px;
     padding: 30px;
-    width: 1272px;
+    width: 100%;
     height: 100px;
     background-color: #3E606F;
     text-align: left;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     color: #eee;
 }
@@ -29,14 +33,14 @@
 
 #title {
 	position : absolute;
-	left : 10%;
+	left : 100px;
 	top : 40px;
-	font-size : 50px;
+	font-size : 40px;
 }
 
 #homeButton {
 	position : absolute;
-	right : 2%;
+	right : 5%;
 	top: 5%;
 	font-size : 20px;
 	font-weight : bold;
@@ -50,13 +54,19 @@
     top: 160px;
     left: 0px;
     padding: 30px;
-    width: 1272px;
+    width: 100%;
     height: 500px;
 }
+
+#penta{
+	position : absolute;
+	width : 100%;
+	top : 5%;
+}
 .pentagon {
-    position: relative;
-    left:450px;
-    top:10px;
+    position: absolute;
+    left:30%;
+    top:30px;
     width: 350px;
     height: 350px;
     background-image: url(pentagon.png);
@@ -65,7 +75,24 @@
     background-color: white;
 }
 
-
+#top{
+	position : absolute;
+	width : 100%;
+	left : 30%;
+	top : 0%;
+}
+#mid{
+	position : absolute;
+	width : 100%;
+	left : 30%;
+	top : 100px;
+}
+#bot{
+	position : absolute;
+	width : 100%;
+	left : 30%;
+	top : 300px;
+}
 	
 .aspect{
 	position : absolute;
@@ -82,40 +109,62 @@
 	line-height : 80px;
 }
 
+
+
 #Production{
+	position : absolute;
 	top : 2%;
-	right : 47.3%;
+	left : 120px;
 }	
 
 #Acting{
+	position : absolute;
 	top : 20%;
-	right : 59%;
+	left : -25px;
 }
 
 #Synopsis{
+	position : absolute;
 	top : 20%;
-	right : 35.5%;
+	left : 280px;
 }
 
 #Music{
+	position : absolute;
 	top : 55%;
-	right : 55%;
+	left : 30px;
 }
 
 #Visual{
+	position : absolute;
 	top : 55%;
-	right : 39%;
+	left : 230px;
 }
 
 #content{
 	width : 100%;
 	height : 300px;
 }
+
+
+#okdiv{
+	position : absolute;
+	width : 70%;
+	right: 15%;
+	bottom : 20%;
+}
+
+#deletediv{
+	position : absolute;
+	width : 70%;
+	right: 15%;
+	bottom : 20%;
+}
+
 .ok {
     position: absolute;
-    right: 15%;
-	bottom : 7%;
     letter-spacing: 3px;
+	right : 200px;
     font-size: 20px;
     border: 3px solid;
     border-color: #3E606F;
@@ -140,8 +189,7 @@
 
 .delete {
     position: absolute;
-    right: 0%;
-	bottom : 7%;
+    right: 20px;
     letter-spacing: 3px;
     font-size: 20px;
     border: 3px solid;
