@@ -10,6 +10,7 @@
 	font-size: 40px;
 	font-weight: bold;
 	color : #eee;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .backbutton {
@@ -29,9 +30,9 @@
 
 #title {
 	position : absolute;
-	left : 5%;
-	top : 50px;
-	font-size : 40px;
+	left : 80px;
+	top : 40px;
+	font-size : 50px;
     color:white;
 }
 
