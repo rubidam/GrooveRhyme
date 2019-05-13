@@ -33,10 +33,10 @@ function initializereviewTable() {
   */
   var myTable = document.getElementById("reviewTable");
   var numRows = myTable.rows.length;
-  for(var i=1;i<numRows;i++){
-    myTable.deleteRow(1);
+  for(var i=0;i<numRows;i++){
+    myTable.deleteRow(0);
   }
-  myTable.insertRow(1);
+  myTable.insertRow(0);
 }
 function refreshreviewList(name) {
 	console.log(name)
@@ -137,7 +137,7 @@ function getCollectionList() {
 }
 /*****************collection part**********************************/
 var reviewlist=[];
-var maxreviewrow = 1;
+var maxreviewrow = 0;
 getReviewList();
 var collectionlist=[];
 getCollectionList();
