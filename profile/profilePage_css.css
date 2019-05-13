@@ -98,10 +98,13 @@ h3 {
 	width : 50%;
 }
 
-.review_th {
+.review {
+	width : 95%;
 	height : 70px;
 	font-size: 40px;
 	padding: 3px;
+	font-weight : bold;
+	text-align : center;
 }
 
 .collection {

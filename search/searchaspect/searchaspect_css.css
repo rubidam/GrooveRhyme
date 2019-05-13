@@ -67,44 +67,43 @@
 }
 
 .aspect {
-    position: relative;
+    position: absolute;
     margin: auto;
     background: white;
     border: 4px solid #555555;
-    width: 60px;
-    height: 60px;
-    border-radius: 40px;
+    width: 90px;
+    height: 90px;
+    border-radius: 70px;
     text-align: center;
-	line-height : 55px;
+	line-height : 80px;
     vertical-align: middle;
     z-index: 2;
     margin: auto auto;
 }
 
 #Production {
-    top: -370px;
-    right: 10px;
-    text-align: right;
+    top : 2%;
+	right : 47.3%;
 }
 
 #Acting {
-    top: -310px;
-    right: 190px;
+    top : 20%;
+	right : 59%;
 }
 
 #Synopsis {
-    top: -380px;
-    right: -160px;
+    top : 20%;
+	right : 35.5%;
 }
 
 #Music {
-    top: -255px;
-    right: -90px;
+    top : 55%;
+	right : 55%;
 }
 
 #Visual {
-    top: -320px;
-    right: 120px;
+    top : 55%;
+	right : 39%;
 }
 
 #content{
@@ -117,7 +116,7 @@
     position: absolute;
     right: 15%;
     letter-spacing: 3px;
-    bottom: 50px;
+    bottom: 7%;
     font-size: 20px;
     width: 150px;
     height: 100px;

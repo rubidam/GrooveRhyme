@@ -96,6 +96,7 @@ td{
 
 .firstName {
   font-size : 35px;
+  font-weight : bold;
   color : white;
   position : absolute;
   top : 10%;
