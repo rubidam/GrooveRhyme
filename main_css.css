@@ -19,10 +19,10 @@ html,body{
 	height:100%;
 	float: left;
 	text-align:center;
-	font-size:60px;
+	font-size:80px;
 	padding: 100px 0px;
     letter-spacing: 3px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -33,12 +33,12 @@ html,body{
 	height: 100%;
     float: left;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     padding: 100px 0px;
     margin-left: 0%;
     letter-spacing: 3px;
     z-index: 1;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 
 }
 #profile {
