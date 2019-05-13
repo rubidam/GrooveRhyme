@@ -2,14 +2,13 @@
 	background-image : url("./defaultProfile.png");
 	background-repeat : no-repeat;
 	background-size : 100%;
-	background-position : center;
     position: relative;
 	z-index: 1;
     top:0px;
     left: 0px;
     padding: 30px;
-    width: 1272px;
-    height: 700px;
+    width: 100%;
+    height: 100%;
 }
 .bgBlur:before {
 	content: '';
@@ -26,26 +25,26 @@
 #tableandbtn{
 	background-color: white;
 	position : absolute;
-	width : 520px;
-	height : 400px;
-	top : 150px;
-	left : 340px;
+	width : 450px;
+	height : 480px;
+	top : 15%;
+	left : 38%;
 	border : 1px solid black;
 }
 #collectiontable {
 	background-color: white;
 	position : absolute;
-	width : 500px;
-	height : 340px;
-	top : 5px;
-	left : 10px;
-	max-height : 340px;
+	width : 95%;
+	height : 80%;
+	top : 1%;
+	left : 2%;
+	max-height : 80%;
 	overflow-y : auto;
 }
 #delete {
 	position : absolute;
-	bottom : 10px;
-	right : 5px;
+	bottom : 2%;
+	right : 3%;
 	font-size : 20px;
 	font-weight : bold;
 	background : #ffffff;
@@ -54,14 +53,14 @@
 }
 table {
 	position : absolute;
-	width : 480px;
-	top: 15px;
-	left : 15px;
+	width : 90%;
+	top: 3%;
+	left : 5%;
 }
 
 th {
 	border-bottom : 3px purple dotted;
-	height : 50px;
+	height : 18%;
 	font-size: 30px;
 	padding: 3px;
 }
