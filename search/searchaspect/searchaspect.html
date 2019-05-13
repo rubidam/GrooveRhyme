@@ -7,6 +7,8 @@
 		<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
 		<link href="./searchaspect_css.css" rel= "stylesheet"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+
 	</head> 
 	<body> 
 		<center>
@@ -25,21 +27,34 @@
 			</div>
 		</center>
         <div id="middle">
-            <div id="content">
-                <div id="pentagon1" class="pentagon"></div>
-                <div id="Production" class="aspect">Production</div>
-                <div id="Acting" class="aspect">Acting</div>
-                <div id="Synopsis" class="aspect">Synopsis</div>
-                <div id="Music" class="aspect">Music</div>
-                <div id="Visual" class="aspect">Visual</div>
-            </div>
-            <div>
+		<div id = "penta">
+		  <div id="pentagon1" class="pentagon"></div>
+		  
+		  <div id = "top">
+				  <div id="Production" class="aspect">Produnction</div>
+		  </div>
+		  
+		  <div id = "mid">
+				  <div id="Acting" class="aspect">Acting</div>
+				  <div id="Synopsis" class="aspect">Synopsis</div>
+		  </div>
+		  
+		  <div id = "bot">
+				  <div id="Music" class="aspect">Music</div>
+				  <div id="Visual" class="aspect">Visual</div>
+		  </div>
+		  
+        </div>
+		<div>
+		<div id = "okdiv">
 				<input id="ok"
 						type="button"
 						value="OK"
-						class="ok" disabled>
-            </div>
-        </div>
+						class="btn ok"
+						disabled>
+							
+		</div>
+		</div>
 		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
