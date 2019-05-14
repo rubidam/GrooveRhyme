@@ -100,10 +100,10 @@ td, th{
 }
 
 .cate:hover {
-	background-image: url(go_to_choose_category_hover.png);
-	background-repeat: no-repeat;
-	background-color: white;
-	background-size: 100%;
+    background-image: url(go_to_choose_category_hover.png);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100%;
 }
 
 .aspe {
