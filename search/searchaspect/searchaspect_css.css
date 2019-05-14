@@ -1,15 +1,21 @@
+html,body{
+	width : 100%;
+	height:100%;
+}
+
 #upper-box {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	padding: 30px;
-	width: 1272px;
-	height: 100px;
+	padding: 0px;
+	width: 100%;
+	height: 150px;
 	background-color: #3E606F;
 	text-align: left;
 	font-size: 40px;
 	font-weight: bold;
 	color : #eee;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .backbutton {
@@ -29,9 +35,9 @@
 
 #title {
 	position : absolute;
-	left : 10%;
+	left : 80px;
 	top : 40px;
-	font-size : 35px;
+	font-size : 50px;
 }
 
 #homeButton {
@@ -50,14 +56,20 @@
 	top: 160px;
 	left: 0px;
 	padding : 30px;
-	width : 1272px;
+	width : 100%;
 	height : 500px;
 }
 
+#penta{
+	position : absolute;
+	width : 100%;
+	top : 5%;
+}
+
 .pentagon {
-    position: relative;
-    left: 450px;
-    top: 10px;
+    position: absolute;
+    left: 30%;
+    top: 30px;
     width: 350px;
     height: 350px;
     background-image: url(pentagon.png);
@@ -81,29 +93,53 @@
     margin: auto auto;
 }
 
-#Production {
-    top : 2%;
-	right : 47.3%;
+#top{
+	position : absolute;
+	width : 100%;
+	left : 30%;
+	top : 0%;
+}
+#mid{
+	position : absolute;
+	width : 100%;
+	left : 30%;
+	top : 100px;
+}
+#bot{
+	position : absolute;
+	width : 100%;
+	left : 30%;
+	top : 300px;
 }
 
-#Acting {
-    top : 20%;
-	right : 59%;
+#Production{
+	position : absolute;
+	top : 2%;
+	left : 120px;
+}	
+
+#Acting{
+	position : absolute;
+	top : 20%;
+	left : -25px;
 }
 
-#Synopsis {
-    top : 20%;
-	right : 35.5%;
+#Synopsis{
+	position : absolute;
+	top : 20%;
+	left : 280px;
 }
 
-#Music {
-    top : 55%;
-	right : 55%;
+#Music{
+	position : absolute;
+	top : 55%;
+	left : 30px;
 }
 
-#Visual {
-    top : 55%;
-	right : 39%;
+#Visual{
+	position : absolute;
+	top : 55%;
+	left : 230px;
 }
 
 #content{
@@ -111,13 +147,18 @@
 	height : 400px;
 }
 
+#okdiv{
+	position : absolute;
+	width : 70%;
+	right: 15%;
+	bottom : 20%;
+}
 
 .ok {
     position: absolute;
-    right: 15%;
+    right: 200px;
     letter-spacing: 3px;
-    bottom: 7%;
-    font-size: 20px;
+    font-size: 25px;
     width: 150px;
     height: 100px;
     border: 3px solid #3E606F;
