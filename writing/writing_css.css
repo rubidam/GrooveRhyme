@@ -30,9 +30,13 @@ body{
 	outline : none;
 }
 
-.backbutton:hover{
-	color: black;
-}
+    .backbutton:hover {
+        color: black;
+        -webkit-transition: background-color 0.15s ease-out;
+        -moz-transition: background-color 0.15s ease-out;
+        -o-transition: background-color 0.15s ease-out;
+        transition: background-color 0.15s ease-out;
+    }
 
 #title {
 	position : absolute;
@@ -87,11 +91,13 @@ body{
     height: 62px;
 }
 
-#searchbutton:hover {
-	border-color: #eee;
-	color: #eee;
-	background-color: #3E606F;
-}
+    #searchbutton:hover {
+        border-color: #eee;
+        color: #eee;
+        background-color: #3E606F;
+  
+    }
+
 #sinput{
 	position : absolute;
 	width : 70%;
@@ -133,11 +139,12 @@ body{
     font-weight: bold;
 }
 
-.ok:hover {
-    background-color: #3E606F;
-    color: #eee;
-    border-color: #eee;
-}
+    .ok:hover {
+        background-color: #3E606F;
+        color: #eee;
+        border-color: #eee;
+       
+    }
 .ok:disabled {
     background-color:white;
     border : 3px solid #eee;
