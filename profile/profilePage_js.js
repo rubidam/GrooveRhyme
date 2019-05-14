@@ -152,5 +152,6 @@ add_btn.onclick = function() {
 }
 //////////////////////////backpart
 function backback(){
+	console.log("aaa");
 	document.location.href = "../main.html";
 }

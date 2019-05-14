@@ -22,11 +22,11 @@ html,body{
 	position : absolute;
 	width : 300px;
 	height : 400px;
-	top : 200px;
-	left : 300px;
+	top : 20%;
+	left : 40%;
 	border : 3px solid #f1f1f1;
 	background-color : #eee;
-	
+	text-align : center;
 	z-index : 3;
 }
 #tablediv{
@@ -37,14 +37,18 @@ html,body{
 }
 
 #closebtn{
-	position:absolute;
-	left : 80%;
-	top : 90%;
+	position : absolute;
+	right : 10%;
+	background-color : darkred;
+	top : 85%;
+	color : white;
+	padding : 16px 20px;
+	border : none;
+	z-index : 1;
+	cursor : pointer;
+	margin-bottom : 10px;
 }
 
-#closebtn.hover{
-	back
-}
 
 td{
 	border : 1px solid black;
@@ -54,9 +58,9 @@ td{
 #collectionList{
 	border:1px solid #444444;
 	background-color:#ddd;
-	position : relative;
+	position : absolute;
 	width : 270px;
-	left : 0%;
+	left : 5%;
 	font-size : 20px;
 }
 
@@ -64,36 +68,32 @@ td{
 	position : absolute;
 	left : 10%;
 	background-color : #4CAF50;
-	top : 90%;
+	top : 85%;
 	color : white;
 	padding : 16px 20px;
 	border : none;
-	opacity : 0.8;
 	z-index : 1;
 	cursor : pointer;
 	margin-bottom : 10px;
 }
-#OKsign:hover{
-	opacity:1;
-}
-
 #Oksign:disabled{
 	cursor : not-allowed;
 	background : #ddd;
 }
 
 #backbutton {
+  border : none;
   font-size: 40px;
   background-color :#3E606F;
   color: #eee;
   display: inline-block;
-  border : none;
   outline : none;
   position : absolute;
   top : 55px;
+  z-index : 1;
 }
 
-#button:hover{
+#backbutton:hover{
     color:black;
 }
 
