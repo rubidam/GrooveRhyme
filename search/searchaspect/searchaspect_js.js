@@ -37,22 +37,27 @@ function clean_aspect(){
 	if (Pon == 1){
 		Pon = 0;
 		production.style.backgroundColor = '';
+		production.style.color = 'black';
 	}
 	if (Mon == 1){
 		Mon = 0;
 		music.style.backgroundColor = '';
+		music.style.color = 'black';
 	}
 	if (Von == 1){
 		Von = 0;
 		visual.style.backgroundColor = '';
+		visual.style.color = 'black';
 	}
 	if (Aon == 1){
 		Aon = 0;
 		acting.style.backgroundColor = '';
+		acting.style.color = 'black';
 	}
 	if (Son == 1){
 		Son = 0;
 		synopsis.style.backgroundColor = '';
+		synopsis.style.color = 'black';
 	}
 }
 
@@ -62,6 +67,7 @@ production.onclick = function() {
 		clean_aspect();
 		Pon = 1;
 		production.style.backgroundColor = '#3E606F';
+		production.style.color = 'white';
 		okbtn.disabled = false;
 	}
 	else {
@@ -70,6 +76,7 @@ production.onclick = function() {
 			okbtn.disabled = true;
 		}
 		production.style.backgroundColor = '';
+		production.style.color = 'black';
 	}
 }
 acting.onclick = function() {
@@ -78,6 +85,7 @@ acting.onclick = function() {
 		clean_aspect();
 		Aon = 1;
         acting.style.backgroundColor = '#3E606F';
+		acting.style.color = 'white';
 		okbtn.disabled = false;
 	}
 	else {
@@ -86,6 +94,7 @@ acting.onclick = function() {
 			okbtn.disabled = true;
 		}
 		acting.style.backgroundColor = '';
+		acting.style.color = 'black';
 	}
 }
 synopsis.onclick = function() {
@@ -95,6 +104,7 @@ synopsis.onclick = function() {
 		clean_aspect();
 		Son = 1;
         synopsis.style.backgroundColor = '#3E606F';
+		synopsis.style.color = 'white';
 		okbtn.disabled = false;
 	}
 	else {
@@ -103,6 +113,7 @@ synopsis.onclick = function() {
 			okbtn.disabled = true;
 		}
 		synopsis.style.backgroundColor = '';
+		synopsis.style.color = 'black';
 	}
 }
 music.onclick = function() {
@@ -111,6 +122,7 @@ music.onclick = function() {
 		clean_aspect();
 		Mon = 1;
         music.style.backgroundColor = '#3E606F';
+		music.style.color = 'white';
 		okbtn.disabled = false;
 	}
 	else {
@@ -119,6 +131,7 @@ music.onclick = function() {
 			okbtn.disabled = true;
 		}
 		music.style.backgroundColor = '';
+		music.style.color = 'black';
 	}
 }
 visual.onclick = function() {
@@ -127,6 +140,7 @@ visual.onclick = function() {
 		clean_aspect();
 		Von = 1;
         visual.style.backgroundColor = '#3E606F';
+		visual.style.color = 'white';
 		okbtn.disabled = false;
 	}
 	else {
@@ -135,6 +149,7 @@ visual.onclick = function() {
 			okbtn.disabled = true;
 		}
 		visual.style.backgroundColor = '';
+		visual.style.color = 'black';
 	}
 }
 
