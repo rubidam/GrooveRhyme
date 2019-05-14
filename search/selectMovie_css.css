@@ -7,7 +7,7 @@ html,body{
   color: #eee;
   position : absolute;
   width : 100%;
-  height : 570px;
+  height : 80%;
 }
 
 .buttonPart {
@@ -102,19 +102,19 @@ td{
 }
 
 .firstName {
-  font-size : 35px;
+  font-size : 50px;
   font-weight : bold;
   color : white;
   position : absolute;
   top : 10%;
-  left : 0%;
+  left : 1%;
   width : 50%;
   text-align : center;
   font-family: 'Open Sans', sans-serif;
 }
 
 .secondName {
-  font-size : 35px;
+  font-size : 50px;
   font-weight : bold;
   color : white;
   position : absolute;
@@ -131,6 +131,8 @@ td{
   position : absolute;
   top : 25%;
   left : 16%;
+  width : 360px;
+  height : 480px;
   
 }
 
@@ -139,11 +141,13 @@ td{
   position : absolute;
   top : 25%;
   right : 16%;
+  width : 360px;
+  height : 480px;
 }
 
 #homeButton {
   position : absolute;
-  top : 5%;
+  top : 2%;
   right : 2%;
   font-size : 20px;
   font-weight : bold;
@@ -153,11 +157,12 @@ td{
 }
 
 .plusButton {
-  font-size : 50px;
+  font-size : 70px;
   color : #888;
-  padding : 5px 20px;
+  padding : 5px 30px;
   background : #ffffff;
   border : #888 3px solid;
+  bottom : 30%;
   border-radius : 0.5em;
 }
 
@@ -169,24 +174,24 @@ td{
 
 #firstPlusButton {
 	position : absolute;
-	left : 24%;
+	left : 22%;
 }
 
 #secondPlusButton {
 	position : absolute;
-	right : 24%;
+	right : 22%;
 }
 
 #refreshButton {
-  font-size : 20px;
+  font-size : 40px;
   color : #888;
   padding : 15px 20px;
   background : #ffffff;
   border : #888 3px solid;
-  border-radius : 1em;
+  border-radius : 0.5em;
   position : absolute;
   left : 45%;
-  top : 10%;
+  bottom : 35%;
 }
 #refreshButton:hover {
     background-color: #3E606F;
