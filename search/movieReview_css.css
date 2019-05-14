@@ -54,35 +54,31 @@ html,body{
 
 #middle {
 	position : absolute;
-	top: 160px;
+	top: 20%;
 	left: 0px;
 	padding : 30px;
 	width : 100%;
-	height : 500px;
+	height : 70%;
 }
 
 #image {
 	border: 1px black solid;
-	position: relative;
+	position: absolute;
 	width:390px;
 	height:520px;
-	margin-left: 2%;
+	left : 50px;
 	float: left;
 	text-align:center;
 	font-size:50px;
 }
 
-
-#star {
-
-}
-
 #review {
 	border: 2px black solid;
-	position: relative;
+	position: absolute;
 	width:830px;
 	height:500px;
 	float: right;
+	left : 460px;
 	text-align:left;
 	margin-right: 2.5%;
 	padding: 10px;
