@@ -131,8 +131,6 @@ td{
   position : absolute;
   top : 25%;
   left : 16%;
-  width : 360px;
-  height : 480px;
   
 }
 
@@ -141,8 +139,6 @@ td{
   position : absolute;
   top : 25%;
   right : 16%;
-  width : 360px;
-  height : 480px;
 }
 
 #homeButton {
