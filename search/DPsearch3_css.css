@@ -1,6 +1,6 @@
 html,body{
-	width : 100%;
-	height : 100%;
+	width : 95%;
+	height : 95%;
 }
 
 #upper-box {
@@ -55,7 +55,6 @@ html,body{
 	position : absolute;
 	top: 160px;
 	left: 0px;
-	padding : 30px;
 	width : 100%;
 	height : 500px;
 }

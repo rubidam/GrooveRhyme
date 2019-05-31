@@ -1,8 +1,10 @@
 html,body{
-	width : 100%;
-	height : 100%;
+	width : 95%;
+	height : 95%;
 }
 .header {
+	top : 0%;
+	left:0%;
   background-color: #3E606F;
   color: #eee;
   position : absolute;
@@ -11,6 +13,7 @@ html,body{
 }
 
 .buttonPart {
+	left : 0%;
   position : absolute;
   width : 100%;
   height : 100px;
