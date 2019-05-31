@@ -42,16 +42,17 @@ html,body{
 
 #homeButton {
 	position : absolute;
-	right : 2%;
-	top : 5%;
-	font-size : 20px;
+	right : 4%;
+	top : 22%;
+	font-size : 30px;
 	font-weight : bold;
-	background : #ffffff;
+	background-color: #ffffff;
 	border-radius : 0.5em;
 	padding : 3px 10px;
 }
 #homeButton:hover {
 	cursor : pointer;
+	background-color: #eeee;
 }
 #middle {
 	position : absolute;
