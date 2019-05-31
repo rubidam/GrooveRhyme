@@ -31,6 +31,7 @@ html,body{
 
 .backbutton:hover{
 	color: black;
+	cursor : pointer;
 }
 
 #title {
@@ -50,7 +51,9 @@ html,body{
 	border-radius : 0.5em;
 	padding : 3px 10px;
 }
-
+#homeButton:hover{
+	cursor : pointer;
+}
 #middle {
 	position : absolute;
 	top: 160px;
@@ -93,7 +96,9 @@ html,body{
     z-index: 2;
     margin: auto auto;
 }
-
+.aspect:hover{
+	cursor : pointer;
+}
 #top{
 	position : absolute;
 	width : 100%;
@@ -169,11 +174,12 @@ html,body{
     font-weight: bold;
 }
 
-    .ok:hover {
-        border: 3px solid #eee;
-        background-color: #3E606F;
-        color: #eee;
-    }
+.ok:hover:enabled {
+	border: 3px solid #eee;
+	background-color: #3E606F;
+	color: #eee;
+	cursor : pointer;
+}
 
 .ok:disabled{
 	border: 3px solid #eee;

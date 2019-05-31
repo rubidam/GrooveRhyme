@@ -31,6 +31,7 @@ html,body{
 
 .backbutton:hover{
 	color: black;
+	cursor : pointer;
 }
 
 #title {
@@ -50,7 +51,9 @@ html,body{
 	border-radius : 0.5em;
 	padding : 3px 10px;
 }
-
+#homeButton:hover{
+	cursor : pointer;
+}
 #middle {
 	position : absolute;
 	top: 160px;
@@ -136,7 +139,7 @@ td, th{
 	background-color: #3E606F;
 	color: #eee;
 	border-color: #eee;
-
+	cursor : pointer;
 }
 #okdiv{
 	position : absolute;

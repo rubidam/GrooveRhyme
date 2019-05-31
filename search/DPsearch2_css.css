@@ -31,6 +31,7 @@ html,body{
 
 .backbutton:hover{
 	color: black;
+	cursor : pointer;
 }
 
 #title {
@@ -49,8 +50,9 @@ html,body{
 	background : #ffffff;
 	border-radius : 0.5em;
 	padding : 3px 10px;
+}#homeButton:hover{
+	cursor : pointer;
 }
-
 #middle {
 	position : absolute;
 	top: 160px;
@@ -132,12 +134,14 @@ td, th{
 	background-repeat: no-repeat;
 	background-color: white;
 	background-size: 100%;
+	cursor : pointer;
 }
 
 .aspe-skip:hover:enabled {
 	background-color: #3E606F;
 	color: #eee;
 	border-color: #eee;
+	cursor : pointer;
 }
 
 .ok {
@@ -158,6 +162,7 @@ td, th{
 	background-color: #3E606F;
 	color: #eee;
 	border-color: #eee;
+	cursor : pointer;
 
 }
 #okdiv{

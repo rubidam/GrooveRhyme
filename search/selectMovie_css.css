@@ -98,6 +98,7 @@ td{
 
 #backbutton:hover{
     color:black;
+	cursor : pointer;
 }
 
 #movie{
@@ -136,6 +137,9 @@ td{
   left : 16%;
   
 }
+#firstMovie:hover{
+	cursor : pointer;
+}
 
 #secondMovie {
   border : black 2px solid;
@@ -143,7 +147,9 @@ td{
   top : 25%;
   right : 16%;
 }
-
+#secondMovie:hover{
+	cursor : pointer;
+}
 #homeButton {
   position : absolute;
   top : 2%;
@@ -154,7 +160,9 @@ td{
   border-radius : 0.5em;
   padding : 3px 10px;
 }
-
+#homeButton:hover{
+	cursor : pointer;
+}
 .plusButton {
   font-size : 70px;
   color : #888;
@@ -166,9 +174,10 @@ td{
 }
 
 .plusButton:hover {
-  background-color: #3E606F;
-  color: #eee;
-  border: #eee 3px solid;
+	background-color: #3E606F;
+	color: #eee;
+	border: #eee 3px solid;
+	cursor : pointer;
 }
 
 #firstPlusButton {
@@ -196,4 +205,5 @@ td{
     background-color: #3E606F;
     color: #eee;
     border: #eee 3px solid;
+	cursor : pointer;
 }
