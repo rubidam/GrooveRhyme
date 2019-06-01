@@ -41,6 +41,11 @@ function imgSrc() {
     });
 }
 
+function imgLoading(){
+	var image = document.getElementById("image");
+	image.src = "./loading.gif";
+}
+
 function star() {
     var starp = document.getElementById("starp");
     var starm = document.getElementById("starm");
@@ -144,6 +149,7 @@ function postPressListener() {
     location.href = next_move;
 };
 
+imgLoading();
 insertCell();
 imgSrc();
 star();
