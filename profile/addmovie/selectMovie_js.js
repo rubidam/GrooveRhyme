@@ -328,6 +328,10 @@ function showcollectionlist(collectionbutton){
 }
 
 function addtocollection(){
+	var getcolname = firebase.database().ref('/collection/').once('value',function(snapshot){
+		var colname = snapshot.data()
+		
+	})
 	if(fstorsnd === 1){
 		
 	}
