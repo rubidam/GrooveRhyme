@@ -97,14 +97,16 @@ td, th{
 
 
 .aspe {
-	border : none;
-	outline : none;
-	width : 300px;
-	height : 150px;
-	background-image:url(go_to_choose_aspects.png);
-	background-repeat:no-repeat;
-	background-color:white;
-	background-size:100%;
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 150px;
+    background-image: url(go_to_choose_aspects.png);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
 
 .aspe-skip {
@@ -116,7 +118,9 @@ td, th{
 	background-color: white;
 	color: #3E606F;
 	letter-spacing: 3px;
-	font-weight: bold;
+	font-weight: bold; 
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
 .aspe-skip:disabled {
         font-size: 25px;
@@ -130,18 +134,20 @@ td, th{
 }
 
 .aspe:hover {
-	background-image: url(go_to_choose_aspects_hover.png);
-	background-repeat: no-repeat;
-	background-color: white;
-	background-size: 100%;
-	cursor : pointer;
+    background-image: url(go_to_choose_aspects_hover.png);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100%;
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
 }
 
 .aspe-skip:hover:enabled {
-	background-color: #3E606F;
-	color: #eee;
-	border-color: #eee;
-	cursor : pointer;
+    background-color: #3E606F;
+    color: #eee;
+    border-color: #eee;
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
 }
 
 .ok {
