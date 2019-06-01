@@ -10,7 +10,7 @@ body{
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	height: 100px;
+	height: 150px;
 	background-color: #3E606F;
 	text-align: left;
 	font-size: 40px;
@@ -21,8 +21,8 @@ body{
 }
 .backbutton {
 	position:absolute;
-	top:55px;
-	font-size: 40px;
+	top:32%;
+	font-size: 50px;
 	background-color :#3E606F;
 	color: #eee;
 	display: inline-block;
@@ -47,18 +47,21 @@ body{
 }
 
 #homeButton {
-	position : absolute;
-	right : 2%;
-	top: 5%;
-	font-size : 20px;
-	font-weight : bold;
-	background : #ffffff;
-	border-radius : 0.5em;
-	padding : 3px 10px;
+    position: absolute;
+    top: 10%;
+    right: 2%;
+    font-size: 40px;
+    background-color: #3E606F;
+    color: #eee;
+    font-weight: bold;
+    border: none;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
+
 #homeButton:hover{
 	cursor : pointer;
-	background-color : #EEEEEE;
+	color : dimgrey;
 }
 #middle {
     position: absolute;
