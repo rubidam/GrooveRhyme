@@ -31,7 +31,7 @@ body{
 }
 
 .backbutton:hover {
-	color: black;
+	color: #aaa;
 	-webkit-transition: background-color 0.15s ease-out;
 	-moz-transition: background-color 0.15s ease-out;
 	-o-transition: background-color 0.15s ease-out;
@@ -61,7 +61,7 @@ body{
 
 #homeButton:hover{
 	cursor : pointer;
-	color : dimgrey;
+	color : #aaa;
 }
 #middle {
     position: absolute;

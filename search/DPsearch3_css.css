@@ -56,7 +56,7 @@ html,body{
 
 #homeButton:hover{
 	cursor : pointer;
-	color : dimgrey;
+	color : #aaa;
 }
 
 #middle {

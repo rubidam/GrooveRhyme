@@ -99,7 +99,7 @@ td:hover{
 }
 
 #backbutton:hover{
-    color:black;
+    color:#aaa;
 	cursor : pointer;
 }
 
@@ -175,7 +175,7 @@ td:hover{
 
 #homeButton:hover{
 	cursor : pointer;
-	color : dimgrey;
+	color : #aaa;
 }
 
 .plusButton {

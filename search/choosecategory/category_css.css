@@ -25,7 +25,7 @@
 }
 
 .backbutton:hover{
-	color: black;
+	color: #aaa;
 	cursor : pointer;
 }
 
@@ -51,7 +51,7 @@
 
 #homeButton:hover{
 	cursor : pointer;
-	color : dimgrey;
+	color : #aaa;
 }
 
 #middle {

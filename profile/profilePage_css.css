@@ -73,7 +73,7 @@ h3 {
 }
 
 #backbutton:hover{
-	color: black;
+	color: #aaa;
 	cursor : pointer;
 }
 
@@ -92,7 +92,7 @@ h3 {
 }
 
 #homeButton:hover{
-	background-color : #EEEEEE;
+	background-color : #aaa;
 	cursor : pointer;
 }
 .homeButtonPart {

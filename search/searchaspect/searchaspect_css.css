@@ -34,7 +34,7 @@ body{
 }
 
 .backbutton:hover{
-	color: black;
+	color: #aaa;
 	cursor : pointer;
 }
 
@@ -60,7 +60,7 @@ body{
 
 #homeButton:hover{
 	cursor : pointer;
-	color : dimgrey;
+	color : #aaa;
 }
 #middle {
 	position : absolute;
