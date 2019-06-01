@@ -7,54 +7,70 @@
 		<link href="./profilePage_css.css" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
 	</head>
-	<body>
-		<div class ="header">
-			<div class = "button">
-					<input type="button" value="<" onclick="backback()" id = "backButton"/>
-			</div>
-			<div class = "profileImg">
-			</div>
-			<div class = "profileText">
-				<h1> JunJeong </h1>
-				<span id ="hashtag"> #Action #Drama </span>
-			</div>
-			<div class = "homeButtonPart">
-				<a href = "../main.html"><input type="button" value="🏠" id = "homeButton"></a>
-			</div>
-		</div>
-		<div class = "main">
-			<div class = "reviewImg">
-				<div class = "review">= Review =</div>
-				<table id = "reviewTable">
-				</table>
-			</div>
-			<div class = "collection">
-				<table id = "collectionTable">
-					<tr>
-						<th class = "collection_th"> My Collection </th>
-						<th class = "collection_th"> 
-							<input type="button" value="+" id = "plusButton" class = "open-button" onclick="openForm()">
-						</th>
-					</tr>
-				</table>
-			</div>
-			<div class="form-popup" id="myForm">
-				<div class="form-container">
-					<div id = "popup_head"><b>Write a new collection name</b>
-						<button type="button" class="btn cancel" onclick="closeForm()">X</button>
-					</div>
-					<div id = "popup_body">
-						<input type="text" placeholder="collection name" id="new_name" required>
-						<button id = "add">Add</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
-		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
-		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-		<script src="./profilePage_js.js"></script>
-	</body>
+    <body>
+        <div class="header">
+            <div class="button">
+                <input type="button" value="<" onclick="backback()" id="backButton" />
+            </div>
+            <div class="profileImg">
+            </div>
+            <div class="profileText">
+                <h1> JunJeong </h1>
+                <span id="hashtag"> #Action #Drama </span>
+            </div>
+            <div class="homeButtonPart">
+                <a href="../main.html"><input type="button" value="🏠" id="homeButton"></a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="reviewImg">
+                <div class="review">= Review =</div>
+                <table id="reviewTable"></table>
+            </div>
+            <div class="collection">
+                <table id="collectionTable">
+                    <tr>
+                        <th class="collection_th"> My Collection </th>
+                        <th class="collection_th">
+                            <input type="button" value="+" id="plusButton" class="open-button" onclick="openForm()">
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-popup" id="myForm">
+                <div class="form-container">
+                    <div id="popup_head">
+                        <b>Write a new collection name</b>
+                        <button type="button" class="btn cancel" onclick="closeForm()">X</button>
+                    </div>
+                    <div id="popup_body">
+                        <input type="text" placeholder="collection name" id="new_name" required>
+                        <button id="add">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="middle" class="bgBlur">
+            <div id="tableandbtn" class="overlap">
+                <div id="collectiontable" class="overlap">
+                    <table id="myTable" class="overlap">
+                        <tr>
+                            <th id="collectionname" class="overlap"> </th>
+                            <th id="closeth"> <button id="close">X</button></th>
+                        </tr>
+                    </table>
+                </div>
+                <button id="addmovie" class="overlap" onclick=addmovie()> Add Movie</button>
+                <button id="delete" class="overlap" onclick=collectiondelete()>Delete Collection</button>
+                
+            </div>
+            <div id="modal_layer"></div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+        <script src="../jquery/js/jquery-1.9.0.min.js"></script>
+        <script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src="./profilePage_js.js"></script>
+    </body>
 </html>

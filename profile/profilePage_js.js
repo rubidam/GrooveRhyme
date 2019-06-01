@@ -108,11 +108,12 @@ function refreshcollectionList(name) {
 	col2.setAttribute('class','collection_td');
 	col1.addEventListener("click",function(e){
 		console.log(name);
-		location.href = "./collection.html?collection=" + name;
+        location.href = "./profilePage.html?collection=" + name;
 	})
 	col2.addEventListener("click",function(e){
 		console.log(name);
-		location.href = "./collection.html?collection=" + name;
+        location.href = "./profilePage.html?collection=" + name;
+
 	})
 	col1.innerHTML = name;
 	col2.innerHTML = ">";
@@ -151,8 +152,103 @@ add_btn.onclick = function() {
 	closeForm();
 	getCollectionList();
 }
+
 //////////////////////////backpart
 function backback(){
 	console.log("aaa");
 	document.location.href = "../main.html";
 }
+
+function collectiondelete() {
+    var para = getUrlVars();
+    var colname = para['collection'].split('%20').join(' ');
+    return firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').once('value', function (snapshot) {
+        firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').remove();
+        location.href = "./profilePage.html";
+    });
+}
+
+function addmovie() {
+    var colname = para['collection'].split('%20').join(' ');
+    var collection_record = firebase.database().ref('/collection/').set({
+        collectionName: colname
+    });
+
+    location.href = "./addmovie/DPsearch1.html"
+}
+
+function initializeTable() {
+    /*
+      Initialize the courses in the right plane
+    */
+    var myTable = document.getElementById("myTable");
+    var numRows = myTable.rows.length;
+    for (var i = 1; i < numRows; i++) {
+        myTable.deleteRow(1);
+    }
+}
+function refreshList(name) {
+    var resultTable = document.getElementById("myTable");
+    var row = resultTable.insertRow(1);
+    row.setAttribute('class', 'namerow');
+    var col1 = row.insertCell(0);
+    col1.setAttribute("class", "overlap");
+    col1.setAttribute("colspan", "2");
+    col1.addEventListener("click", function (e) {
+        console.log(name);
+        location.href = "../search/movieReview.html?" + name;
+    })
+    col1.innerHTML = name;
+}
+function makeTable(lst) {
+    initializeTable();
+    var len = lst.length;
+    for (var i = len - 1; i >= 0; i--) {
+        if (lst[i] == 'z') {
+            continue;
+        }
+        refreshList(lst[i]);
+    }
+}
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+function getMovieList() {
+    var colname = para['collection'].split('%20').join(' ');
+    return firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').once('value', function (snapshot) {
+        var myValue = snapshot.val();
+        if (myValue != null) {
+            var keys = Object.keys(myValue);
+            movielist = keys;
+            console.log(movielist);
+        }
+        var tablehead = document.getElementById("collectionname");
+        tablehead.innerHTML = colname;
+        makeTable(movielist);
+    });
+}
+var para = getUrlVars();
+var movielist = [];
+function popupTrue() {
+    var loc = document.location.href;
+    var loclist = []
+    loclist = loc.split("");
+    for (var i = 0; i < loclist.length; i++) {
+        if (loclist[i] == "?") {
+            getMovieList();
+            return;
+        }
+    }
+    document.getElementById("middle").style.display = 'none';
+}
+var close = document.getElementById("closeth");
+close.addEventListener("click", function (e) {
+    var loc = document.location.href;
+    location.href = loc.split("?")[0];
+})
+popupTrue();
