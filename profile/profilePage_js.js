@@ -199,8 +199,8 @@ function refreshList(name) {
     col1.setAttribute("colspan", "2");
     row.addEventListener("click", function (e) {
         console.log(name);
-        getMovieList(col1.innerHTML);
-		//location.href = "../search/movieReview.html?" + name;
+        //getMovieList(col1.innerHTML);
+		location.href = "../search/movieReview.html?" + name;
     })
     col1.innerHTML = name;
 }
