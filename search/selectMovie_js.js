@@ -191,6 +191,8 @@ function printMovie(){
 	secondidx = secondIndex;
 	
     nextButton.onclick = function () {
+		first.src = "./loading.gif";
+		second.src = "./loading.gif";
         var nextButton = document.getElementById("nextButton");
 		firstIndex = firstIndex + 2;
 		secondIndex = secondIndex + 2;
@@ -225,6 +227,8 @@ function printMovie(){
     }
 	
 	prevButton.onclick = function () {
+		first.src = "./loading.gif";
+		second.src = "./loading.gif";
         var prevButton = document.getElementById("prevButton");
 		firstIndex = firstIndex - 2;
 		secondIndex = secondIndex - 2;
