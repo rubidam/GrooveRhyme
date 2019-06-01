@@ -161,6 +161,7 @@ td:hover{
         box-shadow: 2px 2px 2px #555;
     }
 #homeButton {
+<<<<<<< HEAD
   position : absolute;
   top : 2%;
   right : 2%;
@@ -170,38 +171,53 @@ td:hover{
   font-weight : bold;
   border : none;
   display: inline-block;
+=======
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 40px;
+    background-color: #3E606F;
+    color: #eee;
+    font-weight: bold;
+    border: none;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+>>>>>>> 4b19d1c9630957a4ecfff28cb2c8f092fa7cb1cb
 }
 
 #homeButton:hover{
 	cursor : pointer;
-	color : black;
+	color : dimgrey;
 }
 
 #helpButton {
-  position : absolute;
-  top : 2.2%;
-  right : 5.5%;
-  font-size: 40px;
-  background-color :#3E606F;
-  color: #eee;
-  font-weight : bold;
-  border : none;
-  display: inline-block;
+    position: absolute;
+    top: 2.2%;
+    right: 5.5%;
+    font-size: 40px;
+    background-color: #3E606F;
+    color: #eee;
+    font-weight: bold;
+    border: none;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
 
 #helpButton:hover{
 	cursor : pointer;
-	color : black;
+	color : dimgray;
 }
 
 .plusButton {
-  font-size : 70px;
-  color : #888;
-  padding : 5px 30px;
-  background : #ffffff;
-  border : #888 3px solid;
-  bottom : 30%;
-  border-radius : 0.5em;
+    font-size: 70px;
+    color: #888;
+    padding: 5px 30px;
+    background: #ffffff;
+    border: #888 3px solid;
+    bottom: 30%;
+    border-radius: 0.5em;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
 
 .plusButton:hover {
