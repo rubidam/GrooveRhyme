@@ -114,7 +114,10 @@ function refreshcollectionList(name) {
         //location.href = "./profilePage.html?collection=" + name;
 	})
 	col1.innerHTML = name;
-	col2.innerHTML = ">";
+	var arrow = document.createElement("i");
+	arrow.className="fas fa-angle-right";
+	col2.appendChild(arrow);
+	col2.style.textAlign = "center";
 }
 function makecollectionTable(lst) {
 	initializecollectionTable();
