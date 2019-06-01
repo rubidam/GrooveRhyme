@@ -28,10 +28,6 @@ html,body{
     -webkit-transition: all 0.6s;
     transition: all 0.6s;
 }
-#search:hover{
-    text-shadow: 5px 5px 5px #aaa;
-}
-
 #write {
     background-color: #3E606F;
     color: #eee;
@@ -47,9 +43,7 @@ html,body{
     -webkit-transition: all 0.6s;
     transition: all 0.6s;
 }
-#write:hover {
-    text-shadow: 5px 5px 5px #aaa;
-}
+
 #profile {
     background-color: #3E606F;
     background-size: 100%;
@@ -69,8 +63,9 @@ html,body{
     -webkit-transition: all 0.6s;
     transition: all 0.6s;
 }
-#profile:hover{
+#profile:hover {
     transform:scale(1.1, 1.1);
+    
 }
 #supp1, #supp2 {
     width: 50%;

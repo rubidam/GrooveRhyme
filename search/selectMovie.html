@@ -13,18 +13,19 @@
       <div class="header">
 	  
           <div>
-              <input type="button" value="<" id="backbutton">
+			  <button id = "backbutton"><i class="fas fa-angle-left"></i></button>
           </div>
 		  
           <div id = "movie">
               <div class = "firstName"><span id = "firstName"></span></div>
 			  <div class = "secondName"><span id = "secondName"></span></div>
-              <a><img id = "firstMovie" src="<a href="https://tenor.com/search/loading-gifs">Loading GIFs</a><script type="text/javascript" async src="https://tenor.com/embed.js"></script>" height = 400 width=300></a>
-              <a><img id = "secondMovie" src="./default.jpg" height=400 width=300></a>
+
+              <a><img id = "firstMovie" title = "Move to the page that shows reviews of this movie" src="./default.jpg" height = 400 width=300></a>
+              <a><img id = "secondMovie" title = "Move to the page that shows reviews of this movie" src="./default.jpg" height=400 width=300></a>
+
 			  <button id = "homeButton"><i class="fas fa-home"></i></button>
-			  <button id = "helpButton"><i class="far fa-question-circle"></i></button>
-			  <button id = "prevButton"><i class = "fas fa-arrow-left"></i></button>
-			  <button id = "nextButton"><i class="fas fa-arrow-right"></i></button>
+			  <button id = "prevButton" title = "Previous options"><i class = "fas fa-arrow-left"></i></button>
+			  <button id = "nextButton" title = "Next options"><i class="fas fa-arrow-right"></i></button>
           </div>
 		  
       </div>
@@ -45,8 +46,8 @@
 			</button>
 	  </div>
 	  <div class="buttonPart">
-          <input type="button" value="+" class="plusButton" id = "firstPlusButton" onclick = "">
-          <input type="button" value="+" class="plusButton" id = "secondPlusButton" onclick = "">
+          <input type="button" title = "Add above movie to collection" value="+" class="plusButton" id = "firstPlusButton" onclick = "">
+          <input type="button" title = "Add above movie to collection" value="+" class="plusButton" id = "secondPlusButton" onclick = "">
       </div>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
