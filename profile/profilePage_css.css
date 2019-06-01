@@ -190,10 +190,9 @@ h3 {
 }
 
 .collection_tr:hover{
-	background-color : #EEEEEE;
+	color : #AAA;
 	cursor : pointer;
 }
-
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
