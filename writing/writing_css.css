@@ -30,13 +30,14 @@ body{
 	outline : none;
 }
 
-    .backbutton:hover {
-        color: black;
-        -webkit-transition: background-color 0.15s ease-out;
-        -moz-transition: background-color 0.15s ease-out;
-        -o-transition: background-color 0.15s ease-out;
-        transition: background-color 0.15s ease-out;
-    }
+.backbutton:hover {
+	color: black;
+	-webkit-transition: background-color 0.15s ease-out;
+	-moz-transition: background-color 0.15s ease-out;
+	-o-transition: background-color 0.15s ease-out;
+	transition: background-color 0.15s ease-out;
+	cursor : pointer;
+}
 
 #title {
 	position : absolute;
@@ -55,7 +56,10 @@ body{
 	border-radius : 0.5em;
 	padding : 3px 10px;
 }
-
+#homeButton:hover{
+	cursor : pointer;
+	background-color : #EEEEEE;
+}
 #middle {
     position: absolute;
     top: 160px;
@@ -139,12 +143,13 @@ body{
     font-weight: bold;
 }
 
-    .ok:hover {
-        background-color: #3E606F;
-        color: #eee;
-        border-color: #eee;
-       
-    }
+.ok:hover {
+	cursor : pointer;
+	background-color: #3E606F;
+	color: #eee;
+	border-color: #eee;
+   
+}
 .ok:disabled {
     background-color:white;
     border : 3px solid #eee;

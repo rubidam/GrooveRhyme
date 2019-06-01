@@ -30,6 +30,7 @@ html,body{
 
 .backbutton:hover {
 	color: black;
+	cursor : pointer;
 }
 
 #title {
@@ -49,7 +50,10 @@ html,body{
 	border-radius : 0.5em;
 	padding : 3px 10px;
 }
-
+#homeButton:hover{
+	cursor : pointer;
+	background-color : #EEEEEE;
+}
 #middle {
     position: absolute;
     top: 160px;
@@ -175,7 +179,8 @@ html,body{
     font-weight: bold;
 }
 
-.ok:hover {
+.ok:hover:enabled {
+	cursor : pointer;
     background-color: #3E606F;
     color: #eee;
     border-color: #eee;
@@ -184,7 +189,7 @@ html,body{
 
 .ok:disabled{
 	border: 3px solid #eee;
-  color: #eee;
+	color: #eee;
 }
 
 .delete {
@@ -201,7 +206,8 @@ html,body{
     font-weight: bold;
 }
 
-.delete:hover {
+.delete:hover:enabled {
+	cursor : pointer;
     background-color: darkred;
     color: #eee;
     border-color: #eee;
@@ -210,5 +216,5 @@ html,body{
 
 .delete:disabled{
 	border: 3px solid #eee;
-  color: #eee;
+	color: #eee;
 }
