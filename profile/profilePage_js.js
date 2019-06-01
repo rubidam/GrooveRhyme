@@ -58,7 +58,7 @@ function refreshreviewList(name) {
 	})
 	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
-		col1.innerHTML = "<img src =" + url + " height = 200 width = 130 hspace = 7>";
+		col1.innerHTML = "<img src =" + url + " class = 'reviewelem' height = 200 width = 130 hspace = 7>";
     });
 	
 	if(row.cells.length == 4){
@@ -101,6 +101,7 @@ function initializecollectionTable() {
 function refreshcollectionList(name) {
 	var resultTable = document.getElementById("collectionTable");
 	var row = resultTable.insertRow(1);
+	row.setAttribute('class','collection_tr');
 	var col1 = row.insertCell(0);
 	col1.setAttribute('class','collection_td');
 	var col2 = row.insertCell(1);

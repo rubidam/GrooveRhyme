@@ -37,8 +37,10 @@ function initializeTable() {
 function refreshList(name) {
 	var resultTable = document.getElementById("myTable");
 	var row = resultTable.insertRow(1);
+	row.setAttribute('class','namerow');
 	var col1 = row.insertCell(0);
 	col1.setAttribute("class","overlap");
+	col1.setAttribute("colspan","2");
 	col1.addEventListener("click",function(e){
 		console.log(name);
 		location.href = "../search/movieReview.html?" + name;
@@ -77,7 +79,6 @@ function getMovieList() {
 		makeTable(movielist);
 	});
 }
-
 var para = getUrlVars();
 var movielist=[];
 getMovieList();

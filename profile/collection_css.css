@@ -41,6 +41,20 @@
 	max-height : 80%;
 	overflow-y : auto;
 }
+#closeth{
+	text-align : right;
+}
+#close{
+	background : #ffffff;
+	font-size : 20px;
+	font-weight : bold;
+	border-radius : 0.5em;
+	padding : 5px 10px;
+}
+#close:hover{
+	cursor : pointer;
+	background-color : #EEEEEE;
+}
 #delete {
 	position : absolute;
 	bottom : 2%;
@@ -50,6 +64,10 @@
 	background : #ffffff;
 	border-radius : 0.5em;
 	padding : 5px 10px;
+}
+#delete:hover{
+	cursor : pointer;
+	background-color : #EEEEEE;
 }
 table {
 	position : absolute;
@@ -64,10 +82,13 @@ th {
 	font-size: 30px;
 	padding: 3px;
 }
-
 td {
 	border-bottom: 2px purple dotted;
 	height : 35px;
 	font-size: 25px;
 	padding : 4px;
+}
+.namerow:hover{
+	cursor : pointer;
+	background-color: #EEEEEE;
 }
