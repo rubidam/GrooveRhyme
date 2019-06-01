@@ -12,7 +12,7 @@
 		
         <div class="header">
             <div class="button">
-                <input type="button" value="<" onclick="backback()" id="backButton" />
+                <button id = "backButton" onkeypress = "backspace()"><i class="fas fa-angle-left"></i></button>
             </div>
             <div class="profileImg">
             </div>
@@ -21,7 +21,7 @@
                 <span id="hashtag"> #Action #Drama </span>
             </div>
             <div class="homeButtonPart">
-                <a href="../main.html"><input type="button" value="🏠" id="homeButton"></a>
+                <a href="../main.html"><button id = "homeButton"><i class="fas fa-home"></i></button></a>
             </div>
         </div>
         <div class="main">
@@ -43,7 +43,7 @@
                 <div class="form-container">
                     <div id="popup_head">
                         <b>Write a new collection name</b>
-                        <button type="button" class="btn cancel" onclick="closeForm()">X</button>
+                        <button class="btn cancel" onclick="closeForm()"><i class="fas fa-times"></i></button>
                     </div>
                     <div id="popup_body">
                         <input type="text" placeholder="collection name" id="new_name" required>
@@ -58,7 +58,7 @@
                     <table id="myTable" class="overlap">
                         <tr>
                             <th id="collectionname" class="overlap"> </th>
-                            <th id="closeth"> <button id="close">X</button></th>
+                            <th id="closeth"> <button id="close"><i class="fas fa-times"></i></button></th>
                         </tr>
                     </table>
                 </div>
