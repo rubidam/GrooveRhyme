@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>search</title>
+    <script src="../jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <link href="../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="./DPsearch1_css.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+</head>
+	<body>
+		<div id = "whole">
+        <center>
+			<div id="upper-box">
+				<a href = "../main.html">
+					<input id="backspace"
+						type="button" value="<"
+						class="backbutton" onkeypress="backspace()">
+				</a>
+				<div id = "title">
+					It's time to search
+				</div>
+				<a href = "../main.html">
+					<input type="button" value="🏠" id = "homeButton">
+				</a>
+			</div>
+		</center>
+		<div id = "middle">
+			<table id="searchTable"
+					class="searchTable">
+				<tr>
+					<th id="Category">
+						<input id="category"
+								type="Button"
+								value=""
+								class="cate"
+								/>
+					</th>
+					<th>
+						<input id="skip"
+								type="button"
+								value="Skip?"
+								class="cate-skip"
+								>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<div id="arrow"></div>
+					</td>
+				</tr>
+				<tr>
+					<td id="aspect">
+						<center>
+							<input id="aspect"
+									type="button"
+									value="ASPECTS"
+									class="aspe"
+									>
+						</center>
+					</td>
+					<td>
+						<center>
+							<input id="skip"
+									type="button"
+									value="Skip?"
+									class="aspe-skip"
+									>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<div id = "okdiv">
+				<input id="ok"
+						type="button"
+						value="OK"
+						class="ok"
+						>
+			</div>
+		</div>
+		<script src= "./DPsearch1_js.js"></script>
+		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
+		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+	</div>
+	</body>
+</html>
+
+
+

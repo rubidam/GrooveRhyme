@@ -24,6 +24,16 @@ function collectiondelete() {
 		location.href = "./profilePage.html";
 	});
 }
+
+function addmovie(){
+	var colname = para['collection'].split('%20').join(' ');
+	var collection_record = firebase.database().ref('/collection/').set({
+		collectionName : colname
+	});
+	
+	location.href = "./addmovie/DPsearch1.html"
+}
+
 function initializeTable() {
   /*
     Initialize the courses in the right plane
