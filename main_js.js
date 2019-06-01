@@ -7,7 +7,7 @@ searchdiv.addEventListener('click',function (e) {
 	console.log("search click");
 });
 searchdiv.addEventListener('mouseover', function (e) {
-    searchdiv.style.textShadow = "5px 5px 5px #aaa";
+    searchdiv.style.textShadow = "3px 3px 3px black";
     searchdiv.style.backgroundColor = "#3e606f";
     searchdiv.style.color = "#eee"
     writediv.style.textShadow = "none";
@@ -21,7 +21,7 @@ writediv.addEventListener('click',function (e) {
 });
 writediv.addEventListener("mouseover", function (e) {
     profilediv.style.backgroundColor = "#3e606f";
-    writediv.style.textShadow = "5px 5px 5px #aaa";
+    writediv.style.textShadow = "3px 3px 3px black";
     writediv.style.backgroundColor = "#3e606f";
     writediv.style.color = "#eee";
     searchdiv.style.textShadow = "none";
@@ -43,7 +43,7 @@ profilediv.addEventListener('mouseout',function (e) {
 	console.log("profile hover out");
     profilediv.style.backgroundImage = "url('./profile/profile1.png')";
     profilediv.style.backgroundColor = "#eee";
-    writediv.style.textShadow = "5px 5px 5px #aaa";
+    writediv.style.textShadow = "3px 3px 3px black";
     writediv.style.backgroundColor = "#eee";
     writediv.style.color = "#3e606f";
 });
