@@ -100,20 +100,18 @@ function initializecollectionTable() {
 }
 function refreshcollectionList(name) {
 	var resultTable = document.getElementById("collectionTable");
+	var collection = document.getElementById("middle");
 	var row = resultTable.insertRow(1);
 	row.setAttribute('class','collection_tr');
 	var col1 = row.insertCell(0);
 	col1.setAttribute('class','collection_td');
 	var col2 = row.insertCell(1);
 	col2.setAttribute('class','collection_td');
-	col1.addEventListener("click",function(e){
+	row.addEventListener("click",function(e){
 		console.log(name);
-        location.href = "./profilePage.html?collection=" + name;
-	})
-	col2.addEventListener("click",function(e){
-		console.log(name);
-        location.href = "./profilePage.html?collection=" + name;
-
+		collection.style.display="block";
+		getMovieList(col1.innerHTML);
+        //location.href = "./profilePage.html?collection=" + name;
 	})
 	col1.innerHTML = name;
 	col2.innerHTML = ">";
@@ -144,6 +142,7 @@ getReviewList();
 var collectionlist=[];
 getCollectionList();
 var add_btn = document.getElementById("add");
+
 add_btn.onclick = function() {
 	input_box = document.getElementById("new_name");
 	console.log(input_box.value);
@@ -160,11 +159,13 @@ function backback(){
 }
 
 function collectiondelete() {
+	var collection = document.getElementById("middle");
     var para = getUrlVars();
     var colname = para['collection'].split('%20').join(' ');
     return firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').once('value', function (snapshot) {
         firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').remove();
-        location.href = "./profilePage.html";
+        //location.href = "./profilePage.html";
+		collection.style.display = "none";
     });
 }
 
@@ -183,9 +184,11 @@ function initializeTable() {
     */
     var myTable = document.getElementById("myTable");
     var numRows = myTable.rows.length;
+	var colname = document.getElementById("collectionname");
     for (var i = 1; i < numRows; i++) {
         myTable.deleteRow(1);
     }
+	colname.innerHTML = "";
 }
 function refreshList(name) {
     var resultTable = document.getElementById("myTable");
@@ -194,14 +197,15 @@ function refreshList(name) {
     var col1 = row.insertCell(0);
     col1.setAttribute("class", "overlap");
     col1.setAttribute("colspan", "2");
-    col1.addEventListener("click", function (e) {
+    row.addEventListener("click", function (e) {
         console.log(name);
-        location.href = "../search/movieReview.html?" + name;
+        getMovieList(col1.innerHTML);
+		//location.href = "../search/movieReview.html?" + name;
     })
     col1.innerHTML = name;
 }
 function makeTable(lst) {
-    initializeTable();
+    //initializeTable();
     var len = lst.length;
     for (var i = len - 1; i >= 0; i--) {
         if (lst[i] == 'z') {
@@ -218,8 +222,8 @@ function getUrlVars() {
     return vars;
 }
 
-function getMovieList() {
-    var colname = para['collection'].split('%20').join(' ');
+function getMovieList(colname) {
+    //var colname = para['collection'].split('%20').join(' ');
     return firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').once('value', function (snapshot) {
         var myValue = snapshot.val();
         if (myValue != null) {
@@ -234,6 +238,7 @@ function getMovieList() {
 }
 var para = getUrlVars();
 var movielist = [];
+
 function popupTrue() {
     var loc = document.location.href;
     var loclist = []
@@ -244,11 +249,13 @@ function popupTrue() {
             return;
         }
     }
-    document.getElementById("middle").style.display = 'none';
+    //document.getElementById("middle").style.display = 'none';
 }
-var close = document.getElementById("closeth");
-close.addEventListener("click", function (e) {
-    var loc = document.location.href;
-    location.href = loc.split("?")[0];
+var closebtn = document.getElementById("closeth");
+closebtn.addEventListener("click", function (e) {
+    var collection = document.getElementById("middle");
+	initializeTable();
+	collection.style.display = "none";
+	
 })
 popupTrue();
