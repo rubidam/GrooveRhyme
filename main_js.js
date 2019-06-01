@@ -35,7 +35,7 @@ profilediv.addEventListener('mouseover',function (e) {
 	console.log("profile hover");
     profilediv.style.backgroundImage = "url('./profile/profile2.png')";
     profilediv.style.backgroundColor = "#3e606f";
-    writediv.style.textShadow = "5px 5px 5px #aaa";
+    writediv.style.textShadow = "none";
     writediv.style.backgroundColor = "#3e606f";
     writediv.style.color = "#eee";
 });
@@ -43,7 +43,7 @@ profilediv.addEventListener('mouseout',function (e) {
 	console.log("profile hover out");
     profilediv.style.backgroundImage = "url('./profile/profile1.png')";
     profilediv.style.backgroundColor = "#eee";
-    writediv.style.textShadow = "none";
+    writediv.style.textShadow = "5px 5px 5px #aaa";
     writediv.style.backgroundColor = "#eee";
     writediv.style.color = "#3e606f";
 });
