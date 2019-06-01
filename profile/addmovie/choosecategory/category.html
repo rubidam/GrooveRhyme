@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>category</title>
+		<script src="../../jquery/js/jquery-1.9.0.min.js"></script>
+		<script src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<link href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+		<link href="./category_css.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+	</head >
+	<body id="body">
+		<center>
+			<div id="upper-box">
+				<a href = "../DPsearch1.html">
+					<input id="backspace"
+						type="button" value="<"
+						class="backbutton" onkeypress="backspace()">
+				</a>
+				<div id = "title">
+					Choose the category
+				</div>
+				<a href = "../../main.html">
+					<input type="button" value="🏠" id = "homeButton">
+				</a>
+			</div>
+		</center>
+		<div id = "middle">
+			<div>
+				<div id="fantasy" class = "category"> </div>
+				<div id="horror" class = "category"></div>
+				<div id="crime" class = "category"> </div>
+				
+				<div id="drama" class = "category">  </div>
+				<div id="comedy" class = "category"> </div>
+				<div id="action" class = "category"> </div>
+				
+				<div id="artistic" class = "category"> </div>
+				<div id="mystery" class = "category"> </div>
+				<div id="biography" class = "category"> </div>
+				
+				<div id="documentary" class = "category"></div>
+				<div id="romance" class = "category"> </div>
+				<div id="music" class = "category"> </div>
+			</div>
+			<div id="intensity"></div>
+			<div id="realisticity"></div>
+		
+		</div>
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+	<script src="./category.js"></script>
+	</body>
+</html>

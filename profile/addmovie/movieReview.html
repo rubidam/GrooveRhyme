@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>movieReview</title>
+		<meta charset="UTF-8">
+		<script src="../jquery/js/jquery-1.9.0.min.js"></script>
+		<script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+		<link href="../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+		<link href="./movieReview_css.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    </head>
+    <body>
+        <center>
+            <div id="upper-box">
+                <a href="javascript:history.go(-1)">
+                    <input id="backspace"
+                           type="button" value="<"
+                           class="backbutton">
+                    </a>
+                    <div id="title" value="">
+
+                    </div>
+                    <a href="../main.html">
+                        <input type="button" value="🏠" id="homeButton">
+                    </a>
+</div>
+        </center>
+        <div id="middle">
+            <img id="image" src="">
+            <div id="review">
+                <div>
+                    <input id="post" type="button" value="POST🖍" onclick="postPressListener()">
+                    <div id="star">
+                        <div id="p">
+                            PRODUCTION
+                            <div id="starp" value=""></div>
+                        </div>
+                        <div id="s">
+                            SYNOPSIS
+                            <div id="stars" value=""></div>
+                        </div>
+                        <div id="m">
+                            MUSIC
+                            <div id="starm" value=""></div>
+                        </div>
+                        <div id="v">
+                            VISUAL
+                            <div id="starv" value=""></div>
+                        </div>
+                        <div id="a">
+                            ACTING
+                            <div id="stara" value=""></div>
+                        </div>
+                    </div>
+                </div>
+                <table id="table">
+                    <tr>
+                        <th class="person"> Person </th>
+                        <th class="aspect"> Aspect </th>
+                        <th class="rating"> Rating </th>
+                        <th class="review"> Review </th>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+        <script src="../jquery/js/jquery-1.9.0.min.js"></script>
+        <script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src="./movieReview_js.js"></script>
+    </body>
+	
+</html>
+
+
+
