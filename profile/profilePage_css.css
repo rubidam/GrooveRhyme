@@ -72,11 +72,7 @@ h3 {
   z-index : 1;
 }
 
-<<<<<<< HEAD
 #backButton:hover{
-=======
-#backbutton:hover{
->>>>>>> c53d684043cf9c28ac0aa5ec475ac1980560162d
 	color: #aaa;
 	cursor : pointer;
 }
@@ -99,10 +95,7 @@ h3 {
 }
 
 #homeButton:hover{
-<<<<<<< HEAD
-=======
 	background-color : #aaa;
->>>>>>> c53d684043cf9c28ac0aa5ec475ac1980560162d
 	cursor : pointer;
 	color : #aaa;
 }
