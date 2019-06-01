@@ -135,34 +135,36 @@ h3 {
 
 #reviewtable{
 	width : 95%;
+    top:15%;
 }
 
 .reviewelem {
     -webkit-transition: all 0.6s;
     transition: all 0.6s;
+    
 }
 .reviewelem:hover{
        transform: scale(1.1,1.1);
 	cursor: pointer;
 }
 .collection {
-	background-color : #eee;
-	font-size : 45px;
-	font-weight : bold;
-	border: 1px solid;
-	width : 48%;
-	height : 100%;
+    background-color: #eee;
+    font-size: 45px;
+    width: 48%;
+    height: 100%;
     overflow-y: auto;
-	position : absolute;
-	left : 50%;
-	margin-top : 10px;
+    position: absolute;
+    left: 50%;
+    margin-top: 10px;
+
 }
 
 #collectionTable {
-	position : absolute;
-	width : 90%;
-	top: 15px;
-	left : 30px;
+    position: absolute;
+    width: 90%;
+    top: 15px;
+    left: 30px;
+
 }
 
 #plusButton {
@@ -177,22 +179,28 @@ h3 {
 	background-color: #EEEEEE;
 }
 .collection_th {
-	border-bottom : 3px purple dotted;
-	height : 70px;
-	font-size: 40px;
-	padding: 3px;
+    border-bottom: 2px white solid;
+    height: 70px;
+    font-size: 40px;
+    padding: 3px;
+    background-color: #eee;
 }
 .collection_td {
-	border-bottom: 2px purple dotted;
-	height : 50px;
-	font-size: 35px;
-	padding : 4px;
+    border-bottom: 2px white solid;
+    height: 50px;
+    font-size: 35px;
+    padding: 4px;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+    font-weight: bold;
+    background-color: #eee;
+}
+.collection_td:hover{
+    cursor : pointer;
+    color: #eee;
+    text-shadow:2px 2px 2px #3E606F;
 }
 
-.collection_tr:hover{
-	color : #AAA;
-	cursor : pointer;
-}
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
@@ -353,16 +361,18 @@ table {
 }
 
 th {
-	border-bottom : 3px purple dotted;
+	border-bottom : 2px #eee solid;
 	height : 18%;
 	font-size: 30px;
 	padding: 3px;
+    top:20%;
 }
 td {
-	border-bottom: 2px purple dotted;
-	height : 35px;
-	font-size: 25px;
-	padding : 4px;
+    border-bottom: 2px #eee solid;
+    height: 35px;
+    font-size: 25px;
+    padding: 4px;
+    
 }
 .namerow:hover{
 	cursor : pointer;
