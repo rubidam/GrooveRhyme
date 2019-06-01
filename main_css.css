@@ -15,49 +15,62 @@ html,body{
 }
 
 #search {
-	background-color: #eee;
-    color:#3E606F;
-	width:50%;
-	height:100%;
-	float: left;
-	text-align:center;
-	font-size:80px;
-	padding: 100px 0px;
+    background-color: #eee;
+    color: #3E606F;
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-size: 80px;
+    padding: 100px 0px;
     letter-spacing: 3px;
-	font-family: 'Open Sans', sans-serif;
-
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+#search:hover{
+    text-shadow: 5px 5px 5px #aaa;
 }
 
 #write {
     background-color: #3E606F;
     color: #eee;
     width: 50%;
-	height: 100%;
+    height: 100%;
     float: left;
     text-align: center;
     font-size: 80px;
     padding: 100px 0px;
     letter-spacing: 3px;
     z-index: 1;
-	font-family: 'Open Sans', sans-serif;
-
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+#write:hover {
+    text-shadow: 5px 5px 5px #aaa;
 }
 #profile {
-	background-color:#3E606F;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-    background-image:url(./profile/profile1.png);
-	position: absolute;
-	width: 155px;
-	height : 170px;
-	right: 2px;
-	bottom: 2px;
-	text-align:center;
-	margin-right : 1%;
-	margin-bottom: 1%;
-    z-index : 3;
-    color:black;
+    background-color: #3E606F;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(./profile/profile1.png);
+    position: absolute;
+    width: 155px;
+    height: 170px;
+    right: 2px;
+    bottom: 2px;
+    text-align: center;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    z-index: 3;
+    color: black;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+#profile:hover{
+    transform:scale(1.1, 1.1);
 }
 #supp1, #supp2 {
     width: 50%;

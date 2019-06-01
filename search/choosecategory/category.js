@@ -27,7 +27,7 @@ var category = [];
 
 function sflistener(){
 	sf.addEventListener('mouseover', function (e) {
-		sf.style.backgroundImage = "url('SF_hover.png')";
+        sf.style.backgroundImage = "url('SF_hover.png')";
 	});
 	sf.addEventListener('mouseout', function (e) {
 		sf.style.backgroundImage = "url('SF.png')";
