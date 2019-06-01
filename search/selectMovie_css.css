@@ -131,27 +131,35 @@ td:hover{
   font-family: 'Open Sans', sans-serif;
 }
 
-#firstMovie{
-  border : black 2px solid; 
-  margin-bottom : 20px;
-  position : absolute;
-  top : 25%;
-  left : 25%;
+#firstMovie {
+    border: black 2px solid;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
 
-#firstMovie:hover{
-	cursor : pointer;
-}
+    #firstMovie:hover {
+        cursor: pointer;
+        transform: scale(1.1,1.1);
+        box-shadow: 2px 2px 2px #555;
+    }
 
 #secondMovie {
-  border : black 2px solid;
-  position : absolute;
-  top : 25%;
-  right : 25%;
+    border: black 2px solid;
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
-#secondMovie:hover{
-	cursor : pointer;
-}
+    #secondMovie:hover {
+        cursor: pointer;
+        transform: scale(1.1,1.1);
+        box-shadow: 2px 2px 2px #555;
+    }
 #homeButton {
   position : absolute;
   top : 2%;
@@ -214,32 +222,38 @@ td:hover{
 }
 
 #prevButton {
-  font-size: 60px;
-  background-color :#3E606F;
-  color: #eee;
-  font-weight : bold;
-  border : none;
-  position : absolute;
-  top : 45%;
-  left : 15%;
+    font-size: 60px;
+    background-color: #3E606F;
+    color: #eee;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
 
-#prevButton:hover {
-    color : black;
-	cursor : pointer;
-}
+    #prevButton:hover {
+        transform: scale(1.1,1.1);
+        text-shadow: 5px 5px 5px #333;
+        cursor: pointer;
+    }
 
 #nextButton {
-  font-size: 60px;
-  background-color :#3E606F;
-  color: #eee;
-  font-weight : bold;
-  border : none;
-  position : absolute;
-  top : 45%;
-  right : 15%;
+    font-size: 60px;
+    background-color: #3E606F;
+    color: #eee;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    top: 45%;
+    right: 15%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
-#nextButton:hover {
-    color : black;
-	cursor : pointer;
-}
+    #nextButton:hover {
+        transform: scale(1.1,1.1);
+        text-shadow: 5px 5px 5px #333;
+        cursor: pointer;
+    }
