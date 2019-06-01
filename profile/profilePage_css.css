@@ -332,17 +332,7 @@ h3 {
 #closeth{
 	text-align : right;
 }
-#close{
-	background : #ffffff;
-	font-size : 20px;
-	font-weight : bold;
-	border-radius : 0.5em;
-	padding : 5px 10px;
-}
-#close:hover{
-	cursor : pointer;
-	background-color : #EEEEEE;
-}
+
 #delete {
 	position : absolute;
 	bottom : 2%;
@@ -403,10 +393,29 @@ td {
 #btnCancel {
 	background-color : white;
 	border: none;
+	border-radius : 0.5em;
+	padding : 5px 10px;
+	font-size : 30px;
 	-webkit-transition: all 0.6s;
     transition: all 0.6s;
 }
 
 #btnCancel:hover {
 	cursor : pointer;
+	background-color : #EEEEEE;
+}
+
+#close {
+	background-color : white;
+	border: none;
+	border-radius : 0.5em;
+	padding : 5px 10px;
+	font-size : 30px;
+	-webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+
+#close:hover {
+	cursor : pointer;
+	background-color : #EEEEEE;
 }
