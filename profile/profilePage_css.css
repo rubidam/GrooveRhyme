@@ -71,6 +71,7 @@ h3 {
 
 #backbutton:hover{
 	color: black;
+	cursor : pointer;
 }
 
 #hashtag {
@@ -88,6 +89,7 @@ h3 {
 
 #homeButton:hover{
 	background-color : #EEEEEE;
+	cursor : pointer;
 }
 .homeButtonPart {
   width : 5%;
@@ -126,6 +128,10 @@ h3 {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.reviewelem:hover{
+	border : 1px solid black;
+	cursor: pointer;
+}
 .collection {
 	font-size : 45px;
 	font-weight : bold;
@@ -154,14 +160,16 @@ h3 {
 	border-radius : 0.5em;
 	padding : 5px 10px;
 }
-
+#plusButton:hover{
+	cursor : pointer;
+	background-color: #EEEEEE;
+}
 .collection_th {
 	border-bottom : 3px purple dotted;
 	height : 70px;
 	font-size: 40px;
 	padding: 3px;
 }
-
 .collection_td {
 	border-bottom: 2px purple dotted;
 	height : 50px;
@@ -169,12 +177,16 @@ h3 {
 	padding : 4px;
 }
 
+.collection_tr:hover{
+	background-color : #EEEEEE;
+	cursor : pointer;
+}
 
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: absolute;
-  top : 5%;
+  top : 60%;
   right: 7%;
   border: 3px solid #f1f1f1;
   z-index: 9;
@@ -215,7 +227,10 @@ h3 {
 	border-radius : 0.5em;
 	padding : 5px 10px;
 }
-
+.form-container .cancel:hover {
+	cursor : pointer;
+	background-color : #EEEEEE;
+}
 #popup_head {
 	font-size : 40px;
 }
@@ -228,5 +243,8 @@ h3 {
 	font-weight : bold;
 	border-radius : 0.5em;
 	padding : 5px 10px;
-	
+}
+#add:hover {
+	cursor : pointer;
+	background-color : #EEEEEE;
 }
