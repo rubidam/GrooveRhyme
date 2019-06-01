@@ -10,74 +10,75 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
 
 	</head> 
-	<body>
-		<center>
-			<div id="upper-box">
-				<input id="backspace"
-						type="button" value="<"
-						class="backbutton" onkeypress="backspace()">
-				<div id="title">
-					Choose aspects you want to review
-				</div>
-					<input type="button" value="🏠" id = "homeButton">
-          </div>
-      </center>
-      <div id="middle">
-		<div id = "penta">
-		  <div id="pentagon1" class="pentagon"></div>
-		  
-		  <div id = "top">
-			  <a href="./write_review/write_review.html?aspect=Production">
-				  <div id="Production" class="aspect">Produnction</div>
-			  </a>
-		  </div>
-		  
-		  <div id = "mid">
-			  <a href="./write_review/write_review.html?aspect=Acting">
-				  <div id="Acting" class="aspect">Acting</div>
-			  </a>
-			  <a href="./write_review/write_review.html?aspect=Synopsis">
-				  <div id="Synopsis" class="aspect">Synopsis</div>
-			  </a>
-		  </div>
-		  
-		  <div id = "bot">
-			  <a href="./write_review/write_review.html?aspect=Music">
-				  <div id="Music" class="aspect">Music</div>
-			  </a>
-			  <a href="./write_review/write_review.html?aspect=Visual">
-				  <div id="Visual" class="aspect">Visual</div>
-			  </a>
-		  </div>
-		  
-        </div>
-          <!--
+    <body>
+        <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+        <center>
+            <div id="upper-box">
+                <input id="backspace"
+                       type="button" value="<"
+                       class="backbutton" onkeypress="backspace()">
+                <div id="title">
+                    Choose aspects you want to review
+                </div>
+                <input type="button" value="🏠" id="homeButton">
+            </div>
+        </center>
+        <div id="middle">
+            <div id="penta">
+                <div id="pentagon1" class="pentagon"></div>
+
+                <div id="top">
+                    <a href="./write_review/write_review.html?aspect=Production">
+                        <div id="Production" class="aspect">Produnction</div>
+                    </a>
+                </div>
+
+                <div id="mid">
+                    <a href="./write_review/write_review.html?aspect=Acting">
+                        <div id="Acting" class="aspect">Acting</div>
+                    </a>
+                    <a href="./write_review/write_review.html?aspect=Synopsis">
+                        <div id="Synopsis" class="aspect">Synopsis</div>
+                    </a>
+                </div>
+
+                <div id="bot">
+                    <a href="./write_review/write_review.html?aspect=Music">
+                        <div id="Music" class="aspect">Music</div>
+                    </a>
+                    <a href="./write_review/write_review.html?aspect=Visual">
+                        <div id="Visual" class="aspect">Visual</div>
+                    </a>
+                </div>
+
+            </div>
+            <!--
         <input id = "search_input" placeholder = "Search your movie"> </input>
         <button id = "searchbutton"><i class = "fa fa-search"></i></input>
         -->
-		<div>
-			<div id = "okdiv">
-				<input id="ok"
-						type="button"
-						value="OK"
-						class="btn ok"
-						disabled>
-							
-			</div>
-			<div id = "deletediv">
-					<input id="delete"
-							type="button"
-							value="Delete"
-							class="btn delete"
-							disabled>
-			</div>
-		</div>
-		</div>
-		<script src="jquery/js/jquery-1.9.0.min.js"></script>
-		<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
-		<script src="./aspects_js.js"></script>
-	</body> 
+            <div>
+                <div id="okdiv">
+                    <input id="ok"
+                           type="button"
+                           value="OK"
+                           class="btn ok"
+                           disabled>
+
+                </div>
+                <div id="deletediv">
+                    <input id="delete"
+                           type="button"
+                           value="Delete"
+                           class="btn delete"
+                           disabled>
+                </div>
+            </div>
+        </div>
+        <script src="jquery/js/jquery-1.9.0.min.js"></script>
+        <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+        <script src="./aspects_js.js"></script>
+    </body> 
 </html>

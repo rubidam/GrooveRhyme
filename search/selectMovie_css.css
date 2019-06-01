@@ -113,7 +113,7 @@ td:hover{
   color : white;
   position : absolute;
   top : 10%;
-  left : 1%;
+  left : 8%;
   width : 50%;
   text-align : center;
   font-family: 'Open Sans', sans-serif;
@@ -125,46 +125,73 @@ td:hover{
   color : white;
   position : absolute;
   top : 10%;
-  right : 0%;
+  right : 8%;
   width : 50%;
   text-align : center;
   font-family: 'Open Sans', sans-serif;
 }
 
-#firstMovie{
-  border : black 2px solid; 
-  margin-bottom : 20px;
-  position : absolute;
-  top : 25%;
-  left : 16%;
-  
-}
-#firstMovie:hover{
-	cursor : pointer;
+#firstMovie {
+    border: black 2px solid;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
 
+    #firstMovie:hover {
+        cursor: pointer;
+        transform: scale(1.1,1.1);
+        box-shadow: 2px 2px 2px #555;
+    }
+
 #secondMovie {
-  border : black 2px solid;
-  position : absolute;
-  top : 25%;
-  right : 16%;
+    border: black 2px solid;
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
-#secondMovie:hover{
-	cursor : pointer;
-}
+    #secondMovie:hover {
+        cursor: pointer;
+        transform: scale(1.1,1.1);
+        box-shadow: 2px 2px 2px #555;
+    }
 #homeButton {
   position : absolute;
   top : 2%;
   right : 2%;
-  font-size : 20px;
+  font-size: 40px;
+  background-color :#3E606F;
+  color: #eee;
   font-weight : bold;
-  background : #ffffff;
-  border-radius : 0.5em;
-  padding : 3px 10px;
+  border : none;
 }
+
 #homeButton:hover{
 	cursor : pointer;
+	color : black;
 }
+
+#helpButton {
+  position : absolute;
+  top : 2.2%;
+  right : 5.5%;
+  font-size: 40px;
+  background-color :#3E606F;
+  color: #eee;
+  font-weight : bold;
+  border : none;
+}
+
+#helpButton:hover{
+	cursor : pointer;
+	color : black;
+}
+
 .plusButton {
   font-size : 70px;
   color : #888;
@@ -184,28 +211,49 @@ td:hover{
 
 #firstPlusButton {
 	position : absolute;
-	left : 22%;
+	left : 30%;
+	bottom : 50%;
 }
 
 #secondPlusButton {
 	position : absolute;
-	right : 22%;
+	right : 30%;
+	bottom : 50%;
 }
 
-#refreshButton {
-  font-size : 40px;
-  color : #888;
-  padding : 15px 20px;
-  background : #ffffff;
-  border : #888 3px solid;
-  border-radius : 0.5em;
-  position : absolute;
-  left : 45%;
-  bottom : 35%;
-}
-#refreshButton:hover {
+#prevButton {
+    font-size: 60px;
     background-color: #3E606F;
     color: #eee;
-    border: #eee 3px solid;
-	cursor : pointer;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
 }
+
+    #prevButton:hover {
+        transform: scale(1.1,1.1);
+        text-shadow: 5px 5px 5px #333;
+        cursor: pointer;
+    }
+
+#nextButton {
+    font-size: 60px;
+    background-color: #3E606F;
+    color: #eee;
+    font-weight: bold;
+    border: none;
+    position: absolute;
+    top: 45%;
+    right: 15%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+    #nextButton:hover {
+        transform: scale(1.1,1.1);
+        text-shadow: 5px 5px 5px #333;
+        cursor: pointer;
+    }
