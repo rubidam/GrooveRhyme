@@ -163,22 +163,20 @@ function backback(){
 
 function collectiondelete() {
 	var collection = document.getElementById("middle");
-    var para = getUrlVars();
-    var colname = para['collection'].split('%20').join(' ');
+	var colname = document.getElementById("collectionname").innerHTML;
+	console.log(colname);
+	
     return firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').once('value', function (snapshot) {
         firebase.database().ref('/UserProfile/MyCollection/' + colname + '/').remove();
         //location.href = "./profilePage.html";
 		collection.style.display = "none";
+		getCollectionList();
     });
 }
 
 function addmovie() {
-    var colname = para['collection'].split('%20').join(' ');
-    var collection_record = firebase.database().ref('/collection/').set({
-        collectionName: colname
-    });
 
-    location.href = "./addmovie/DPsearch1.html"
+    location.href = "../search/DPsearch1.html";
 }
 
 function initializeTable() {
