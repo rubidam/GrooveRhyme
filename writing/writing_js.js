@@ -33,9 +33,37 @@ function input_event(){
 			moviePicture = moviePicture + movieNameElement[i];
 		}
 	}
+	console.log(moviePicture);
+	
+	var newMoviePicture = "";
+	var newMovieNameElement = moviePicture.split(" ");
+	for (var i = 0 ; i < newMovieNameElement.length ; i++){
+		if (i == newMovieNameElement.length - 1){
+			if (newMovieNameElement[i] == "in" || newMovieNameElement[i] == "of" || newMovieNameElement[i] == "for" || newMovieNameElement[i] == "and"){
+				newMoviePicture = newMoviePicture + newMovieNameElement[i];
+			}
+			else {
+				var firstLetter = newMovieNameElement[i].charAt(0);
+				newMoviePicture = newMoviePicture + firstLetter.toUpperCase() + newMovieNameElement[i].slice(1);
+			}
+		}
+		else{
+			if (newMovieNameElement[i] == "in" || newMovieNameElement[i] == "of" || newMovieNameElement[i] == "for" || newMovieNameElement[i] == "and"){
+				newMoviePicture = newMoviePicture + newMovieNameElement[i] + " ";
+			}
+			else {
+				var firstLetter = newMovieNameElement[i].charAt(0);
+				newMoviePicture = newMoviePicture + firstLetter.toUpperCase() + newMovieNameElement[i].slice(1) + " ";
+			}
+			
+		}
+	}
+	
+	console.log(newMoviePicture);
+	
 
 	var poster = document.getElementById("poster");
-	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
+	var getstorage = firebase.storage().ref().child(newMoviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
         poster.src = url;
     });
