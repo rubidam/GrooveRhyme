@@ -95,6 +95,8 @@ body{
     left: 15%;
     width: 90px;
     height: 62px;
+	-webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 #searchbutton:hover {
@@ -115,6 +117,8 @@ body{
     left : 33%;
     width: 90px;
     height: 62px;
+	-webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 #collectionButton:hover {
