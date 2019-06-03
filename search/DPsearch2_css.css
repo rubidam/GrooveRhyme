@@ -66,74 +66,75 @@ html,body{
 	height : 50%;
 }
 
-.searchTable {
-	position : absolute;
-	top: 20px;
-	left: 20px;
-}
-
-td, th{
-	padding: 20px;
-}
-
-
 .cate {
-	font-size: 25px;
+	font-size: 30px;
 	border: none;
 	outline: none;
-	width: 200px;
-	height: 80px;
+	width: 250px;
+	height: 100px;
 	color: #eee;
 	letter-spacing: 3px;
 	font-weight: bold;
+	position : absolute;
+	top : 28%;
+	left : 5%;
 }
 
 .cate-skip {
-    font-size: 25px;
+    font-size: 30px;
     border: 3px solid #3E606F;
     border-color: #3E606F;
-    width: 200px;
-    height: 100px;
+    width: 250px;
+    height: 125px;
     background-color: white;
     color: #3E606F;
     letter-spacing: 3px;
     font-weight: bold;
+	position : absolute;
+	top : 25%;
+	left : 20%;
 }
 
 
 .aspe {
     border: none;
     outline: none;
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     background-image: url(go_to_choose_aspects.png);
     background-repeat: no-repeat;
     background-color: white;
     background-size: 100%;
     -webkit-transition: all 0.6s;
     transition: all 0.6s;
+	position : absolute;
+	top : 20%;
+	left : 47%;
 }
 
 .aspe-skip {
-	font-size: 25px;
+	font-size: 30px;
 	border: 3px solid #3E606F;
 	border-color : #3E606F;
-	width: 200px;
-	height: 100px;
+	width: 250px;
+	height: 125px;
 	background-color: white;
 	color: #3E606F;
 	letter-spacing: 3px;
 	font-weight: bold; 
     -webkit-transition: all 0.6s;
     transition: all 0.6s;
+	position : absolute;
+	top : 25%;
+	left : 70%;
 }
 .aspe-skip:disabled {
-        font-size: 25px;
+        font-size: 30px;
         color: #eee;
         border:none;
         background-color:#ddd;
-        width: 200px;
-        height: 100px;
+        width: 250px;
+        height: 125px;
         letter-spacing: 3px;
         font-weight: bold;
 }
@@ -193,12 +194,17 @@ ok[disabled]{
 	bottom : 5%;
 }
 #arrow {
-	background-image: url(arrow_to_down.png);
-	background-size: 100%;
-	background-repeat:no-repeat;
 	position:absolute;
-	left:50%;
-	bottom:170px;
-	width: 100px;
-	height:50px;
+	left:38%;
+	top : 26%;
+	font-size : 120px;
+	color: #3E606F;
+}
+
+#categoryImg {
+	height : 175px;
+	width : 175px;
+	position : absolute;
+	top : 57%;
+	left : 22%;
 }

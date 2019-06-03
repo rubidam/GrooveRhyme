@@ -52,6 +52,8 @@ function apply() {
     var splitquery;
     var category = document.getElementById("skip");
 	var okbtn = document.getElementById("ok");
+	var categoryImg = document.getElementById("categoryImg");
+	
     if (query != "") {
         splitquery = query.split("=")[1].split("&")[0].toUpperCase();
         console.log("splitquery1 : " + splitquery);
@@ -59,6 +61,13 @@ function apply() {
             splitquery = "NONE";
         }
         category.value = splitquery;
+		
+		if (splitquery == "SF"){
+			categoryImg.src = "../search/choosecategory/" + splitquery + "_hover.png";
+		}
+		else{
+			categoryImg.src = "../search/choosecategory/" + splitquery.toLowerCase() + "_hover.png";
+		}
     }
     else {
         splitquery = "NONE";
