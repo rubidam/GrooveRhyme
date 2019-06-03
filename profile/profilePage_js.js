@@ -92,14 +92,14 @@ function initializecollectionTable() {
   /*
     Initialize the courses in the right plane
   */
-  var myTable = document.getElementById("collectionTable");
+  var myTable = document.getElementById("collectionT");
   var numRows = myTable.rows.length;
   for(var i=1;i<numRows;i++){
     myTable.deleteRow(1);
   }
 }
 function refreshcollectionList(name) {
-	var resultTable = document.getElementById("collectionTable");
+	var resultTable = document.getElementById("collectionT");
 	var collection = document.getElementById("middle");
 	var row = resultTable.insertRow(1);
 	row.setAttribute('class','collection_tr');
@@ -119,6 +119,7 @@ function refreshcollectionList(name) {
 	col2.appendChild(arrow);
 	col2.style.textAlign = "center";
 }
+
 function makecollectionTable(lst) {
 	initializecollectionTable();
 	var len = lst.length;

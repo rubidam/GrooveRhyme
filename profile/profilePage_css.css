@@ -154,7 +154,6 @@ h3 {
 }
 .collection {
     background-color: #eee;
-    font-size: 45px;
     width: 48%;
     height: 100%;
     overflow-y: auto;
@@ -164,11 +163,12 @@ h3 {
 
 }
 
-#collectionTable {
+#collectionT {
+	border
     position: absolute;
-    width: 90%;
-    top: 15px;
-    left: 30px;
+	width : 95%;
+	top : 1%;
+	left : 2%;
 
 }
 
