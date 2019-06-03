@@ -18,6 +18,17 @@ console.log(poster);
 function input_event(){
 	//console.log("a");
 	var inputvalue = document.getElementById("search_input");
+	if(inputvalue.value == ""){
+		var poster = document.getElementById("poster");
+		poster.src = '';
+		inputvalue.style.borderColor = "red";
+		inputvalue.setAttribute("placeholder","You should write movie name");
+		setTimeout(function(){
+			inputvalue.style.borderColor = "#aaa";
+			inputvalue.setAttribute("placeholder","Search your movie");
+		}, 1100);
+		return;
+	}
 	var movieName = inputvalue.value;
 	var movieNameElement = movieName.split(":");
 	var okButton = document.getElementById("ok");
