@@ -50,6 +50,13 @@ html,body{
 	z-index : 1;
 	cursor : pointer;
 	margin-bottom : 10px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-weight:bold;
+}
+#closebtn:hover{
+    transform :scale(1.1, 1.1);
+
 }
 
 
@@ -59,28 +66,42 @@ td{
 
 
 #collectionList{
-	border:1px solid #444444;
-	background-color:#ddd;
+
+	background-color:#eee;
 	position : absolute;
 	width : 270px;
 	left : 5%;
 	font-size : 20px;
+    border-radius:5px 5px;
+}
+td {
+    border: 1px solid #fff;
+    border-radius: 5px 5px;
+    background-color:#ddd;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 td:hover{
 	cursor : pointer;
-	background-color : #EEE;
+	background-color : #eee;
 }
-#OKsign{
-	position : absolute;
-	left : 10%;
-	background-color : #4CAF50;
-	top : 85%;
-	color : white;
-	padding : 16px 20px;
-	border : none;
-	z-index : 1;
-	cursor : pointer;
-	margin-bottom : 10px;
+#OKsign {
+    position: absolute;
+    left: 10%;
+    background-color: #3E606F;
+    top: 85%;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    z-index: 1;
+    cursor: pointer;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-weight:bold;
+}
+#OKsign:hover{
+    transform:scale(1.1, 1.1);
 }
 #Oksign:disabled{
 	cursor : not-allowed;
