@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div id="middle" class="bgBlur" >
+        <div id="middle" class="bgBlur">
             <div id="tableandbtn" class="overlap">
                 <div id="collectiontable" class="overlap">
                     <table id="myTable" class="overlap">
@@ -64,9 +64,31 @@
                 </div>
                 <button id="addmovie" class="overlap" onclick=addmovie()> Add Movie</button>
                 <button id="delete" class="overlap" onclick=collectiondelete()>Delete Collection</button>
-                
+
             </div>
             <div id="modal_layer"></div>
+            <div id="addmoviesec">
+                <div id="sinput">
+                    <input id="search_input" placeholder="Search your movie">
+                </div>
+
+                <div id="sbtn">
+                    <button id="searchbutton"
+                            type="button">
+                        <i class="fa fa-search"></i>
+                </div>
+                <div id="picture">
+                    <img src="" id="poster" onerror="this.src = './defaultProfile.jpg'">
+                </div>
+                <div>
+                    <input id="addmovieok"
+                           type="button"
+                           value="OK"
+                           class="ok"
+                           onclick="okPressListener()"
+                           disabled=true>
+                </div>
+            </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>

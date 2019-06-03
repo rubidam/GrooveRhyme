@@ -253,10 +253,17 @@ function popupTrue() {
     //document.getElementById("middle").style.display = 'none';
 }
 var closebtn = document.getElementById("closeth");
+var modal_layer = document.getElementById("modal_layer");
 closebtn.addEventListener("click", function (e) {
     var collection = document.getElementById("middle");
 	initializeTable();
 	collection.style.display = "none";
 	
+})
+modal_layer.addEventListener("click", function (e) {
+    var collection = document.getElementById("middle");
+    initializeTable();
+    collection.style.display = "none";
+
 })
 popupTrue();
