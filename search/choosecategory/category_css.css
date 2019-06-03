@@ -152,7 +152,7 @@
 
 
 #artistic {
-    background-image: url(art.png);
+    background-image: url(artistic.png);
     background-size: 100%;
     background-repeat: no-repeat;
     width: 150px;
@@ -178,7 +178,7 @@
 }
 
 #biography {
-    background-image: url(bio.png);
+    background-image: url(biography.png);
     background-size: 100%;
     background-repeat: no-repeat;
     width: 150px;
