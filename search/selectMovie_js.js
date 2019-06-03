@@ -219,15 +219,22 @@ function printMovie(){
 		}
         var getstorageFirstNew = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
             console.log("create : " + createMovieName(sortedList[firstIndex]));
+			var firstmoviename = createMovieName(sortedList[firstIndex]);
 
 			console.log(url);
 			first.src = url;
+			first.title = "Move to the page that shows reviews of " + firstmoviename;
+			firstbtn.title = "Add "+firstmoviename+" to collection";
 		});
 		firstName.innerHTML = sortedList[firstIndex];
 		
 		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
+			var secondmoviename = createMovieName(sortedList[secondIndex]);
 			console.log(url);
 			second.src = url;
+			second.title = "Move to the page that shows reviews of " + secondmoviename;
+			secondbtn.title = "Add "+secondmoviename+" to collection";
+			
         });
 		secondName.innerHTML = sortedList[secondIndex];
 		firstidx = firstIndex;
@@ -255,15 +262,20 @@ function printMovie(){
 		}
         var getstorageFirstNew = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
             console.log("create : " + createMovieName(sortedList[firstIndex]));
-
+			var firstmoviename = createMovieName(sortedList[firstIndex]);
 			console.log(url);
 			first.src = url;
+			first.title = "Move to the page that shows reviews of " + firstmoviename;
+			firstbtn.title = "Add "+firstmoviename+" to collection";
 		});
 		firstName.innerHTML = sortedList[firstIndex];
 		
 		var getstorageSecondNew = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
+			var secondmoviename = createMovieName(sortedList[secondIndex]);
 			console.log(url);
 			second.src = url;
+			second.title = "Move to the page that shows reviews of " + secondmoviename;
+			secondbtn.title = "Add "+secondmoviename+" to collection";
         });
 		secondName.innerHTML = sortedList[secondIndex];
 		firstidx = firstIndex;
