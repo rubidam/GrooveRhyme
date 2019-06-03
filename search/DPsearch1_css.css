@@ -71,8 +71,8 @@ html,body{
 .cate {
     border: none;
     outline: none;
-    width: 400px;
-    height: 200px;
+    width: 320px;
+    height: 160px;
     background-image: url(go_to_choose_category.png);
     background-repeat: no-repeat;
     background-color: white;
@@ -93,11 +93,11 @@ html,body{
     }
 
 .cate-skip {
-    font-size: 30px;
+    font-size: 25px;
     border: 3px solid #3E606F;
     border-color: #3E606F;
-    width: 250px;
-    height: 125px;
+    width: 200px;
+    height: 100px;
     background-color: white;
     color: #3E606F;
     letter-spacing: 3px;

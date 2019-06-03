@@ -129,24 +129,24 @@ td:hover{
 }
 
 .firstName {
-  font-size : 50px;
+  font-size : 45px;
   font-weight : bold;
   color : white;
   position : absolute;
   top : 5%;
-  left : 16%;
+  left : 17%;
   width : 35%;
   text-align : center;
   font-family: 'Open Sans', sans-serif;
 }
 
 .secondName {
-  font-size : 50px;
+  font-size : 45px;
   font-weight : bold;
   color : white;
   position : absolute;
   top : 5%;
-  right : 16%;
+  right : 17%;
   width : 35%;
   text-align : center;
   font-family: 'Open Sans', sans-serif;
@@ -220,12 +220,12 @@ td:hover{
 
 #firstPlusButton {
 	position : absolute;
-	left : 30%;
+	left : 31%;
 }
 
 #secondPlusButton {
 	position : absolute;
-	right : 30%;
+	right : 31%;
 }
 
 #prevButton {

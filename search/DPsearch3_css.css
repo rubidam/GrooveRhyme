@@ -67,11 +67,11 @@ html,body{
 }
 
 .cate {
-	font-size: 30px;
+	font-size: 25px;
 	border: none;
 	outline: none;
-	width: 250px;
-	height: 100px;
+	width: 200px;
+	height: 80px;
 	color: #eee;
 	letter-spacing: 3px;
 	font-weight: bold;
@@ -81,11 +81,11 @@ html,body{
 }
 
 .cate-skip {
-    font-size: 30px;
+    font-size: 25px;
     border: 3px solid #3E606F;
     border-color: #3E606F;
-    width: 250px;
-    height: 125px;
+    width: 200px;
+    height: 100px;
     background-color: white;
     color: #3E606F;
     letter-spacing: 3px;
@@ -97,11 +97,11 @@ html,body{
 
 
 .aspe {
-    font-size: 30px;
+    font-size: 25px;
     border: none;
     outline: none;
-    width: 250px;
-    height: 100px;
+    width: 200px;
+    height: 80px;
     color: #eee;
     letter-spacing: 3px;
     font-weight: bold;
@@ -111,11 +111,11 @@ html,body{
 }
 
 .aspe-skip {
-    font-size: 30px;
+    font-size: 25px;
     border: 3px solid #3E606F;
     border-color: #3E606F;
-    width : 250px;
-    height: 125px;
+    width : 200px;
+    height: 100px;
     background-color: white;
     color: #3E606F;
     letter-spacing: 1px;
@@ -153,22 +153,22 @@ html,body{
 
 #arrow {
 	position:absolute;
-	left:38%;
-	top : 26%;
+	left:37%;
+	top : 23%;
 	font-size : 120px;
 	color: #3E606F;
 }
 
 #categoryImg {
-	height : 175px;
-	width : 175px;
+	height : 150px;
+	width : 150px;
 	position : absolute;
 	top : 57%;
 	left : 22%;
 }
 
 #aspectImg {
-	font-size : 150px;
+	font-size : 125px;
 	position : absolute;
 	top : 57%;
 	left : 65.5%;
