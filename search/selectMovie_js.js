@@ -306,12 +306,14 @@ function printMovie(){
 function closeForm(){
 	var popup = document.getElementById("collection");
 	var table = document.getElementById("collectionList");
+	var oksign = document.getElementById("OKsign");
 	for (var i = 1; i<= collectionnames.length; i++){
 		console.log(collectionnames[i-1]);
 		table.deleteRow(0);
 	}
 	collectionnames = [];
 	fstorsnd = 0;
+	oksign.disabled = true;
 	popup.style.display = "none";
 	
 }

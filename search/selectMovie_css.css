@@ -87,26 +87,30 @@ body{
 #OKsign {
     position: absolute;
     left: 10%;
-    background-color: #3E606F;
+    background-color: #ddd;
     top: 85%;
     color: white;
     padding: 16px 20px;
     border: none;
     z-index: 1;
-    cursor: pointer;
     margin-bottom: 10px;
-    -webkit-transition: all 0.2s;
     transition: all 0.2s;
     font-weight:bold;
 }
-
-#OKsign:hover{
+#OKsign:enabled{
+	background-color : #3E606F;
+}
+#OKsign:enabled:hover{
     transform:scale(1.1, 1.1);
+	cursor : pointer;
+	background-color: #3E606F;
 }
 
-#Oksign:disabled{
-	cursor : not-allowed;
+#Oksign:disabled,
+OKsign[disabled]{
 	background-color : #ddd;
+	cursor : default;
+	
 }
 
 #backbutton {
