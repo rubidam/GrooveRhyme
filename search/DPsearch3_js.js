@@ -46,6 +46,15 @@ function apply() {
             splitquery = "NONE";
         }
         category.value = splitquery;
+		
+		var categoryImg = document.getElementById("categoryImg");
+		
+		if (splitquery == "SF"){
+			categoryImg.src = "../search/choosecategory/" + splitquery + "_hover.png";
+		}
+		else{
+			categoryImg.src = "../search/choosecategory/" + splitquery.toLowerCase() + "_hover.png";
+		}
     }
     else {
         splitquery = "NONE";
@@ -63,9 +72,26 @@ function apply() {
     }
     
     var aspeskip = document.getElementById("aspeskip");
+	var aspectImg = document.getElementById("aspectImg");
     var listjoin = list.join(", ");
     aspeskip.value = listjoin;
     console.log(listjoin);
+	
+	if (listjoin == "PRODUCTION"){
+		aspectImg.className = "fas fa-video";
+	}
+	else if (listjoin == "ACTING"){
+		aspectImg.className = "fas fa-users";
+	}
+	else if (listjoin == "MUSIC") {
+		aspectImg.className = "fas fa-music";
+	}
+	else if (listjoin == "SYNOPSIS") {
+		aspectImg.className = "fas fa-film";
+	}
+	else if (listjoin == "VISUAL") {
+		aspectImg.className = "fas fa-images";
+	}
 }
 var back = document.getElementById("backspace").addEventListener("click", function () {
     var loc = document.location.href;
