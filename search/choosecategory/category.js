@@ -69,10 +69,10 @@ function crimelistener(){
 
 function biographylistener(){
 	biography.addEventListener('mouseover', function (e) {
-		biography.style.backgroundImage = "url('bio_hover.png')";
+		biography.style.backgroundImage = "url('biography_hover.png')";
 	});
 	biography.addEventListener('mouseout', function (e) {
-		biography.style.backgroundImage = "url('bio.png')";
+		biography.style.backgroundImage = "url('biography.png')";
 	});
 	biography.addEventListener('click',function(e){
 		category = category + "Biography";
@@ -99,10 +99,10 @@ function mysterylistener(){
 
 function artlistener(){
 	art.addEventListener('mouseover', function (e) {
-		art.style.backgroundImage = "url('art_hover.png')";
+		art.style.backgroundImage = "url('artistic_hover.png')";
 	});
 	art.addEventListener('mouseout', function (e) {
-		art.style.backgroundImage = "url('art.png')";
+		art.style.backgroundImage = "url('artistic.png')";
 	});
 	art.addEventListener('click',function(e){
 		category = category + "Artistic";
