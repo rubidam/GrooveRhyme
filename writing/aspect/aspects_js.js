@@ -48,6 +48,7 @@ function parse_url(){
 		moviename = tempname.replace("%20"," ");
 		
 	}
+	moviename = moviename.replace("%27","'");
 	console.log(moviename);
 	return moviename;
 }
