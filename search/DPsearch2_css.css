@@ -176,6 +176,16 @@ td, th{
 	cursor : pointer;
 
 }
+
+.ok:disabled,
+ok[disabled]{
+	border: 3px solid;
+	border-color: #eee;
+	background-color: white;
+	cursor : default;
+	color: #eee;
+	font-weight:bold;
+}
 #okdiv{
 	position : absolute;
 	float : right;
