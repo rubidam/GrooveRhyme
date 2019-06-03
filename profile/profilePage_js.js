@@ -56,9 +56,11 @@ function refreshreviewList(name) {
 		console.log(name);
 		copy_review(name);
 	})
+	
 	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
-		col1.innerHTML = "<img src =" + url + " class = 'reviewelem' height = 200 width = 130 hspace = 7>";
+		col1.innerHTML = "<img src =" + url + " class = 'reviewelem' height = 200 width = 130 hspace = 7 "+ "title= 'Move to my review of "+name+"'>";
+		
     });
 	
 	if(row.cells.length == 4){
