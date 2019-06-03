@@ -162,6 +162,8 @@ function printMovie(){
 	var second = document.getElementById("secondMovie");
 	var firstName = document.getElementById("firstName");
 	var secondName = document.getElementById("secondName");
+	var firstbtn = document.getElementById("firstPlusButton");
+	var secondbtn = document.getElementById("secondPlusButton");
 	
 	var firstIndex = 0;
 	var secondIndex = 1;
@@ -176,15 +178,21 @@ function printMovie(){
 	sorted = sortedList;
 	
     var getstorageFirst = firebase.storage().ref().child(createMovieName(sortedList[firstIndex]) + ".jpg").getDownloadURL().then(function (url) {
-        console.log("create : " + createMovieName(sortedList[firstIndex]));
+        var firstmoviename = createMovieName(sortedList[firstIndex]);
+		console.log("create : " + firstmoviename);
 		console.log(url);
 		first.src = url;
+		first.title = "Move to the page that shows reviews of " + firstmoviename;
+		firstbtn.title = "Add "+firstmoviename+" to collection";
 	});
 	firstName.innerHTML = sortedList[firstIndex];
 	
 	var getstorageSecond = firebase.storage().ref().child(createMovieName(sortedList[secondIndex]) + ".jpg").getDownloadURL().then(function(url){
+		var secondmoviename = createMovieName(sortedList[secondIndex]);
 		console.log(url);
 		second.src = url;
+		second.title = "Move to the page that shows reviews of " + secondmoviename;
+		secondbtn.title = "Add "+secondmoviename+" to collection";
 	});
 	secondName.innerHTML = sortedList[secondIndex];
 	firstidx = firstIndex;

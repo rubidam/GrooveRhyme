@@ -56,9 +56,11 @@ function refreshreviewList(name) {
 		console.log(name);
 		copy_review(name);
 	})
+	
 	var getstorage = firebase.storage().ref().child(moviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
-		col1.innerHTML = "<img src =" + url + " class = 'reviewelem' height = 200 width = 130 hspace = 7>";
+		col1.innerHTML = "<img src =" + url + " class = 'reviewelem' height = 200 width = 130 hspace = 7 "+ "title= 'Move to my review of "+name+"'>";
+		
     });
 	
 	if(row.cells.length == 4){
@@ -92,14 +94,14 @@ function initializecollectionTable() {
   /*
     Initialize the courses in the right plane
   */
-  var myTable = document.getElementById("collectionTable");
+  var myTable = document.getElementById("collectionT");
   var numRows = myTable.rows.length;
   for(var i=1;i<numRows;i++){
     myTable.deleteRow(1);
   }
 }
 function refreshcollectionList(name) {
-	var resultTable = document.getElementById("collectionTable");
+	var resultTable = document.getElementById("collectionT");
 	var collection = document.getElementById("middle");
 	var row = resultTable.insertRow(1);
 	row.setAttribute('class','collection_tr');
@@ -119,6 +121,7 @@ function refreshcollectionList(name) {
 	col2.appendChild(arrow);
 	col2.style.textAlign = "center";
 }
+
 function makecollectionTable(lst) {
 	initializecollectionTable();
 	var len = lst.length;

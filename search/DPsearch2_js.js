@@ -51,6 +51,7 @@ function apply() {
     var query = extractquery(loc);
     var splitquery;
     var category = document.getElementById("skip");
+	var okbtn = document.getElementById("ok");
     if (query != "") {
         splitquery = query.split("=")[1].split("&")[0].toUpperCase();
         console.log("splitquery1 : " + splitquery);
@@ -62,6 +63,7 @@ function apply() {
     else {
         splitquery = "NONE";
         category.value = splitquery;
+		okbtn.disabled = true;
     }
 
     
