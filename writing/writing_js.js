@@ -18,9 +18,22 @@ console.log(poster);
 function input_event(){
 	//console.log("a");
 	var inputvalue = document.getElementById("search_input");
+	if(inputvalue.value == ""){
+		var poster = document.getElementById("poster");
+		poster.src = '';
+		inputvalue.style.borderColor = "red";
+		inputvalue.setAttribute("placeholder","You should write movie name");
+		setTimeout(function(){
+			inputvalue.style.borderColor = "#aaa";
+			inputvalue.setAttribute("placeholder","Search your movie");
+		}, 1100);
+		return;
+	}
 	var movieName = inputvalue.value;
 	var movieNameElement = movieName.split(":");
 	var okButton = document.getElementById("ok");
+	
+	
 	
 	okButton.disabled = false;
 
@@ -162,6 +175,31 @@ function backspace(){
 	location.href = "../main.html";
 };
 
+function showMovieList(collectionName){
+	var MovieList = document.getElementById("movielist_table");
+	var getMovieList = firebase.database().ref('/UserProfile/MyCollection/'+movieName).once('value',function(snapshot){
+		
+	});
+}
+
+function showCollection(){
+	var collectionList = document.getElementById("collection_table");
+	var getCollection = firebase.database().ref('/UserProfile/MyCollection/').once('value',function(snapshot){
+		var data = snapshot.val();
+		var keys = Object.keys(data);
+		console.log(keys);
+		for (var i = 0; i< keys.length; i++){
+			var row = collectionList.insertRow(i);
+			var col = row.insertCell(0);
+			col.innerHTML = keys[i];
+			row.style.cursor = "pointer";
+			row.addEventListener("click",function(e){
+				showMovieList(keys[i]);
+			});
+		}
+	});
+}
+
 function bindEvent(){
 	var searchbutton = document.getElementById("searchbutton");
 	var collectionButton = document.getElementById("collectionButton");
@@ -185,3 +223,4 @@ function bindEvent(){
 }
 
 bindEvent();
+showCollection();

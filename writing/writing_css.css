@@ -95,6 +95,8 @@ body{
     left: 15%;
     width: 90px;
     height: 62px;
+	-webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 #searchbutton:hover {
@@ -115,6 +117,8 @@ body{
     left : 33%;
     width: 90px;
     height: 62px;
+	-webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 #collectionButton:hover {
@@ -131,7 +135,7 @@ body{
 #sbtn{
 	position : absolute;
 	width : 30%;
-	left : 70%
+	left : 70%;
 }
 
 #picture{
@@ -184,4 +188,20 @@ body{
 	position : absolute;
 	left : 10%;
 	top : 15%;
+}
+#collection{
+	position : absolute;
+	width : 35%;
+	height : 50%;
+	top : 20%;
+	left : 20px;
+	background-color : green;
+}
+#collection_movielist{
+	position : absolute;
+	width : 35%;
+	height : 50%;
+	top : 20%;
+	left : calc(35px + 35%);
+	background-color : skyblue;
 }
