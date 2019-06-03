@@ -164,10 +164,24 @@ function backspace(){
 
 function bindEvent(){
 	var searchbutton = document.getElementById("searchbutton");
+	var collectionButton = document.getElementById("collectionButton");
+	var folderButton = document.getElementById("folderButton");
+	var folderOpen = document.getElementsByClassName("far fa-folder-open");
+	//console.log(folderOpen);
 	
     searchbutton.onclick = function () {
 		input_event();
 	};
+	
+	collectionButton.onclick = function(){
+		//console.log(folderOpen);
+		if(folderOpen.length == 1){
+			folderButton.className = "far fa-folder";
+		}
+		else if (folderOpen.length == 0){
+			folderButton.className = "far fa-folder-open";
+		}
+	}
 }
 
 bindEvent();
