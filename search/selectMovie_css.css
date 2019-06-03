@@ -36,6 +36,7 @@ body{
 	text-align : center;
 	z-index : 3;
 }
+
 #tablediv{
 	width : 290px;
 	max-height : 200px;
@@ -64,11 +65,6 @@ body{
 }
 
 
-td{
-	border : 1px solid black;
-}
-
-
 #collectionList{
 
 	background-color:#eee;
@@ -78,17 +74,16 @@ td{
 	font-size : 20px;
     border-radius:5px 5px;
 }
-td {
+#collectionList td {
     border: 1px solid #fff;
     border-radius: 5px 5px;
     background-color:#ddd;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
 }
-td:hover{
+
+#collectionList tr:hover{
 	cursor : pointer;
-	background-color : #eee;
 }
+
 #OKsign {
     position: absolute;
     left: 10%;
@@ -109,10 +104,9 @@ td:hover{
     transform:scale(1.1, 1.1);
 }
 
-#Oksign:disabled
-OKsign[disabled]{
+#Oksign:disabled{
 	cursor : not-allowed;
-	background : #ddd;
+	background-color : #ddd;
 }
 
 #backbutton {

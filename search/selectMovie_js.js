@@ -307,32 +307,42 @@ function closeForm(){
 	var popup = document.getElementById("collection");
 	var table = document.getElementById("collectionList");
 	for (var i = 1; i<= collectionnames.length; i++){
-		console.log(collectionnames[i]);
+		console.log(collectionnames[i-1]);
 		table.deleteRow(0);
 	}
 	collectionnames = [];
+	fstorsnd = 0;
 	popup.style.display = "none";
 	
 }
 
 function checkrow(index,row){
 	var okbtn = document.getElementById("OKsign");
+	var cell_of_row = row.cells;
 	if (idx != index){
 		var table = document.getElementById("collectionList").rows;
+		
 		for (var i = 1; i<table.length; i++){
-			if (table[i].innerHTML != clickedcollection) {
-				table[i].style.backgroundColor = "#ddd";
+			var cell_of_row = table[i-1].cells;
+			console.log(cell_of_row);
+			if (cell_of_row[0].style.backgroundColor != "#ddd") {
+				console.log(cell_of_row[0].innerHTML);
+				console.log(cell_of_row[0].style.backgroundColor);
+				console.log(i);
+				cell_of_row[0].style.backgroundColor = "#ddd";
 			}
 		}
-		row.style.backgroundColor = "#eee";
-		clickedcollection = row.innerHTML;
+		var cell_of_row = row.cells;
+		cell_of_row[0].style.backgroundColor = "#ccc";
+		//clickedcollection = row.innerHTML;
 		console.log(row.innerHTML);
 		console.log(clickedcollection);
 		okbtn.disabled = false;
 		idx = index;
 	}
 	else{
-		row.style.backgroundColor = "#ddd";
+		console.log("nothing");
+		cell_of_row[0].style.backgroundColor = "#ddd";
 		clickedcollection = "";
 		okbtn.disabled = true;
 		idx = -1;
@@ -391,6 +401,7 @@ function bindevent(){
 		}
 		else{
 			console.log("---------------errorerror-----------------");
+			console.log(fstorsnd);
 		}
 		fstorsnd = 0;
 		idx = -1;
@@ -422,15 +433,16 @@ function bindevent(){
 		)
 	};
 	firstbtn.onclick = function(){
+		var col_div = document.getElementById("")
 		console.log("first");
-		fstorsnd = 1;
 		closeForm();
+		fstorsnd = 1;
 		showcollectionlist(firstbtn);
 	};
 	secondbtn.onclick = function(){
 		console.log("second");
-		fstorsnd = 2;
 		closeForm();
+		fstorsnd = 2;
 		showcollectionlist(secondbtn);
 	}
 }
