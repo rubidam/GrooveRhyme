@@ -1,4 +1,8 @@
-html,body{
+html{
+	width : 100vw;
+	height : 100vh;
+}
+body{
 	width : 95%;
 	height : 95%;
 }
