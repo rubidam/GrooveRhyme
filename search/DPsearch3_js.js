@@ -52,7 +52,7 @@ function apply() {
 		if (splitquery == "SF"){
 			categoryImg.src = "../search/choosecategory/" + splitquery + "_hover.png";
 		}
-		else{
+		else if (splitquery != "NONE"){
 			categoryImg.src = "../search/choosecategory/" + splitquery.toLowerCase() + "_hover.png";
 		}
     }
