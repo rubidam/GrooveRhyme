@@ -5,6 +5,13 @@ body{
 	margin : 0px;
 }
 
+h2 {
+	font-weight : bold;
+	margin-left : 5px;
+	font-size : 32px;
+	font-family: 'Open Sans', sans-serif;
+}
+
 #upper-box{
 	position: absolute;
 	top: 0px;
@@ -193,15 +200,46 @@ body{
 	position : absolute;
 	width : 35%;
 	height : 50%;
+	max-height: 50%;
+    overflow-y: auto;
 	top : 20%;
 	left : 20px;
-	background-color : green;
+	background-color : #eee;
+	display : none;
+}
+#collection_table{
+	color : #1C167f;
+	width : 95%;
 }
 #collection_movielist{
 	position : absolute;
 	width : 35%;
 	height : 50%;
+	max-height: 50%;
+    overflow-y: auto;
 	top : 20%;
 	left : calc(35px + 35%);
-	background-color : skyblue;
+	background-color : #eee;
+	display : none;
+}
+#movielist_table{
+	color : #1C167f;
+	width : 95%;
+}
+
+td {
+    border-bottom: 2px white solid;
+    height: 30px;
+    font-size: 22px;
+    padding: 4px;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+    font-weight: bold;
+    background-color: #eee;
+}
+
+td:hover{
+    cursor : pointer;
+    color: #aaa;
+    text-shadow:2px 2px 2px #3E606F;
 }

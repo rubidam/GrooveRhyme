@@ -175,29 +175,73 @@ function backspace(){
 	location.href = "../main.html";
 };
 
+function initializepopupTable(table) {
+  /*
+    Initialize the courses in the right plane
+  */
+  var numRows = table.rows.length;
+  for(var i=0;i<numRows;i++){
+    table.deleteRow(0);
+  }
+}
+
+function addrowmovietable(index,key){
+	var movieList = document.getElementById("movielist_table");
+	var row = movieList.insertRow(index);
+	var col = row.insertCell(0);
+	col.innerHTML = key;
+	row.style.cursor = "pointer";
+	row.addEventListener("click",function(e){
+		var collectionButton = document.getElementById("collectionButton");
+		collectionButton.click();
+		var input = document.getElementById("search_input");
+		input.value = key;
+		var btn = document.getElementById("searchbutton");
+		btn.click();
+	});
+}
 function showMovieList(collectionName){
+	var selectedname = document.getElementById("selected_colname");
+	console.log(collectionName);
+	selectedname.innerHTML = collectionName;
 	var MovieList = document.getElementById("movielist_table");
-	var getMovieList = firebase.database().ref('/UserProfile/MyCollection/'+movieName).once('value',function(snapshot){
-		
+	initializepopupTable(MovieList);
+	var getMovieList = firebase.database().ref('/UserProfile/MyCollection/'+collectionName).once('value',function(snapshot){
+		var data = snapshot.val();
+		var keys = Object.keys(data);
+		for (var i = 0;i<keys.length; i++){
+			if(keys[i] != "z")
+				addrowmovietable(i,keys[i]);
+		}
+	});
+	var movieListdiv = document.getElementById("collection_movielist");
+	movieListdiv.style.display = 'block';
+}
+
+function addrowcollectiontable(index,key){
+	var collectionList = document.getElementById("collection_table");
+	var row = collectionList.insertRow(index);
+	var col = row.insertCell(0);
+	col.innerHTML = key;
+	row.style.cursor = "pointer";
+	row.addEventListener("click",function(e){
+		showMovieList(key);
 	});
 }
 
 function showCollection(){
 	var collectionList = document.getElementById("collection_table");
+	initializepopupTable(collectionList);
 	var getCollection = firebase.database().ref('/UserProfile/MyCollection/').once('value',function(snapshot){
 		var data = snapshot.val();
 		var keys = Object.keys(data);
 		console.log(keys);
 		for (var i = 0; i< keys.length; i++){
-			var row = collectionList.insertRow(i);
-			var col = row.insertCell(0);
-			col.innerHTML = keys[i];
-			row.style.cursor = "pointer";
-			row.addEventListener("click",function(e){
-				showMovieList(keys[i]);
-			});
+			addrowcollectiontable(i,keys[i]);
 		}
 	});
+	var coldiv = document.getElementById("collection");
+	coldiv.style.display = 'block';
 }
 
 function bindEvent(){
@@ -215,12 +259,16 @@ function bindEvent(){
 		//console.log(folderOpen);
 		if(folderOpen.length == 1){
 			folderButton.className = "far fa-folder";
+			var coldiv = document.getElementById("collection");
+			var movieListdiv = document.getElementById("collection_movielist");
+			coldiv.style.display = 'none';
+			movieListdiv.style.display = 'none';
 		}
 		else if (folderOpen.length == 0){
 			folderButton.className = "far fa-folder-open";
+			showCollection();
 		}
 	}
 }
 
 bindEvent();
-showCollection();
