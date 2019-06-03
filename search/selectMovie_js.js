@@ -20,7 +20,7 @@ var secondidx = 0;
 var collectionnames = [];
 var idx = -1;
 var fstorsnd = 0;
-
+var clickedcollection = "";
 function readFromDatabase(){
 	return firebase.database().ref('/MovieList/').once('value', 
 	function(snapshot){
@@ -319,16 +319,20 @@ function checkrow(index,row){
 	if (idx != index){
 		var table = document.getElementById("collectionList").rows;
 		for (var i = 1; i<table.length; i++){
-			if (table[i].style.backgroundColor != "#ddd") {
+			if (table[i].innerHTML != clickedcollection) {
 				table[i].style.backgroundColor = "#ddd";
 			}
 		}
-		row.style.backgroundColor = "#ccc";
+		row.style.backgroundColor = "#eee";
+		clickedcollection = row.innerHTML;
+		console.log(row.innerHTML);
+		console.log(clickedcollection);
 		okbtn.disabled = false;
 		idx = index;
 	}
 	else{
 		row.style.backgroundColor = "#ddd";
+		clickedcollection = "";
 		okbtn.disabled = true;
 		idx = -1;
 	}
@@ -373,6 +377,7 @@ function bindevent(){
 			var entry ={};
 			entry[sorted[firstidx]] = 1;
 			console.log(entry);
+			console.log("first we did it");
 			update.update(entry);
 		}
 		
@@ -380,6 +385,7 @@ function bindevent(){
 			var entry = {};
 			entry[sorted[secondidx]] = 1;
 			console.log(entry);
+			console.log("second we did it");
 			update.update(entry);
 		}
 		else{
@@ -417,11 +423,13 @@ function bindevent(){
 	firstbtn.onclick = function(){
 		console.log("first");
 		fstorsnd = 1;
+		closeForm();
 		showcollectionlist(firstbtn);
 	};
 	secondbtn.onclick = function(){
 		console.log("second");
 		fstorsnd = 2;
+		closeForm();
 		showcollectionlist(secondbtn);
 	}
 }
