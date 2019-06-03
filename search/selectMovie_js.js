@@ -310,6 +310,7 @@ function closeForm(){
 		console.log(collectionnames[i]);
 		table.deleteRow(0);
 	}
+	collectionnames = [];
 	popup.style.display = "none";
 	
 }
