@@ -36,13 +36,20 @@
 		<div id = "picture">
 			<img src = "" id = "poster" onerror = "this.src = './new_default.jpg'">
 		</div>
+		<div id = "collection">
+			<h2>Choose your collection</h2>
+			<table id = "collection_table"></table>
+		</div>
+		<div id = "collection_movielist">
+			<table id = "movielist_table"></table>
+		</div>
 		<div>
 			<input id="ok"
 					type="button"
 					value="OK"
 					class="ok"
 					onclick="okPressListener()"
-					disabled = true>
+					disabled>
 		</div>
 	</div>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
