@@ -26,6 +26,7 @@ var next_move = "../DPsearch2.html?"
 var category = [];
 
 function sflistener(){
+	var click = 0;
 	sf.addEventListener('mouseover', function (e) {
         sf.style.backgroundImage = "url('SF_hover.png')";
 	});
@@ -33,13 +34,17 @@ function sflistener(){
 		sf.style.backgroundImage = "url('SF.png')";
 	});
 	sf.addEventListener('click',function(e){
-		category = category + "SF Fantasy";
-		next_move = next_move + "category=SF";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "SF Fantasy";
+			next_move = next_move + "category=SF";
+			pushCategory(category);
+		}
 	});
 }
 
 function horrorlistener(){
+	var click = 0;
 	horror.addEventListener('mouseover', function (e) {
 		horror.style.backgroundImage = "url('horror_hover.png')";
 	});
@@ -47,13 +52,17 @@ function horrorlistener(){
 		horror.style.backgroundImage = "url('horror.png')";
 	});
 	horror.addEventListener('click',function(e){
-		category = category + "Horror";
-		next_move = next_move + "category=HORROR";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Horror";
+			next_move = next_move + "category=HORROR";
+			pushCategory(category);
+		}
 	});
 }
 
 function crimelistener(){
+	var click = 0;
 	crime.addEventListener('mouseover', function (e) {
 		crime.style.backgroundImage = "url('crime_hover.png')";
 	});
@@ -61,13 +70,17 @@ function crimelistener(){
 		crime.style.backgroundImage = "url('crime.png')";
 	});
 	crime.addEventListener('click',function(e){
-		category = category + "Crime Noir";
-		next_move = next_move + "category=CRIME";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Crime Noir";
+			next_move = next_move + "category=CRIME";
+			pushCategory(category);
+		}
 	});
 }
 
 function biographylistener(){
+	var click = 0;
 	biography.addEventListener('mouseover', function (e) {
 		biography.style.backgroundImage = "url('biography_hover.png')";
 	});
@@ -75,14 +88,18 @@ function biographylistener(){
 		biography.style.backgroundImage = "url('biography.png')";
 	});
 	biography.addEventListener('click',function(e){
-		category = category + "Biography";
-		next_move = next_move + "category=BIOGRAPHY";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Biography";
+			next_move = next_move + "category=BIOGRAPHY";
+			pushCategory(category);
+		}
 	});
 
 }
 
 function mysterylistener(){
+	var click = 0;
 	mystery.addEventListener('mouseover', function (e) {
 		mystery.style.backgroundImage = "url('mystery_hover.png')";
 	});
@@ -90,14 +107,18 @@ function mysterylistener(){
 		mystery.style.backgroundImage = "url('mystery.png')";
 	});
 	mystery.addEventListener('click',function(e){
-		category = category + "Mystery";
-		next_move = next_move + "category=MYSTERY";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Mystery";
+			next_move = next_move + "category=MYSTERY";
+			pushCategory(category);
+		}
 	});
 
 }
 
 function artlistener(){
+	var click = 0;
 	art.addEventListener('mouseover', function (e) {
 		art.style.backgroundImage = "url('artistic_hover.png')";
 	});
@@ -105,14 +126,18 @@ function artlistener(){
 		art.style.backgroundImage = "url('artistic.png')";
 	});
 	art.addEventListener('click',function(e){
-		category = category + "Artistic";
-		next_move = next_move + "category=ARTISTIC";
-		pushCategory(category);
+		if (click ==  0){
+			click = click + 1;
+			category = category + "Artistic";
+			next_move = next_move + "category=ARTISTIC";
+			pushCategory(category);
+		}
 	});
 }
 
 	
 function comedylistener(){
+	var click = 0;
 	comedy.addEventListener('mouseover', function (e) {
 		comedy.style.backgroundImage = "url('comedy_hover.png')";
 	});
@@ -120,14 +145,18 @@ function comedylistener(){
 		comedy.style.backgroundImage = "url('comedy.png')";
 	});
 	comedy.addEventListener('click',function(e){
-		category = category + "Comedy";
-		next_move = next_move + "category=COMEDY";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Comedy";
+			next_move = next_move + "category=COMEDY";
+			pushCategory(category);
+		}
 	});
 }
 
 
 function musiclistener(){
+	var click = 0;
 	music.addEventListener('mouseover', function (e) {
 		music.style.backgroundImage = "url('music_hover.png')";
 	});
@@ -135,14 +164,18 @@ function musiclistener(){
 		music.style.backgroundImage = "url('music.png')";
 	});
 	music.addEventListener('click',function(e){
-		category = category + "Music";
-		next_move = next_move + "category=MUSIC";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Music";
+			next_move = next_move + "category=MUSIC";
+			pushCategory(category);
+		}
 	});
 }
 
 
 function dramalistener(){
+	var click = 0;
 	drama.addEventListener('mouseover', function (e) {
 		drama.style.backgroundImage = "url('drama_hover.png')";
 	});
@@ -150,14 +183,18 @@ function dramalistener(){
 		drama.style.backgroundImage = "url('drama.png')";
 	});
 	drama.addEventListener('click',function(e){
-		category = category + "Drama";
-		next_move = next_move + "category=DRAMA";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Drama";
+			next_move = next_move + "category=DRAMA";
+			pushCategory(category);
+		}
 	});
 }
 
 
 function doculistener(){
+	var click = 0;
 	docu.addEventListener('mouseover', function (e) {
 		docu.style.backgroundImage = "url('docu_hover.png')";
 	});
@@ -165,14 +202,18 @@ function doculistener(){
 		docu.style.backgroundImage = "url('docu.png')";
 	});
 	docu.addEventListener('click',function(e){
-		category = category + "Documentary";
-		next_move = next_move + "category=DOCU";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Documentary";
+			next_move = next_move + "category=DOCU";
+			pushCategory(category);
+		}
 	});
 }
 
 
 function actionlistener(){
+	var click = 0;
 	action.addEventListener('mouseover', function (e) {
 		action.style.backgroundImage = "url('action_hover.png')";
 	});
@@ -180,14 +221,18 @@ function actionlistener(){
 		action.style.backgroundImage = "url('action.png')";
 	});
 	action.addEventListener('click',function(e){
-		category = category + "Action";
-		next_move = next_move + "category=ACTION";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Action";
+			next_move = next_move + "category=ACTION";
+			pushCategory(category);
+		}
 	});
 }
 
 
 function romancelistener(){
+	var click = 0;
 	romance.addEventListener('mouseover', function (e) {
 		romance.style.backgroundImage = "url('romance_hover.png')";
 	});
@@ -195,9 +240,12 @@ function romancelistener(){
 		romance.style.backgroundImage = "url('romance.png')";
 	});
 	romance.addEventListener('click',function(e){
-		category = category + "Romance";
-		next_move = next_move + "category=ROMANCE";
-		pushCategory(category);
+		if (click == 0){
+			click = click + 1;
+			category = category + "Romance";
+			next_move = next_move + "category=ROMANCE";
+			pushCategory(category);
+		}
 	});
 }
 
