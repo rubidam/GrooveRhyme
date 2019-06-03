@@ -304,7 +304,7 @@ function closeForm(){
 	var table = document.getElementById("collectionList");
 	for (var i = 1; i<= collectionnames.length; i++){
 		console.log(collectionnames[i]);
-		table.deleteRow(1);
+		table.deleteRow(0);
 	}
 	popup.style.display = "none";
 	
@@ -345,7 +345,7 @@ function showcollectionlist(collectionbutton){
 		collectionnames = keys;
 		console.log(keys);
 		for (var k = 1; k <= keys.length; k++){
-			var row = ctable.insertRow(k);
+			var row = ctable.insertRow(k-1);
 			var cell = row.insertCell(0);
 			cell.innerHTML = keys[k-1];
 			var temp = k;
