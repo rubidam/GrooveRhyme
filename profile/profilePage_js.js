@@ -1,4 +1,4 @@
-// Your web app's Firebase configuration
+﻿// Your web app's Firebase configuration
 var firebaseConfig = {
 	apiKey: "AIzaSyDDFiULsphXfbs8XMTaJr4o4dxCPvCyX8w",
 	authDomain: "movielist-454ba.firebaseapp.com",
@@ -112,7 +112,9 @@ function refreshcollectionList(name) {
 	row.addEventListener("click",function(e){
 		console.log(name);
 		collection.style.display="block";
-		getMovieList(col1.innerHTML);
+        getMovieList(col1.innerHTML);
+        var addmoviesec = document.getElementById("addmoviesec");
+        addmoviesec.style.display = "none";
         //location.href = "./profilePage.html?collection=" + name;
 	})
 	col1.innerHTML = name;
@@ -176,12 +178,29 @@ function collectiondelete() {
 		getCollectionList();
     });
 }
-
 function addmovie() {
-
-    location.href = "../search/DPsearch1.html";
+    var addmoviesec = document.getElementById("addmoviesec");
+    addmoviesec.style.display = 'block';
 }
+var addmovieok = document.getElementById("addmovieok");
+function addmovieonclick() {
+    addmovieok.onclick = function (e) {
+        console.log("sibal");
+        var search_input = document.getElementById("search_input");
+        var collectionname = document.getElementById("collectionname")
+        var update = firebase.database().ref('/UserProfile/MyCollection/' + collectionname.innerHTML);
+        var entry = {};
+        entry[search_input.value] = 1;
 
+        update.update(entry);
+        refreshList(search_input.value);
+        search_input.value = '';
+        addmoviesec.style.display = 'none';
+        var poster = document.getElementById("poster");
+        poster.src = './new_default.jpg';
+
+    }
+}
 function initializeTable() {
     /*
       Initialize the courses in the right plane
@@ -270,3 +289,113 @@ modal_layer.addEventListener("click", function (e) {
 
 })
 popupTrue();
+addmovieonclick();
+function input_event() {
+    //console.log("a");
+    var inputvalue = document.getElementById("search_input");
+    var movieName = inputvalue.value;
+    var movieNameElement = movieName.split(":");
+    var okButton = document.getElementById("ok");
+
+
+    var moviePicture = "";
+    for (var i = 0; i < movieNameElement.length; i++) {
+        if (i > 0) {
+            moviePicture = moviePicture + movieNameElement[i];
+        }
+        else {
+            moviePicture = moviePicture + movieNameElement[i];
+        }
+    }
+    console.log(moviePicture);
+
+    var newMoviePicture = "";
+    var newMovieNameElement = moviePicture.split(" ");
+    for (var i = 0; i < newMovieNameElement.length; i++) {
+        if (i == newMovieNameElement.length - 1) {
+            if (newMovieNameElement[i] == "in" || newMovieNameElement[i] == "of" || newMovieNameElement[i] == "for" || newMovieNameElement[i] == "and") {
+                newMoviePicture = newMoviePicture + newMovieNameElement[i];
+            }
+            else {
+                var firstLetter = newMovieNameElement[i].charAt(0);
+                newMoviePicture = newMoviePicture + firstLetter.toUpperCase() + newMovieNameElement[i].slice(1);
+            }
+        }
+        else {
+            if (newMovieNameElement[i] == "in" || newMovieNameElement[i] == "of" || newMovieNameElement[i] == "for" || newMovieNameElement[i] == "and") {
+                newMoviePicture = newMoviePicture + newMovieNameElement[i] + " ";
+            }
+            else {
+                var firstLetter = newMovieNameElement[i].charAt(0);
+                newMoviePicture = newMoviePicture + firstLetter.toUpperCase() + newMovieNameElement[i].slice(1) + " ";
+            }
+
+        }
+    }
+
+    console.log(newMoviePicture);
+
+
+    var poster = document.getElementById("poster");
+    poster.src = 'loading.gif';
+    var getstorage = firebase.storage().ref().child(newMoviePicture + ".jpg").getDownloadURL().then(function (url) {
+        console.log(url);
+        poster.src = url;
+    });
+
+}
+var searching = firebase.database().ref('/MovieList/').once('value', function (snapshot) {
+    var moviedic = snapshot.val();
+    var movielist = Object.keys(moviedic);
+    //console.log(movielist);
+
+    $(function () {
+
+
+
+        var accentMap = {
+            "á": "a",
+            "ö": "o"
+        };
+        var normalize = function (term) {
+            var ret = "";
+            for (var i = 0; i < term.length; i++) {
+                ret += accentMap[term.charAt(i)] || term.charAt(i);
+            }
+            return ret;
+        };
+
+        $("#search_input").autocomplete({
+            source: function (request, response) {
+                var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+                response($.grep(movielist, function (value) {
+                    //value = value.label || value.value || value;
+                    //console.log(movielist);
+                    value = value.value || value;
+
+                    return matcher.test(value) || matcher.test(normalize(value));
+                }));
+            },
+
+
+            select: function (event, ui) {
+                event.preventDefault();
+                var selectedObj = ui.item;
+                $("#search_input").appendTo(".foo");
+                $("#search_input").val(ui.item.value);
+
+                if (event.keyCode != 13) {
+                    input_event();
+                    addmovieonclick();
+                }
+                else if (event.keyCode == 13) {
+                    input_event();
+                    //input.value = '';
+                    addmovieonclick();
+                }
+                $("#search_input").autocomplete("close");
+                return false;
+            }
+        });
+    });
+})

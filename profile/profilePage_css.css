@@ -377,6 +377,7 @@ th {
 	font-size: 30px;
 	padding: 3px;
     top:20%;
+    text-align:center;
 }
 td {
     border-bottom: 2px #eee solid;
@@ -420,20 +421,73 @@ td {
 	background-color : #EEEEEE;
 }
 
-#sinput{
+#search_input{
     position:absolute;
-
-    width:50%
+    font-size:20px;
+    width:300px;
+    height:60px;
+    border: 1px solid #3E606F;
+   
 }
-#sbtn{
-    width:15%
-}
-#addmoviesec{
-    z-index:10;
+#searchbutton {
+    background-color: white;
+    border: 3px solid;
+    border-color: #3E606F;
+    color: #3E606F;
+    top: 0px;
+    font-size: 25px;
+    cursor: pointer;
     position: absolute;
-    top: 160px;
-    left: 0px;
-    padding: 30px 0px;
-    width: 100%;
-    height: 500px;
+    left: 390px;
+    width: 90px;
+    height: 62px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+    #searchbutton:hover {
+        border-color: #eee;
+        color: #eee;
+        background-color: #3E606F;
+        cursor:pointer;
+    }
+#addmovieok {
+    background-color: white;
+    border: 3px solid;
+    border-color: #3E606F;
+    color: #3E606F;
+    top: 0px;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    left: 300px;
+    width: 90px;
+    height: 62px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+    #addmovieok:hover {
+        border-color: #eee;
+        color: #eee;
+        background-color: #3E606F;
+        cursor:pointer;
+    }
+#addmoviesec {
+    z-index: 10;
+    position: absolute;
+    top: 0px;
+    left: 455px;
+    width: 200px;
+    height: 100px;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+
+#poster {
+    width: 298px;
+    height: 400px;
+    position: absolute;
+    top:61px;
+    border:1px solid #3E606F;
 }
