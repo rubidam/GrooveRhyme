@@ -63,6 +63,7 @@ function input_event(){
 	
 
 	var poster = document.getElementById("poster");
+	poster.src = 'loading.gif';
 	var getstorage = firebase.storage().ref().child(newMoviePicture + ".jpg").getDownloadURL().then(function(url){
 		console.log(url);
         poster.src = url;
