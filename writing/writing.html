@@ -30,8 +30,8 @@
 			<input id = "search_input" placeholder = "Search your movie">
 		</div>
 		<div id = "sbtn">
-			<button id = "searchbutton"><i class = "fa fa-search"></i></button>
-			<button id = "collectionButton"><i id = "folderButton" class="far fa-folder"></i></button>
+			<button id = "searchbutton" title = "Search movie to write review."><i class = "fa fa-search"></i></button>
+			<button id = "collectionButton" title = "Get movie from my collection to write review."><i id = "folderButton" class="far fa-folder"></i></button>
 		</div>
 		<div id = "picture">
 			<img src = "" id = "poster" onerror = "this.src = './new_default.jpg'">
@@ -50,6 +50,7 @@
 					value="OK"
 					class="ok"
 					onclick="okPressListener()"
+					title = "Move page to write review"
 					disabled>
 		</div>
 	</div>
