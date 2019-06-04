@@ -49,7 +49,7 @@ function apply() {
 		
 		var categoryImg = document.getElementById("categoryImg");
 		
-		if (splitquery == "SF"){
+		if (splitquery == "SF" || splitquery == "DOCU"){
 			categoryImg.src = "../search/choosecategory/" + splitquery + "_hover.png";
 		}
 		else if (splitquery != "NONE"){

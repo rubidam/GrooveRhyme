@@ -20,7 +20,7 @@ var secondidx = 0;
 var collectionnames = [];
 var idx = -1;
 var fstorsnd = 0;
-
+var clickedcollection = "";
 function readFromDatabase(){
 	return firebase.database().ref('/MovieList/').once('value', 
 	function(snapshot){
@@ -198,7 +198,10 @@ function printMovie(){
 	firstidx = firstIndex;
 	secondidx = secondIndex;
 	
+	var closebtn = document.getElementById("closebtn");
+	
     nextButton.onclick = function () {
+		closebtn.click();
 		first.src = "./loading.gif";
 		second.src = "./loading.gif";
         var nextButton = document.getElementById("nextButton");
@@ -242,6 +245,7 @@ function printMovie(){
     }
 	
 	prevButton.onclick = function () {
+		closebtn.click();
 		first.src = "./loading.gif";
 		second.src = "./loading.gif";
         var prevButton = document.getElementById("prevButton");
@@ -302,29 +306,46 @@ function printMovie(){
 function closeForm(){
 	var popup = document.getElementById("collection");
 	var table = document.getElementById("collectionList");
+	var oksign = document.getElementById("OKsign");
 	for (var i = 1; i<= collectionnames.length; i++){
-		console.log(collectionnames[i]);
-		table.deleteRow(1);
+		console.log(collectionnames[i-1]);
+		table.deleteRow(0);
 	}
+	collectionnames = [];
+	fstorsnd = 0;
+	oksign.disabled = true;
 	popup.style.display = "none";
 	
 }
 
 function checkrow(index,row){
 	var okbtn = document.getElementById("OKsign");
+	var cell_of_row = row.cells;
 	if (idx != index){
 		var table = document.getElementById("collectionList").rows;
+		
 		for (var i = 1; i<table.length; i++){
-			if (table[i].style.backgroundColor != "#ddd") {
-				table[i].style.backgroundColor = "#ddd";
+			var cell_of_row = table[i-1].cells;
+			console.log(cell_of_row);
+			if (cell_of_row[0].style.backgroundColor != "#ddd") {
+				console.log(cell_of_row[0].innerHTML);
+				console.log(cell_of_row[0].style.backgroundColor);
+				console.log(i);
+				cell_of_row[0].style.backgroundColor = "#ddd";
 			}
 		}
-		row.style.backgroundColor = "#ccc";
+		var cell_of_row = row.cells;
+		cell_of_row[0].style.backgroundColor = "#ccc";
+		//clickedcollection = row.innerHTML;
+		console.log(row.innerHTML);
+		console.log(clickedcollection);
 		okbtn.disabled = false;
 		idx = index;
 	}
 	else{
-		row.style.backgroundColor = "#ddd";
+		console.log("nothing");
+		cell_of_row[0].style.backgroundColor = "#ddd";
+		clickedcollection = "";
 		okbtn.disabled = true;
 		idx = -1;
 	}
@@ -341,7 +362,7 @@ function showcollectionlist(collectionbutton){
 		collectionnames = keys;
 		console.log(keys);
 		for (var k = 1; k <= keys.length; k++){
-			var row = ctable.insertRow(k);
+			var row = ctable.insertRow(k-1);
 			var cell = row.insertCell(0);
 			cell.innerHTML = keys[k-1];
 			var temp = k;
@@ -369,6 +390,7 @@ function bindevent(){
 			var entry ={};
 			entry[sorted[firstidx]] = 1;
 			console.log(entry);
+			console.log("first we did it");
 			update.update(entry);
 		}
 		
@@ -376,10 +398,12 @@ function bindevent(){
 			var entry = {};
 			entry[sorted[secondidx]] = 1;
 			console.log(entry);
+			console.log("second we did it");
 			update.update(entry);
 		}
 		else{
 			console.log("---------------errorerror-----------------");
+			console.log(fstorsnd);
 		}
 		fstorsnd = 0;
 		idx = -1;
@@ -411,12 +435,15 @@ function bindevent(){
 		)
 	};
 	firstbtn.onclick = function(){
+		var col_div = document.getElementById("")
 		console.log("first");
+		closeForm();
 		fstorsnd = 1;
 		showcollectionlist(firstbtn);
 	};
 	secondbtn.onclick = function(){
 		console.log("second");
+		closeForm();
 		fstorsnd = 2;
 		showcollectionlist(secondbtn);
 	}

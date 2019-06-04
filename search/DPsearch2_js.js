@@ -62,7 +62,7 @@ function apply() {
         }
         category.value = splitquery;
 		
-		if (splitquery == "SF"){
+		if (splitquery == "SF" || splitquery == "DOCU"){
 			categoryImg.src = "../search/choosecategory/" + splitquery + "_hover.png";
 		}
 		else{

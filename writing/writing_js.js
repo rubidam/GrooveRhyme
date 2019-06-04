@@ -166,8 +166,32 @@ function makeTempDB(moviename){
 next_move = "./aspect/aspects.html?"
 
 function okPressListener(){
-	next_move = next_move + "name=" + textbox.value;
-	makeTempDB(textbox.value);
+	var newTextValue = "";
+	var textValue = textbox.value;
+	var movieNameElement = textValue.split(" ");
+	for (var i = 0 ; i < movieNameElement.length ; i++){
+		if (i == movieNameElement.length - 1){
+			if (movieNameElement[i] == "in" || movieNameElement[i] == "of" || movieNameElement[i] == "for" || movieNameElement[i] == "and"){
+				newTextValue = newTextValue + movieNameElement[i];
+			}
+			else {
+				var firstLetter = movieNameElement[i].charAt(0);
+				newTextValue = newTextValue + firstLetter.toUpperCase() + movieNameElement[i].slice(1);
+			}
+		}
+		else{
+			if (movieNameElement[i] == "in" || movieNameElement[i] == "of" || movieNameElement[i] == "for" || movieNameElement[i] == "and"){
+				newTextValue = newTextValue + movieNameElement[i] + " ";
+			}
+			else {
+				var firstLetter = movieNameElement[i].charAt(0);
+				newTextValue = newTextValue + firstLetter.toUpperCase() + movieNameElement[i].slice(1) + " ";
+			}
+			
+		}
+	}
+	next_move = next_move + "name=" + newTextValue;
+	makeTempDB(newTextValue);
 	location.href = next_move;
 };
 

@@ -152,10 +152,13 @@ getCollectionList();
 var add_btn = document.getElementById("add");
 
 add_btn.onclick = function() {
+	var middlediv = document.getElementById("middle");
 	input_box = document.getElementById("new_name");
 	console.log(input_box.value);
+	middlediv.style.left = "0%";
 	firebase.database().ref('/UserProfile/MyCollection/' + input_box.value + '/').set({'z':1});
 	input_box.value = '';
+	
 	closeForm();
 	getCollectionList();
 }
@@ -180,18 +183,20 @@ function collectiondelete() {
 }
 function addmovie() {
     var addmoviesec = document.getElementById("addmoviesec");
+	var middlediv = document.getElementById("middle");
+	//middlediv.style.left = "-15%";
     addmoviesec.style.display = 'block';
 }
 var addmovieok = document.getElementById("addmovieok");
 function addmovieonclick() {
     addmovieok.onclick = function (e) {
-        console.log("sibal");
+        var middlediv = document.getElementById("middle");
         var search_input = document.getElementById("search_input");
         var collectionname = document.getElementById("collectionname")
         var update = firebase.database().ref('/UserProfile/MyCollection/' + collectionname.innerHTML);
         var entry = {};
         entry[search_input.value] = 1;
-
+		middlediv.style.left = "0%";
         update.update(entry);
         refreshList(search_input.value);
         search_input.value = '';
@@ -279,13 +284,15 @@ var modal_layer = document.getElementById("modal_layer");
 closebtn.addEventListener("click", function (e) {
     var collection = document.getElementById("middle");
 	initializeTable();
+	collection.style.left = "0%";
 	collection.style.display = "none";
 	
 })
 modal_layer.addEventListener("click", function (e) {
     var collection = document.getElementById("middle");
     initializeTable();
-    collection.style.display = "none";
+    collection.style.left = "0%";
+	collection.style.display = "none";
 
 })
 popupTrue();
